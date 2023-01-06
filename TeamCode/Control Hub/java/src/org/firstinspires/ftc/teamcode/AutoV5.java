@@ -188,18 +188,18 @@ public class AutoV5 extends LinearOpMode {
             pointDirection(0);
         } else if (state == 6) {
             arm(4400,2000);
-            sleep(1000);
-            driveHorizontal(610,600);
+            sleep(500);
+            driveHorizontal(655,400);
             sleep(500);
             pointDirection(0);
         } else if (state == 7) {
-            driveVertical(95,300);
+            driveVertical(33,300);
             armGravity();
             sleep(2000);
             claw(-0.1);
             pointDirection(0);
         } else if (state == 8) {
-            driveVertical(-170,300);
+            driveVertical(-45,300);
             arm(0,3000);
             claw(-1);
             pointDirection(0);
@@ -283,6 +283,7 @@ public class AutoV5 extends LinearOpMode {
         int bR = 0;
         int fR = 0;
         int bL = 0;
+        
         telemetry.addLine("driving");
         telemetry.update();
         while ((fL != position) && (bR != position) && (bL != -position) && (fR != -position) && opModeIsActive()) { 
@@ -446,7 +447,7 @@ public class AutoV5 extends LinearOpMode {
             // to artificially zoom in to the center of image.  For best results, the "aspectRatio" argument
             // should be set to the value of the images used to create the TensorFlow Object Detection model
             // (typically 16/9).
-            tfod.setZoom(2.75, 9.0/9.0);
+            tfod.setZoom(2, 16.0/9.0);
         }
         
         /** Wait for the game to begin */
@@ -457,6 +458,7 @@ public class AutoV5 extends LinearOpMode {
         int tick = 0;
         int tickSS = 30;
         String imageFound = "nothing";
+        String imageFound2 = "nothing";
         boolean gotImage = false;
         //OpMode
         if (opModeIsActive()) {
@@ -490,24 +492,39 @@ public class AutoV5 extends LinearOpMode {
                 if (imageFound != "nothing") {
                     //tick = tick + 1;
                 }
-                if ((gotImage == false) && (timer.seconds()>2)) {
+                if ((gotImage == false) && (timer.seconds()>5)) {
                     //timer.reset();
                     gotImage = true;
                     if (imageFound == "nothing") {
-                        imageFound = "D3";
+                        imageFound = "D2";
                     }
+                    imageFound2 = imageFound;
                 }
                 if ((gotImage == true)) {
                     placeCone();
-                    if ((imageFound == "D1") || (imageFound == "Hawk")){
+                    if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){
                         telemetry.addLine("1 Bolt Confirmed");
-                        
+                        if (state == endState) {
+                            driveHorizontal(666, 1000);
+                            pointDirection(0);
+                            //driveHorizontal(500, 1000);
+                            pointDirection(0);
+                            driveVertical(100,2000);
+                            pointDirection(0);
+                        }
                     }
-                    else if ((imageFound == "D2") || (imageFound == "Hammer")) {
+                    else if ((imageFound2 == "D2") || (imageFound2 == "Hammer")) {
                         telemetry.addLine("2 Bulb Confirmed");
-                        
+                        if (state == endState) {
+                            driveHorizontal(-666, 1000);
+                            pointDirection(0);
+                            //driveHorizontal(500, 1000);
+                            pointDirection(0);
+                            driveVertical(100,2000);
+                            pointDirection(0);
+                        }
                     }
-                    else if ((imageFound == "D3") || (imageFound == "Gear")) {
+                    else if ((imageFound2 == "D3") || (imageFound2 == "Gear")) {
                         telemetry.addLine("3 Panel Confirmed");
                         if (state == endState) {
                             driveHorizontal(-720, 2000);

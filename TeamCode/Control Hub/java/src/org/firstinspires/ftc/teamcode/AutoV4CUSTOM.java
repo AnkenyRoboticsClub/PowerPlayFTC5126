@@ -54,7 +54,7 @@ import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
  * is explained below.
  */
 @Autonomous //(name = "Concept: TensorFlow Object Detection", group = "Concept")
-
+@Disabled
 public class AutoV4CUSTOM extends LinearOpMode {
 
     /*

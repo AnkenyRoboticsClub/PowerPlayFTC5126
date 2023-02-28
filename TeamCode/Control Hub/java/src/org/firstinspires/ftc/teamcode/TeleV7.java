@@ -16,6 +16,7 @@ public class TeleV7 extends LinearOpMode {
     private DcMotor MotorSlide;
     private CRServo right;
     private CRServo left;
+    
     //Scanner scan=new Scanner(System.in);
     //String s=scan.nextLine();
     @Override
@@ -89,7 +90,8 @@ public class TeleV7 extends LinearOpMode {
         if (isStopRequested()) return;
 
         while (opModeIsActive()) {
-            
+            //put pole sensor here
+            //if()
             left.setPower(gamepad2.right_trigger * 0.5 - 0.25);
             right.setPower(gamepad2.right_trigger * -0.5 + 0.25);
             //lastEncoderPosition = encoderPosition;

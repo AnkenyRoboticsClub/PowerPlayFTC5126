@@ -302,6 +302,32 @@ public class AutoV9RedRight extends LinearOpMode {
     
     //set led color like in tele to show distance from pole
     //color sensor is illegal but it doesn't report if it is connected or not so just leave the code
+    private double getAbsolutePoleDist()
+    {
+        if(controldistance.getDistance(DistanceUnit.CM)>18)
+            {
+                //too far
+                Red.enable(true);
+                Green.enable(false);
+                return(controldistance.getDistance(DistanceUnit.CM)-18); 
+                
+            }
+            else if(controldistance.getDistance(DistanceUnit.CM)<13)
+            {
+                //too close
+                Red.enable(true);
+                Green.enable(true);
+                return(controldistance.getDistance(DistanceUnit.CM)+13);
+            }
+            else
+            {
+                //in range
+                Red.enable(false);
+                Green.enable(true);
+                return (0);
+            }
+    
+    }
     private int usePoleSensor(){
         
         if(controldistance.getDistance(DistanceUnit.CM)>18)
@@ -494,6 +520,81 @@ public class AutoV9RedRight extends LinearOpMode {
         motorSlide.setPower(0);
     }
     
+    private void poleCorrection(int strength)
+    {
+        if(strength==0)
+        {
+        int lineUp=0;
+        while(lineUp<4){
+            if(getAbsolutePoleDist()<90)
+            {
+                break;
+            }
+            if(lineUp%2==0)
+            {
+                driveHorizontal(100/(lineUp+1),1000);
+            }
+            if(lineUp%2==1)
+            {
+                driveHorizontal(-100/(lineUp+1),1000);
+            }
+            lineUp++;
+        }
+             
+        int tries =0;
+        while((tries<3)){//this gives the robot three tries to line up with the pole 
+            if(usePoleSensor()==0)
+            {
+                driveVertical((int)getAbsolutePoleDist(),300);//75
+            }   
+            else if(usePoleSensor()==1)
+            {
+                break; 
+            }
+            else if (usePoleSensor()==2)
+            {
+                driveVertical((int)getAbsolutePoleDist(),300);//-100
+            }
+            tries++;
+        }
+        }
+        else{
+            int lineUp=0;
+        while(lineUp<4){
+            if(getAbsolutePoleDist()<90)
+            {
+                break;
+            }
+            if(lineUp%2==0)
+            {
+                driveHorizontal(100/(lineUp+1),1000);
+            }
+            if(lineUp%2==1)
+            {
+                driveHorizontal(-100/(lineUp+1),1000);
+            }
+            lineUp++;
+        }
+             
+        int tries =0;
+        while((tries<3)){//this gives the robot three tries to line up with the pole 
+            if(usePoleSensor()==0)
+            {
+                driveVertical((int)getAbsolutePoleDist(),300);//75
+            }   
+            else if(usePoleSensor()==1)
+            {
+                break; 
+            }
+            else if (usePoleSensor()==2)
+            {
+                driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+            }
+            tries++;
+        }
+        }
+    }
+    
     //state machine to progress through the cycles
     private void autoCycle(){
         if (state== -1) {
@@ -501,40 +602,20 @@ public class AutoV9RedRight extends LinearOpMode {
             sleep(300);
             state++;
         }else if (state == 0) {
-            arm(3000,2000);
+            arm(3000,3000);
             state++;
         } else if (state == 1) {
             driveHorizontal(2125,1000);
             state++;
         } else if (state == 2) {
+            pointDirection(0);
+            poleCorrection(1);
             
-           int tries =0;
-            while((tries<3))//this gives the robot three tries 
-            //to line up with the pole
-            {
-                
-                if(usePoleSensor()==0)
-                {
-                    driveVertical(75,500);
-               
-                }   
-                else if(usePoleSensor()==1)
-                {
-                   // break; 
-                }
-                else if (usePoleSensor()==2)
-                {
-                    driveVertical(-100,500);
-                }
-                tries++;
-            }
-            
-            
-            arm(1200,2000);
+            arm(1200,2000);//1200
             claw(-1);
             sleep(50);
             arm(1800,2000);
-            pointDirection(0);
+            //pointDirection(0);
             driveVertical(30,500);
             driveHorizontal(800,1000);
             pointDirection(0);
@@ -542,6 +623,7 @@ public class AutoV9RedRight extends LinearOpMode {
         } else if (state == 3) {
             pointDirection(180);
             driveHorizontal(160,1000);
+            arm(670,2000);
             state++;
         } else if (state == 4) {
             pointDirection(180);
@@ -552,10 +634,10 @@ public class AutoV9RedRight extends LinearOpMode {
             state++;
         } else if (state == 5) {
             //sleep(500);
-           for (int i=0;i<3;i++)
-           {
-               driveVertical(driveToWall(),200);
-           }
+            for (int i=0;i<3;i++)
+            {
+                driveVertical(driveToWall(),400);
+            }
             //changed from driveArmSideDistance(30);
             pointDirection(180);
             arm(670,2000);
@@ -567,13 +649,17 @@ public class AutoV9RedRight extends LinearOpMode {
             arm(2500,2000);
             sleep(500);
             pointDirection(180);
-            driveArmSideDistance(36);
-            pointDirection(180);
+            // driveArmSideDistance(36);
+            driveVertical(-200,1000);
+            //pointDirection(180);
             arm(2000,500);
-            pointDirection(75);
+            pointDirection(70);
             state++;
         } else if (state == 7) {
-            driveVertical(20,500);
+            driveVertical(60,500);
+            
+            poleCorrection(0);
+            
             arm(1100,2000);//force cone down
             claw(-1);
             sleep(50);
@@ -709,7 +795,7 @@ public class AutoV9RedRight extends LinearOpMode {
                 if (imageFound != "nothing") {
                     //tick = tick + 1;
                 }
-                if ((gotImage == false) && (timer.seconds()>2)) {
+                if ((gotImage == false) && (state>1)) {
                     //timer.reset();
                     gotImage = true;
                     if (imageFound == "nothing") {
@@ -717,7 +803,9 @@ public class AutoV9RedRight extends LinearOpMode {
                     }
                     imageFound2 = imageFound;
                 }
-                autoCycle();
+                //if (timer.seconds()>1){
+                    autoCycle();
+                //}
                 if ((gotImage == true)) {
                     
                     if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){

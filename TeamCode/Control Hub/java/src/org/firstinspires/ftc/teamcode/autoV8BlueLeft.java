@@ -69,7 +69,7 @@ import java.util.Collections;
  * is explained below.
  */
 @Autonomous //(name = "Concept: TensorFlow Object Detection", group = "Concept")
-
+@Disabled
 public class autoV8BlueLeft extends LinearOpMode {
 
     /*

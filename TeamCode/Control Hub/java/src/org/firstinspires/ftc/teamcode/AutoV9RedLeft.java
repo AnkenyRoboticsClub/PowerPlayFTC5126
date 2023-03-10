@@ -73,7 +73,7 @@ import java.util.Collections;
  
 //Set file to autonomous
 @Autonomous 
-//@Disabled //Used disable files
+@Disabled //Used disable files
 
 //Make sure the name is correct
 public class AutoV9RedLeft extends LinearOpMode {

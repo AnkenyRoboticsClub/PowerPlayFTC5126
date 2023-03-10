@@ -1,0 +1,267 @@
+--------- beginning of main
+03-04 13:25:56.253   972  1167 V Robocol : received command: CMD_SET_MATCH_NUMBER(13939) 0
+03-04 13:25:56.254   972  1167 V Robocol : received command: CMD_INIT_OP_MODE(13940) AutoV11RedLeft
+03-04 13:25:56.270   972  1168 I RobotCore: ******************** START - OPMODE AutoV11RedLeft ********************
+03-04 13:25:56.273   972  1306 V RobotCore: thread: ...terminating 'OpModeThread'
+03-04 13:25:56.278   972  1191 I RobotCore: Attempting to switch to op mode AutoV11RedLeft
+03-04 13:25:56.445   972  1191 D HardwareMap: Clearing which device instances have been retrieved
+03-04 13:25:56.445   972  1191 D HardwareMap: Clearing which device instances have been retrieved
+03-04 13:25:56.448   972  1308 V RobotCore: thread: 'OpModeThread' starting...
+03-04 13:25:56.448   972  1308 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 1; addr7=0x29)
+03-04 13:25:56.448   972  1308 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 13:25:56.453   972  1308 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 13:25:56.456   972  1308 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 13:25:56.458   972  1308 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 13:25:56.460   972  1171 V Robocol : sending CMD_NOTIFY_INIT_OP_MODE(4015), attempt: 0
+03-04 13:25:56.462   972  1308 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 13:25:56.465   972  1308 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 13:25:56.484   972  1308 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.250000
+03-04 13:25:56.488   972  1308 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 13:25:56.720   972  1308 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 2; addr7=0x29)
+03-04 13:25:56.720   972  1308 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 13:25:56.723   972  1308 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 13:25:56.726   972  1308 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 13:25:56.729   972  1308 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 13:25:56.732   972  1308 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 13:25:56.735   972  1308 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 13:25:56.754   972  1308 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.250000
+03-04 13:25:56.759   972  1308 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 13:25:56.990   972  1308 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 173; bus 3; addr7=0x52)
+03-04 13:25:56.990   972  1308 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 13:25:56.998   972  1308 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 13:25:56.998   972  1308 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 13:25:57.001   972  1308 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 13:25:57.004   972  1308 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 13:25:57.007   972  1308 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 13:25:57.010   972  1308 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 13:25:57.017   972  1308 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 13:25:57.023   972  1308 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 13:25:57.029   972  1308 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 13:25:57.029   972  1308 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 13:25:57.030   972  1308 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 2; bus 1; addr7=0x52)
+03-04 13:25:57.030   972  1308 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 13:25:57.041   972  1308 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 13:25:57.041   972  1308 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 13:25:57.046   972  1308 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 13:25:57.051   972  1308 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 13:25:57.057   972  1308 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 13:25:57.062   972  1308 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 13:25:57.072   972  1308 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 13:25:57.081   972  1308 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 13:25:57.086   972  1308 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 13:25:57.086   972  1308 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 13:25:57.120   972  1308 V BNO055  : Suppressing I2C warnings while we check for a BNO055 IMU
+03-04 13:25:57.123   972  1308 V BNO055  : Found BNO055 IMU
+03-04 13:25:57.558   972  1308 V BNO055IMU: Now polling until IMU comes out of reset. It is normal to see I2C failures below
+03-04 13:25:57.561   972  1308 V RobotCore: addr=false data=true arb=false clock=false
+03-04 13:25:57.561   972  1308 E LynxI2cDeviceSynch: readStatusQuery: cbExpected=1 cbRead=0
+03-04 13:25:57.561   972  1308 E LynxI2cDeviceSynch: placeholder: readStatusQuery
+03-04 13:25:57.625   972  1308 V RobotCore: addr=false data=true arb=false clock=false
+03-04 13:25:57.625   972  1308 E LynxI2cDeviceSynch: readStatusQuery: cbExpected=1 cbRead=0
+03-04 13:25:57.789   972  1308 V BNO055IMU: IMU has come out of reset. No more I2C failures should occur.
+03-04 13:25:57.834   972  1308 D Vuforia : using camera by direction (classic): BACK
+03-04 13:25:57.922   972  1308 D skia    : JPEG Decode 84
+03-04 13:25:58.025   972  1308 D Vuforia : Vuforia.init()...
+03-04 13:25:58.038   972  1308 I AR      : Vuforia selected rendering API OpenGL ES 2.x
+03-04 13:25:58.038   972  1308 I AR      : Vuforia SDK version 7.4.3
+03-04 13:25:58.354   972  1308 D Vuforia : ...Vuforia.init()
+03-04 13:25:58.706   972  1308 I AR      : ObjectTracker: This device doesn't support model targets extended tracking, extended tracking will be turned off
+03-04 13:25:58.980   972  1171 V Robocol : sending CMD_STREAM_CHANGE(4040), attempt: 0
+03-04 13:25:58.982   972  1171 V Robocol : sending CMD_STREAM_CHANGE(4041), attempt: 0
+03-04 13:25:59.366   972  1350 I native  : Initializing object tracker. 272x153 @0x742157e264
+03-04 13:25:59.368   972  1350 I native  : Initialized!
+03-04 13:26:00.014   972  1167 V Robocol : received command: CMD_RUN_OP_MODE(13988) AutoV11RedLeft
+03-04 13:26:00.060   972  1171 V Robocol : sending CMD_NOTIFY_RUN_OP_MODE(4060), attempt: 0
+03-04 13:26:04.936   972  1308 I DbgLog  : Turn: RAD=-0.04111111 DEG=-2.3554931881164474 POWER=0.12666666835546495
+03-04 13:26:04.987   972  1308 I DbgLog  : Turn: RAD=-0.045555554 DEG=-2.5464791511317553 POWER=0.13199999958276748
+03-04 13:26:05.037   972  1308 I DbgLog  : Turn: RAD=-0.033333335 DEG=-1.7188733469726556 POWER=0.1279999989271164
+03-04 13:26:05.080   972  1308 I DbgLog  : Turn: RAD=-0.016666668 DEG=-0.7639437453395267 POWER=0.11333333358168601
+03-04 13:26:05.143   972  1308 I DbgLog  : Turn: RAD=9.630362E-4 DEG=0.4371494224775791 POWER=0.08666666682809591
+03-04 13:26:05.166   972  1308 I DbgLog  : IMU DEG=0.8827782580054646
+03-04 13:26:05.170   972  1308 I DbgLog  : IMU DEG ERROR=-1.0737776679557012
+03-04 13:26:08.937   972  1308 I DbgLog  : Turn: RAD=-0.017777778 DEG=-1.0822536125505697 POWER=0.10133333384990692
+03-04 13:26:08.970   972  1308 I DbgLog  : Turn: RAD=-0.017777778 DEG=-0.9549297083548347 POWER=0.10133333384990692
+03-04 13:26:09.007   972  1308 I DbgLog  : Turn: RAD=-0.012222222 DEG=-0.5729577823242186 POWER=0.09600000038743019
+03-04 13:26:09.036   972  1308 I DbgLog  : IMU DEG=-0.2546479151131755
+03-04 13:26:09.045   972  1308 I DbgLog  : IMU DEG ERROR=0.12732395755658776
+03-04 13:26:10.559   972  1308 I DbgLog  : Turn: RAD=0.026518647 DEG=1.5194065301640132 POWER=-0.11182237595319748
+03-04 13:26:10.613   972  1308 I DbgLog  : Turn: RAD=0.023185078 DEG=1.2647497571492576 POWER=-0.1091559025645256
+03-04 13:26:10.642   972  1308 I DbgLog  : Turn: RAD=0.018740956 DEG=0.9464356210699835 POWER=-0.10515562027692794
+03-04 13:26:10.671   972  1308 I DbgLog  : Turn: RAD=0.0076296967 DEG=0.4371494224775791 POWER=-0.09715562790632248
+03-04 13:26:10.694   972  1308 I DbgLog  : IMU DEG=0.24617733328402258
+03-04 13:26:10.700   972  1308 I DbgLog  : IMU DEG ERROR=-0.11883527305809163
+03-04 13:26:12.589   972  1308 I DbgLog  : Turn: RAD=-0.031111112 DEG=-1.782535405792229 POWER=0.1173333342373371
+03-04 13:26:12.632   972  1308 I DbgLog  : Turn: RAD=-0.031111112 DEG=-1.782535405792229 POWER=0.1173333342373371
+03-04 13:26:12.695   972  1308 I DbgLog  : Turn: RAD=-0.027777778 DEG=-1.5915494427769208 POWER=0.11466666638851167
+03-04 13:26:12.721   972  1308 I DbgLog  : Turn: RAD=-0.02 DEG=-1.0822536125505697 POWER=0.10533333227038383
+03-04 13:26:12.768   972  1308 I DbgLog  : Turn: RAD=-0.016666668 DEG=-0.9549297083548347 POWER=0.10133333384990692
+03-04 13:26:12.801   972  1308 I DbgLog  : Turn: RAD=-0.012222222 DEG=-0.7002817398808063 POWER=0.09600000038743019
+03-04 13:26:12.822   972  1308 I DbgLog  : IMU DEG=-0.509295830226351
+03-04 13:26:12.831   972  1308 I DbgLog  : IMU DEG ERROR=0.509295830226351
+03-04 13:26:14.571   972  1308 I DbgLog  : Turn: RAD=-0.043333333 DEG=-2.5464791511317553 POWER=0.13333333462476732
+03-04 13:26:14.607   972  1308 I DbgLog  : Turn: RAD=-0.04222222 DEG=-2.2281692839207126 POWER=0.13333333462476732
+03-04 13:26:14.679   972  1308 I DbgLog  : Turn: RAD=-0.018888889 DEG=-0.8276056974373941 POWER=0.12266666769981385
+03-04 13:26:14.727   972  1308 I DbgLog  : Turn: RAD=0.0054076356 DEG=0.5644641219261903 POWER=0.08266666673123836
+03-04 13:26:14.755   972  1308 I DbgLog  : IMU DEG=0.8827782580054646
+03-04 13:26:14.765   972  1308 I DbgLog  : IMU DEG ERROR=-1.0101203048911822
+03-04 13:26:15.823   972  1308 W EventLoopManager: Failed to send telemetry data
+03-04 13:26:15.825   972  1308 E EventLoopManager: com.qualcomm.robotcore.exception.RobotCoreException: Cannot have more than 255 string data points
+03-04 13:26:15.826   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.TelemetryMessage.toByteArray(TelemetryMessage.java:211)
+03-04 13:26:15.827   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolParsableBase.toByteArrayForTransmission(RobocolParsableBase.java:101)
+03-04 13:26:15.829   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolDatagram.<init>(RobocolDatagram.java:50)
+03-04 13:26:15.831   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.network.NetworkConnectionHandler.sendDataToPeer(NetworkConnectionHandler.java:572)
+03-04 13:26:15.836   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.EventLoopManager.sendTelemetryData(EventLoopManager.java:570)
+03-04 13:26:15.838   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoopHandler.refreshUserTelemetry(FtcEventLoopHandler.java:434)
+03-04 13:26:15.839   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoop.refreshUserTelemetry(FtcEventLoop.java:266)
+03-04 13:26:15.841   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.refreshUserTelemetry(OpModeManagerImpl.java:769)
+03-04 13:26:15.843   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpMode.internalUpdateTelemetryNow(OpMode.java:236)
+03-04 13:26:15.845   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.updateTelemetryNow(OpModeManagerImpl.java:765)
+03-04 13:26:15.847   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.tryUpdate(TelemetryImpl.java:716)
+03-04 13:26:15.848   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.update(TelemetryImpl.java:676)
+03-04 13:26:15.850   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.driveVertical(AutoV11RedLeft.java:405)
+03-04 13:26:15.852   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.autoCycle(AutoV11RedLeft.java:603)
+03-04 13:26:15.854   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.runOpMode(AutoV11RedLeft.java:771)
+03-04 13:26:15.856   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.LinearOpMode.internalRunOpMode(LinearOpMode.java:169)
+03-04 13:26:15.859   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$1$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:180)
+03-04 13:26:15.861   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda1.run(D8$$SyntheticClass)
+03-04 13:26:15.862   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool.logThreadLifeCycle(ThreadPool.java:737)
+03-04 13:26:15.864   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$2$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:178)
+03-04 13:26:15.866   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda2.run(D8$$SyntheticClass)
+03-04 13:26:15.868   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+03-04 13:26:15.871   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+03-04 13:26:15.873   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool$ThreadFactoryImpl$1.run(ThreadPool.java:793)
+03-04 13:26:15.875   972  1308 E EventLoopManager: 	at java.lang.Thread.run(Thread.java:761)
+03-04 13:26:17.422   972  1308 I DbgLog  : IMU DEG=0.6281488057473892
+03-04 13:26:17.427   972  1308 I DbgLog  : IMU DEG ERROR=-0.5644641219261903
+03-04 13:26:20.085   972  1308 W EventLoopManager: Failed to send telemetry data
+03-04 13:26:20.088   972  1308 E EventLoopManager: com.qualcomm.robotcore.exception.RobotCoreException: Cannot have more than 255 string data points
+03-04 13:26:20.090   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.TelemetryMessage.toByteArray(TelemetryMessage.java:211)
+03-04 13:26:20.092   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolParsableBase.toByteArrayForTransmission(RobocolParsableBase.java:101)
+03-04 13:26:20.093   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolDatagram.<init>(RobocolDatagram.java:50)
+03-04 13:26:20.094   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.network.NetworkConnectionHandler.sendDataToPeer(NetworkConnectionHandler.java:572)
+03-04 13:26:20.095   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.EventLoopManager.sendTelemetryData(EventLoopManager.java:570)
+03-04 13:26:20.096   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoopHandler.refreshUserTelemetry(FtcEventLoopHandler.java:434)
+03-04 13:26:20.097   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoop.refreshUserTelemetry(FtcEventLoop.java:266)
+03-04 13:26:20.098   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.refreshUserTelemetry(OpModeManagerImpl.java:769)
+03-04 13:26:20.099   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpMode.internalUpdateTelemetryNow(OpMode.java:236)
+03-04 13:26:20.099   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.updateTelemetryNow(OpModeManagerImpl.java:765)
+03-04 13:26:20.101   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.tryUpdate(TelemetryImpl.java:716)
+03-04 13:26:20.104   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.update(TelemetryImpl.java:676)
+03-04 13:26:20.105   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.pointDirection(AutoV11RedLeft.java:336)
+03-04 13:26:20.106   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.autoCycle(AutoV11RedLeft.java:615)
+03-04 13:26:20.107   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.runOpMode(AutoV11RedLeft.java:771)
+03-04 13:26:20.108   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.LinearOpMode.internalRunOpMode(LinearOpMode.java:169)
+03-04 13:26:20.109   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$1$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:180)
+03-04 13:26:20.110   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda1.run(D8$$SyntheticClass)
+03-04 13:26:20.111   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool.logThreadLifeCycle(ThreadPool.java:737)
+03-04 13:26:20.112   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$2$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:178)
+03-04 13:26:20.113   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda2.run(D8$$SyntheticClass)
+03-04 13:26:20.114   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+03-04 13:26:20.116   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+03-04 13:26:20.123   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool$ThreadFactoryImpl$1.run(ThreadPool.java:793)
+03-04 13:26:20.124   972  1308 E EventLoopManager: 	at java.lang.Thread.run(Thread.java:761)
+03-04 13:26:20.147   972  1308 I DbgLog  : IMU DEG=0.5644641219261903
+03-04 13:26:20.151   972  1308 I DbgLog  : IMU DEG ERROR=-0.5644641219261903
+03-04 13:26:20.763   972  1308 I DbgLog  : Turn: RAD=0.026518647 DEG=1.5194065301640132 POWER=0.5
+03-04 13:26:20.817   972  1308 I DbgLog  : Turn: RAD=0.043185536 DEG=4.193207237613977 POWER=0.5
+03-04 13:26:20.849   972  1308 I DbgLog  : Turn: RAD=0.108740635 DEG=6.23037945946198 POWER=0.5
+03-04 13:26:20.883   972  1308 I DbgLog  : Turn: RAD=0.18874103 DEG=12.08729356661777 POWER=0.5
+03-04 13:26:20.906   972  1308 I DbgLog  : Turn: RAD=0.23429662 DEG=14.824751423688841 POWER=0.5
+03-04 13:26:20.940   972  1308 I DbgLog  : Turn: RAD=0.3087409 DEG=19.34475205034984 POWER=0.5
+03-04 13:26:20.985   972  1308 I DbgLog  : Turn: RAD=0.41985208 DEG=25.710952809665283 POWER=0.5
+03-04 13:26:21.017   972  1308 I DbgLog  : Turn: RAD=0.53540736 DEG=32.331810341995485 POWER=0.5
+03-04 13:26:21.045   972  1308 I DbgLog  : Turn: RAD=0.6254075 DEG=37.42475455699383 POWER=0.5
+03-04 13:26:21.103   972  1308 I DbgLog  : Turn: RAD=0.76429635 DEG=45.25518394981993 POWER=0.5
+03-04 13:26:21.148   972  1308 I DbgLog  : Turn: RAD=0.8720744 DEG=51.43038529918514 POWER=0.5
+03-04 13:26:21.195   972  1308 I DbgLog  : Turn: RAD=1.0265187 DEG=60.34307524147268 POWER=0.5
+03-04 13:26:21.261   972  1308 I DbgLog  : Turn: RAD=1.1898521 DEG=69.82870535700299 POWER=0.5
+03-04 13:26:21.283   972  1308 I DbgLog  : Turn: RAD=1.2720741 DEG=72.88447735015333 POWER=0.5
+03-04 13:26:21.313   972  1308 I DbgLog  : Turn: RAD=1.329852 DEG=77.7227921128936 POWER=0.5
+03-04 13:26:21.339   972  1308 I DbgLog  : Turn: RAD=1.4098519 DEG=82.43379214950484 POWER=0.5
+03-04 13:26:21.365   972  1308 I DbgLog  : Turn: RAD=1.4920744 DEG=85.48956414265518 POWER=0.5
+03-04 13:26:21.404   972  1308 I DbgLog  : Turn: RAD=1.5965189 DEG=91.47379340282684 POWER=0.5
+03-04 13:26:21.432   972  1308 I DbgLog  : Turn: RAD=1.6487411 DEG=96.05745139255235 POWER=0.5
+03-04 13:26:21.469   972  1308 I DbgLog  : Turn: RAD=1.7531852 DEG=102.04168065272401 POWER=0.44850764491613987
+03-04 13:26:21.505   972  1308 I DbgLog  : Turn: RAD=1.8587407 DEG=106.4979965955638 POWER=0.32317424037512427
+03-04 13:26:21.540   972  1308 I DbgLog  : Turn: RAD=1.9387411 DEG=112.48222585573546 POWER=0.19784083583410864
+03-04 13:26:21.578   972  1308 I DbgLog  : Turn: RAD=2.0131853 DEG=117.89350469738059 POWER=0.10717444636877661
+03-04 13:26:21.631   972  1308 I DbgLog  : Turn: RAD=2.1198518 DEG=122.54082005017062 POWER=-8.255936855446677E-4
+03-04 13:26:21.673   972  1308 I DbgLog  : Turn: RAD=2.2020743 DEG=126.5515344515588 POWER=-0.11682519695702903
+03-04 13:26:21.720   972  1308 I DbgLog  : Turn: RAD=2.2165186 DEG=126.93350595070258 POWER=-0.1648257233852517
+03-04 13:26:21.766   972  1308 I DbgLog  : Turn: RAD=2.2054074 DEG=126.36053504160856 POWER=-0.1634919144863259
+03-04 13:26:21.817   972  1308 I DbgLog  : Turn: RAD=2.1865184 DEG=125.02364845498361 POWER=-0.14349221966210715
+03-04 13:26:21.855   972  1308 I DbgLog  : Turn: RAD=2.1609628 DEG=123.81404927373104 POWER=-0.11282548687402122
+03-04 13:26:21.892   972  1308 I DbgLog  : Turn: RAD=2.1454074 DEG=122.66813477629967 POWER=-0.16882550976220484
+03-04 13:26:21.936   972  1308 I DbgLog  : Turn: RAD=2.1231854 DEG=121.649562325754 POWER=-0.1474920060390603
+03-04 13:26:21.975   972  1308 I DbgLog  : Turn: RAD=2.1076295 DEG=120.50364782832263 POWER=-0.13015878460351343
+03-04 13:26:22.019   972  1308 I DbgLog  : Turn: RAD=2.0854075 DEG=119.48504805702028 POWER=-0.10082528850976341
+03-04 13:26:22.060   972  1308 I DbgLog  : Turn: RAD=2.0731852 DEG=118.65744769566818 POWER=-0.08349206707421654
+03-04 13:26:22.086   972  1308 I DbgLog  : IMU DEG=118.40279092265342
+03-04 13:26:22.099   972  1308 I DbgLog  : IMU DEG ERROR=0.7245238034756193
+03-04 13:26:23.223   972  1308 W EventLoopManager: Failed to send telemetry data
+03-04 13:26:23.227   972  1308 E EventLoopManager: com.qualcomm.robotcore.exception.RobotCoreException: Cannot have more than 255 string data points
+03-04 13:26:23.231   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.TelemetryMessage.toByteArray(TelemetryMessage.java:211)
+03-04 13:26:23.232   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolParsableBase.toByteArrayForTransmission(RobocolParsableBase.java:101)
+03-04 13:26:23.233   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.robocol.RobocolDatagram.<init>(RobocolDatagram.java:50)
+03-04 13:26:23.236   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.network.NetworkConnectionHandler.sendDataToPeer(NetworkConnectionHandler.java:572)
+03-04 13:26:23.237   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.EventLoopManager.sendTelemetryData(EventLoopManager.java:570)
+03-04 13:26:23.238   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoopHandler.refreshUserTelemetry(FtcEventLoopHandler.java:434)
+03-04 13:26:23.240   972  1308 E EventLoopManager: 	at com.qualcomm.ftccommon.FtcEventLoop.refreshUserTelemetry(FtcEventLoop.java:266)
+03-04 13:26:23.261   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.refreshUserTelemetry(OpModeManagerImpl.java:769)
+03-04 13:26:23.262   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpMode.internalUpdateTelemetryNow(OpMode.java:236)
+03-04 13:26:23.263   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl.updateTelemetryNow(OpModeManagerImpl.java:765)
+03-04 13:26:23.272   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.tryUpdate(TelemetryImpl.java:716)
+03-04 13:26:23.274   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.update(TelemetryImpl.java:676)
+03-04 13:26:23.279   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.driveVertical(AutoV11RedLeft.java:405)
+03-04 13:26:23.280   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.autoCycle(AutoV11RedLeft.java:623)
+03-04 13:26:23.284   972  1308 E EventLoopManager: 	at org.firstinspires.ftc.teamcode.AutoV11RedLeft.runOpMode(AutoV11RedLeft.java:771)
+03-04 13:26:23.286   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.LinearOpMode.internalRunOpMode(LinearOpMode.java:169)
+03-04 13:26:23.289   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$1$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:180)
+03-04 13:26:23.293   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda1.run(D8$$SyntheticClass)
+03-04 13:26:23.296   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool.logThreadLifeCycle(ThreadPool.java:737)
+03-04 13:26:23.300   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal.lambda$internalInit$2$com-qualcomm-robotcore-eventloop-opmode-OpModeInternal(OpModeInternal.java:178)
+03-04 13:26:23.305   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.eventloop.opmode.OpModeInternal$$ExternalSyntheticLambda2.run(D8$$SyntheticClass)
+03-04 13:26:23.307   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+03-04 13:26:23.310   972  1308 E EventLoopManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+03-04 13:26:23.312   972  1308 E EventLoopManager: 	at com.qualcomm.robotcore.util.ThreadPool$ThreadFactoryImpl$1.run(ThreadPool.java:793)
+03-04 13:26:23.316   972  1308 E EventLoopManager: 	at java.lang.Thread.run(Thread.java:761)
+03-04 13:26:23.317   972  1191 W art     : Long monitor contention with owner OpModeThread (1308) at boolean org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.tryUpdate(org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl$UpdateReason)(TelemetryImpl.java:688) waiters=0 in boolean org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl.tryUpdate(org.firstinspires.ftc.robotcore.internal.opmode.TelemetryImpl$UpdateReason) for 153ms
+03-04 13:26:24.914   972  1308 I DbgLog  : Turn: RAD=1.9931854 DEG=114.20111126226087 POWER=-0.5
+03-04 13:26:24.952   972  1308 I DbgLog  : Turn: RAD=1.9898518 DEG=113.62814035316684 POWER=-0.5
+03-04 13:26:24.986   972  1308 I DbgLog  : Turn: RAD=1.9431852 DEG=110.50871099695198 POWER=-0.4815336751953673
+03-04 13:26:25.020   972  1308 I DbgLog  : Turn: RAD=1.8765186 DEG=107.51659636686615 POWER=-0.410866980554254
+03-04 13:26:25.066   972  1308 I DbgLog  : Turn: RAD=1.78763 DEG=101.08673824448618 POWER=-0.34153352260747666
+03-04 13:26:25.091   972  1308 I DbgLog  : Turn: RAD=1.7187408 DEG=98.47659511354415 POWER=-0.2055336523071837
+03-04 13:26:25.118   972  1308 I DbgLog  : Turn: RAD=1.6720742 DEG=94.65688012210622 POWER=-0.14953370571294541
+03-04 13:26:25.168   972  1308 I DbgLog  : Turn: RAD=1.582074 DEG=89.75490799630143 POWER=-0.15486672878423446
+03-04 13:26:25.227   972  1308 I DbgLog  : Turn: RAD=1.5087408 DEG=85.74419359491326 POWER=0.10513288974603896
+03-04 13:26:25.286   972  1308 I DbgLog  : Turn: RAD=1.4587411 DEG=83.70702137306526 POWER=0.11579985141596083
+03-04 13:26:25.337   972  1308 I DbgLog  : Turn: RAD=1.4709634 DEG=84.47096437135285 POWER=0.12646631717523818
+03-04 13:26:25.388   972  1308 I DbgLog  : Turn: RAD=1.4854077 DEG=85.42590677959066 POWER=0.11179956912836317
+03-04 13:26:25.426   972  1308 I DbgLog  : Turn: RAD=1.5020741 DEG=86.06250773099254 POWER=0.17179987430414442
+03-04 13:26:25.466   972  1308 I DbgLog  : Turn: RAD=1.5165185 DEG=86.89010809234465 POWER=0.15313341617426163
+03-04 13:26:25.532   972  1308 I DbgLog  : Turn: RAD=1.5431856 DEG=88.73630822499909 POWER=0.13179991245111708
+03-04 13:26:25.580   972  1308 I DbgLog  : Turn: RAD=1.5620741 DEG=89.75490799630143 POWER=0.10113317966303115
+03-04 13:26:25.637   972  1308 I DbgLog  : Turn: RAD=1.5865186 DEG=91.02813721986185 POWER=-0.09086678981939074
+03-04 13:26:25.693   972  1308 I DbgLog  : Turn: RAD=1.5976299 DEG=91.53745076589136 POWER=-0.11086705684819932
+03-04 13:26:25.731   972  1308 I DbgLog  : Turn: RAD=1.5942963 DEG=91.02813721986185 POWER=-0.11086705684819932
+03-04 13:26:25.776   972  1308 I DbgLog  : Turn: RAD=1.579852 DEG=90.32787890539547 POWER=-0.09753354549566026
+03-04 13:26:25.815   972  1308 I DbgLog  : IMU DEG=89.6275932701724
+03-04 13:26:25.820   972  1308 I DbgLog  : IMU DEG ERROR=0.4997487767133257
+03-04 13:26:26.300   972  1308 I DbgLog  : IMU DEG=89.2456217710286
+03-04 13:26:26.312   972  1308 I DbgLog  : IMU DEG ERROR=0.754378228971401
+03-04 13:26:26.359   972  1308 I DbgLog  : IMU DEG=89.2456217710286
+03-04 13:26:26.364   972  1308 I DbgLog  : IMU DEG ERROR=0.754378228971401
+03-04 13:26:29.447   972  1308 I DbgLog  : Turn: RAD=1.5509633 DEG=88.79999290882029 POWER=0.10379965305170302
+03-04 13:26:29.482   972  1308 I DbgLog  : Turn: RAD=1.5509633 DEG=88.92730763494933 POWER=0.10513288974603896
+03-04 13:26:29.518   972  1308 I DbgLog  : Turn: RAD=1.5565189 DEG=89.18196440796407 POWER=0.10113317966303115
+03-04 13:26:29.547   972  1308 I DbgLog  : Turn: RAD=1.5620741 DEG=89.50025122328667 POWER=0.09313318729242567
+03-04 13:26:29.569   972  1308 I DbgLog  : IMU DEG=89.88222272243047
+03-04 13:26:29.577   972  1308 I DbgLog  : IMU DEG ERROR=0.11777727756953262
+03-04 13:26:30.096   972  1167 V Robocol : received command: CMD_INIT_OP_MODE(14314) $Stop$Robot$
+03-04 13:26:30.114   972  1168 I RobotCore: ******************** STOP - OPMODE /storage/emulated/0/FIRST/matchlogs/Match-0-AutoV11RedLeft.txt ********************
+03-04 13:26:30.134   972  1308 D RobotCore: User runOpModeMethod exited
+03-04 13:26:30.135   972  1308 V RobotCore: thread: ...terminating 'OpModeThread'
+03-04 13:26:30.141   972  1358 I RobotCore: saving match logcat to /storage/emulated/0/FIRST/matchlogs/Match-0-AutoV11RedLeft.txt
+03-04 13:26:30.141   972  1358 I RobotCore: logging command line: exec logcat -d -T '3-4 13:25:56.000' -f '/storage/emulated/0/FIRST/matchlogs/Match-0-AutoV11RedLeft.txt' -n4 -v threadtime UsbRequestJNI:S UsbRequest:S art:W ThreadPool:W System:W ExtendedExtractor:W OMXClient:W MediaPlayer:W dalvikvm:W  *:V
+03-04 13:26:30.180   972  1171 V Robocol : sending CMD_STREAM_CHANGE(4390), attempt: 0

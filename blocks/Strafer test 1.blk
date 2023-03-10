@@ -1,0 +1,490 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="UQPLHLG@swvOMZ|~LiMd">y</variable>
+<variable id="70{ezE}k?t|57)[s8$xQ">x</variable>
+<variable id="sQFM9u(+j`6WEwX4K8rI">rx</variable>
+<variable id="1740cA)YYp/d(]d_X${_">denominator</variable>
+</variables>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="102" y="93">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Direction" id="@0h`s2Jl$0Vg[~VjG~gw">
+<field name="IDENTIFIER">frontrightAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"front right"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="C]{$*oBr=twf6A?cbLyy">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="Ro5P1hK,LHst0x6sZWEN">
+<field name="IDENTIFIER">rearrightAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rear right"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="S*7NqaW0u]Df_YU2+7^j">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="variables_set" id=",n4u|eN0X=dt|S6%iO#V">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+<value name="VALUE">
+<block type="math_single" id="8QtOSLvgO|yU6/O|QZnj">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="DgxBit50EG-cI,6+uN14">
+<field name="NUM">9</field>
+</shadow>
+<block type="math_arithmetic" id="`uFb[%QVmC*pTeb|]E77">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id=":cc;OcZyGPM-VUy{rqY}">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="#b|u7`0y{+ka3J%6HhFJ">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="variables_set" id="idH4}nshR7g2ND-ao!B9">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+<value name="VALUE">
+<block type="math_arithmetic" id=",Pvid@|eppG^FhP7v8Y%">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="}To:16O)TUB8DG,^RpR!">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="_@|/2@uIO%[:!g|z6:U.">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="w1jF|e$y)WP{YJK7($c_">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="variables_set" id="-A${}En*B0W*yn6ro.vE">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="+1)wkQwJrE^[MWY0+G@H">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="jm%-5[1|(F1US|oO[L7]">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="{[2BZ5w0]=oS1yjDX=RW">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="0J:~L(j:$0(G/fgam,~C">
+<field name="NUM">-0.6</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="variables_set" id="b[s6kiC{(n6m`,SL5iL4">
+<field name="VAR" id="1740cA)YYp/d(]d_X${_">denominator</field>
+<value name="VALUE">
+<block type="math_on_list" id="AEYiVCCA@b:k5z;^Y8zq">
+<mutation op="MAX"/>
+<field name="OP">MAX</field>
+<value name="LIST">
+<block type="lists_create_with" id="jhue_!-D*t;A^{dfG$mD">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="math_on_list" id="*,s]U]nJ.M2=1QSJ77pT">
+<mutation op="SUM"/>
+<field name="OP">SUM</field>
+<value name="LIST">
+<block type="lists_create_with" id="1}%D46Qa!H$l8EO_OdMg">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="math_single" id=",pJ+{3sO*nQG_UUzdhEu">
+<field name="OP">ABS</field>
+<value name="NUM">
+<shadow type="math_number" id="{gf(Ztsf)ES%-=,.h;Z1">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="5Ux/FH!Xc9PnGaIt%nq+">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+</block>
+</value>
+</block>
+</value>
+<value name="ADD1">
+<block type="math_single" id="K/r(-l@P,pia?hM^.Yfc">
+<field name="OP">ABS</field>
+<value name="NUM">
+<shadow type="math_number" id="EdH9Cp2k_m4,(fUxBISi">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="%$s`*eZJnTO,=m,OI2l]">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+</block>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="math_single" id="bfPX6(fQAD.j+aU]+aDO">
+<field name="OP">ABS</field>
+<value name="NUM">
+<shadow type="math_number" id="goE:`K31Ywg]BlM)~-}l">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="@S|AVCE~YwH3I%qkXxh;">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="ADD1">
+<block type="math_number" id="n0eDUNW|[`S39)|?;x,6">
+<field name="NUM">1</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="_eih{Y%s`#5ESJ1+3OBB">
+<field name="IDENTIFIER">frontleftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"front left"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=".^RMKH67_76?T^H|lBoJ">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="-Ipj:Upc8qqF%(OWF$:A">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="x_6@f]lHr.gZSIxc)0ij">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="dAa0Ckx=ao1GtbO6yR6*">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="pVev(0A!JWZnog%C6Af[">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="C)HTQb*RJy0*RM]Gcq*Y">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="=_:Om@Kb^GoXPD,sgqT~">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="Beu_,8Tm;mM:YvWScLlL">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="`|i9]*/VO1w6^@:W1iIS">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="!*}hF4)[oJD#Tw_?yr?$">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="wNy)0hKrlqq97xJ,2U5^">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="lv)#0wSNEa0DG-(?^0`!">
+<field name="VAR" id="1740cA)YYp/d(]d_X${_">denominator</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="#0sxy7o[khMO_bh`)q5U">
+<field name="IDENTIFIER">rearleftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rear left"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="(*-Km/^=;m5{B~=:pICe">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="^hUB/ARE2`2!vgT$M-ui">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="ib9oQWn7+3#q:7C^U=a2">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="7,9z@W@[v1AfUoT8wCc?">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="bhGgO23||})Tzz6AQ!{0">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="PKZ0[PaC:N9+NWP(qW(:">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="t]}Dek%;n?86,q(+V@0-">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="A=vgd?@N%DK+@tzX.2,R">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="!J^/u;ax05lH-,K`hBHM">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="6?,~W=~1M;6?Qtmhu#t@">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="n]me78T|KS_UDPcjnMg]">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="-1+h_O$j^3:|WZxYLk0m">
+<field name="VAR" id="1740cA)YYp/d(]d_X${_">denominator</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="uEZ//^6tG_DQT#kZ`):U">
+<field name="IDENTIFIER">frontrightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"front right"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="2!4?YD~VBD@cY8nVjHOA">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="-);VtiSXtGnBY@vaJlm{">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="/mhyBiM;7{?VxG:dGK3)">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="rv!q;?clcb#AeKj!y/TY">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="}/:0a(Y:I6:?e[$L*)P:">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="w5Z./PA~q*[s7RGik]BL">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="@_k81~)M:N[!avqiu@%0">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="r-#G2a-dwX!S=_T}t8Di">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="=_w~OO8+OVj,2WFeEYq^">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="+zs_D3}uTivKR#Q7Mcv/">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="ADN}q6*];pyE=PYNOpe;">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="m`L5P2(zXFhT~?PQN]7V">
+<field name="VAR" id="1740cA)YYp/d(]d_X${_">denominator</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="XmNf(naAA,l=O/qf8T}~">
+<field name="IDENTIFIER">rearrightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rear right"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="[HoPXD_wP[z/vhww:Sxn">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="wbPWmIzb#/HU9Tt*|I_m">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number" id="$4;i)6GJQ8{2uK6t%8$4">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="{`*@-bCR?{0CqRUq![.E">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="J!#q][GeZIvP?|{@q)B]">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="*cp}ZH,^.(Jy9F$oR7[7">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="tFdhN6)O),b?4Y3Y{BVy">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="f$pJh{Fz*#_B4Y?#3Ao)">
+<field name="VAR" id="UQPLHLG@swvOMZ|~LiMd">y</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="%$!p?a~s}{/#XuG!!Yj#">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id=";4?KjH*WuiYYx^4|P=b{">
+<field name="VAR" id="70{ezE}k?t|57)[s8$xQ">x</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="N3|(NU;fRYZc#.,T;CzK">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="IkfW|O]t]bQA3$ye:wv?">
+<field name="VAR" id="sQFM9u(+j`6WEwX4K8rI">rx</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="nbIfcIE{(13J3k5k;s1`">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id=";6FF1drsHoBSJnA2elzD">
+<field name="VAR" id="1740cA)YYp/d(]d_X${_">denominator</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="math_number" id="qeNX.GwIyc:iA`05x,bJ" x="164" y="131">
+<field name="NUM">0</field>
+</block>
+<block type="math_single" id="ykWxIHKtt|e?.DmHqux?" x="17" y="550">
+<field name="OP">ABS</field>
+<value name="NUM">
+<shadow type="math_number" id="%37.t==]~4wn4m;V6P0*">
+<field name="NUM">9</field>
+</shadow>
+</value>
+</block>
+</xml><?xml version='1.0' encoding='UTF-8' standalone='yes' ?><Extra><OpModeMeta flavor="TELEOP" group="" /><Enabled value="false" /></Extra>

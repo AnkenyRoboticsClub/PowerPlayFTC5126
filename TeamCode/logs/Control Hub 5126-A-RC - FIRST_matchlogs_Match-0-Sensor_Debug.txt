@@ -1,0 +1,109 @@
+--------- beginning of main
+03-04 08:04:32.528   968  1169 V Robocol : received command: CMD_SET_MATCH_NUMBER(18375) 0
+03-04 08:04:32.529   968  1169 V Robocol : received command: CMD_INIT_OP_MODE(18376) Sensor Debug
+03-04 08:04:32.542   968  1170 I RobotCore: ******************** START - OPMODE Sensor Debug ********************
+03-04 08:04:32.545   968  1859 V RobotCore: thread: ...terminating 'OpModeThread'
+03-04 08:04:32.549   968  1182 I RobotCore: Attempting to switch to op mode Sensor Debug
+03-04 08:04:32.701   968  1182 D HardwareMap: Clearing which device instances have been retrieved
+03-04 08:04:32.701   968  1182 D HardwareMap: Clearing which device instances have been retrieved
+03-04 08:04:32.703   968  1866 V RobotCore: thread: 'OpModeThread' starting...
+03-04 08:04:32.704   968  1866 I RobotCore: BlocksOpMode - "Sensor Debug" - main/OpModeThread - runOpMode - start
+03-04 08:04:32.704   968  1866 I RobotCore: BlocksOpMode - "Sensor Debug" - main/OpModeThread - runOpMode - before while !scriptFinished loop
+03-04 08:04:32.704   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - run1 - before loadScript
+03-04 08:04:32.704   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - loadScript - WebView user agent is "Mozilla/5.0 (Linux; Android 7.1.2; Control Hub v1.0 Build/NHG47K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.100 Safari/537.36"
+03-04 08:04:32.711   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "imu". It isn't used in this blocks opmode.
+03-04 08:04:32.711   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color1". It isn't used in this blocks opmode.
+03-04 08:04:32.712   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color2". It isn't used in this blocks opmode.
+03-04 08:04:32.712   968   968 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 173; bus 3; addr7=0x52)
+03-04 08:04:32.712   968   968 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 08:04:32.720   968   968 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 08:04:32.720   968   968 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 08:04:32.723   968   968 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 08:04:32.726   968   968 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 08:04:32.731   968   968 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 08:04:32.733   968   968 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 08:04:32.739   968  1196 V Robocol : sending CMD_NOTIFY_INIT_OP_MODE(10180), attempt: 0
+03-04 08:04:32.745   968   968 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 08:04:32.750   968   968 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 08:04:32.755   968   968 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 08:04:32.755   968   968 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 08:04:32.756   968   968 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 2; bus 1; addr7=0x52)
+03-04 08:04:32.756   968   968 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 08:04:32.765   968   968 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 08:04:32.765   968   968 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 08:04:32.770   968   968 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 08:04:32.775   968   968 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 08:04:32.780   968   968 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 08:04:32.784   968   968 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 08:04:32.793   968   968 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 08:04:32.802   968   968 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 08:04:32.807   968   968 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 08:04:32.807   968   968 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 08:04:32.807   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "left". It isn't used in this blocks opmode.
+03-04 08:04:32.807   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "right". It isn't used in this blocks opmode.
+03-04 08:04:32.808   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Motor0". It isn't used in this blocks opmode.
+03-04 08:04:32.808   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Motor1". It isn't used in this blocks opmode.
+03-04 08:04:32.808   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Motor2". It isn't used in this blocks opmode.
+03-04 08:04:32.808   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Motor3". It isn't used in this blocks opmode.
+03-04 08:04:32.808   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "MotorSlide". It isn't used in this blocks opmode.
+03-04 08:04:32.809   968   968 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 1; addr7=0x29)
+03-04 08:04:32.809   968   968 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 08:04:32.812   968   968 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 08:04:32.815   968   968 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 08:04:32.818   968   968 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 08:04:32.821   968   968 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 08:04:32.824   968   968 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 08:04:32.844   968   968 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.250000
+03-04 08:04:32.848   968   968 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 08:04:33.046   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color1". It isn't used in this blocks opmode.
+03-04 08:04:33.046   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color2". It isn't used in this blocks opmode.
+03-04 08:04:33.047   968   968 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 2; addr7=0x29)
+03-04 08:04:33.047   968   968 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 08:04:33.050   968   968 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 08:04:33.053   968   968 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 08:04:33.056   968   968 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 08:04:33.059   968   968 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 08:04:33.061   968   968 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 08:04:33.079   968   968 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.250000
+03-04 08:04:33.083   968   968 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 08:04:33.274   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "imu". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Green". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color1". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color2". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Control Hub". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Expansion Hub 2". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color1". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "color2". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Control Hub". It isn't used in this blocks opmode.
+03-04 08:04:33.275   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Expansion Hub 2". It isn't used in this blocks opmode.
+03-04 08:04:33.276   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Control Hub". It isn't used in this blocks opmode.
+03-04 08:04:33.276   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Expansion Hub 2". It isn't used in this blocks opmode.
+03-04 08:04:33.276   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - Skipping hardware device named "Webcam 1". It isn't used in this blocks opmode.
+03-04 08:04:33.313   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - run1 - after loadScript
+03-04 08:04:33.360   968   968 W cr_BindingManager: Cannot call determinedVisibility() - never saw a connection for the pid: 968
+03-04 08:04:33.374   968  1221 I RobotCore: BlocksOpMode - "Sensor Debug" - main/JavaBridge - scriptStarting
+03-04 08:04:33.378   968  1221 I RobotCore: BlocksOpMode - "Sensor Debug" - main/JavaBridge - waitForStartForBlocks - start
+03-04 08:04:34.049   968  1169 V Robocol : received command: CMD_RUN_OP_MODE(18399) Sensor Debug
+03-04 08:04:34.060   968  1196 V Robocol : sending CMD_NOTIFY_RUN_OP_MODE(10198), attempt: 0
+03-04 08:04:34.079   968  1221 I RobotCore: BlocksOpMode - "Sensor Debug" - main/JavaBridge - waitForStartForBlocks - end
+03-04 08:05:32.312   968  1169 V Robocol : received command: CMD_INIT_OP_MODE(19169) $Stop$Robot$
+03-04 08:05:32.323   968  1170 I RobotCore: ******************** STOP - OPMODE /storage/emulated/0/FIRST/matchlogs/Match-0-Sensor_Debug.txt ********************
+03-04 08:05:32.330   968  2023 I RobotCore: saving match logcat to /storage/emulated/0/FIRST/matchlogs/Match-0-Sensor_Debug.txt
+03-04 08:05:32.330   968  2023 I RobotCore: logging command line: exec logcat -d -T '3-4 8:4:32.000' -f '/storage/emulated/0/FIRST/matchlogs/Match-0-Sensor_Debug.txt' -n4 -v threadtime UsbRequestJNI:S UsbRequest:S art:W ThreadPool:W System:W ExtendedExtractor:W OMXClient:W MediaPlayer:W dalvikvm:W  *:V
+03-04 08:05:32.331   968  1866 E RobotCore: BlocksOpMode - "Sensor Debug" - main/OpModeThread - runOpMode - caught InterruptedException during scriptFinishedLock.wait
+03-04 08:05:32.331   968  1221 E LynxI2cDeviceSynch: placeholder: readStatusQuery
+03-04 08:05:32.336   968  1221 E LynxI2cDeviceSynch: placeholder: readTimestamped
+03-04 08:05:32.339   968  1221 E LynxI2cDeviceSynch: placeholder: readTimestamped
+03-04 08:05:32.344   968  1221 E LynxI2cDeviceSynch: placeholder: readTimestamped
+03-04 08:05:32.352   968  1221 I RobotCore: BlocksOpMode - "Sensor Debug" - main/JavaBridge - scriptFinished
+03-04 08:05:32.352   968  1866 I RobotCore: BlocksOpMode - "Sensor Debug" - main/OpModeThread - runOpMode - after while !scriptFinished loop
+03-04 08:05:32.352   968  1866 I RobotCore: BlocksOpMode - "Sensor Debug" - main/OpModeThread - runOpMode - end - 21ms after InterruptedException
+03-04 08:05:32.352   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - run2 - before clearScript
+03-04 08:05:32.352   968  1866 D RobotCore: User runOpModeMethod exited
+03-04 08:05:32.354   968  1866 V RobotCore: thread: ...terminating 'OpModeThread'
+03-04 08:05:32.358   968   968 I RobotCore: BlocksOpMode - "Sensor Debug" - main/main - run2 - after clearScript
+03-04 08:05:32.359   968  1182 I RobotCore: Attempting to switch to op mode $Stop$Robot$
+03-04 08:05:32.360   968  1182 D HardwareMap: Clearing which device instances have been retrieved
+03-04 08:05:32.360   968  1182 D HardwareMap: Clearing which device instances have been retrieved
+03-04 08:05:32.364   968  2027 V RobotCore: thread: 'OpModeThread' starting...
+03-04 08:05:32.379   968  1196 V Robocol : sending CMD_NOTIFY_INIT_OP_MODE(10976), attempt: 0

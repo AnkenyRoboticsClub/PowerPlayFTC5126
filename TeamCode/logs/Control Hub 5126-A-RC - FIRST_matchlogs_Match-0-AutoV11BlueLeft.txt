@@ -1,0 +1,1706 @@
+--------- beginning of main
+03-04 14:19:20.537   975  1162 V Robocol : received command: CMD_SET_MATCH_NUMBER(10132) 0
+03-04 14:19:20.538   975  1162 V Robocol : received command: CMD_INIT_OP_MODE(10133) AutoV11BlueLeft
+03-04 14:19:20.562   975  1163 I RobotCore: ******************** START - OPMODE AutoV11BlueLeft ********************
+03-04 14:19:20.568   975  1202 V RobotCore: thread: ...terminating 'OpModeThread'
+03-04 14:19:20.571   975  1175 I RobotCore: Attempting to switch to op mode AutoV11BlueLeft
+03-04 14:19:20.785   975  1175 D HardwareMap: Clearing which device instances have been retrieved
+03-04 14:19:20.785   975  1175 D HardwareMap: Clearing which device instances have been retrieved
+03-04 14:19:20.787   975  1204 V RobotCore: thread: 'OpModeThread' starting...
+03-04 14:19:20.788   975  1204 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 1; addr7=0x29)
+03-04 14:19:20.788   975  1204 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 14:19:20.792   975  1204 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 14:19:20.796   975  1204 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 14:19:20.799   975  1204 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 14:19:20.806   975  1190 V Robocol : sending CMD_NOTIFY_INIT_OP_MODE(221), attempt: 0
+03-04 14:19:20.807   975  1204 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 14:19:20.812   975  1204 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 14:19:20.841   975  1204 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.000000
+03-04 14:19:20.847   975  1204 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 14:19:21.098   975  1204 I I2C     : Automatically initializing I2C device Rev2mDistanceSensor (USB (embedded); module 173; bus 2; addr7=0x29)
+03-04 14:19:21.099   975  1204 D STMicroVL53L0X: : Checking to see if it's really a VL53L0X sensor...
+03-04 14:19:21.102   975  1204 D STMicroVL53L0X: : Reg 0xC0 = ee (should be 0xEE)
+03-04 14:19:21.105   975  1204 D STMicroVL53L0X: : Reg 0xC1 = aa (should be 0xAA)
+03-04 14:19:21.109   975  1204 D STMicroVL53L0X: : Reg 0xC2 = 10 (should be 0x10)
+03-04 14:19:21.112   975  1204 D STMicroVL53L0X: : Reg 0x51 = 0 (should be 0x0099)
+03-04 14:19:21.116   975  1204 D STMicroVL53L0X: : Reg 0x61 = 0 (should be 0x0000)
+03-04 14:19:21.139   975  1204 D STMicroVL53L0X: : initial sig rate lim (MCPS) 0.000000
+03-04 14:19:21.144   975  1204 D STMicroVL53L0X: : adjusted sig rate lim (MCPS) 0.250000
+03-04 14:19:21.381   975  1204 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 173; bus 3; addr7=0x52)
+03-04 14:19:21.381   975  1204 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 14:19:21.389   975  1204 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 14:19:21.390   975  1204 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 14:19:21.393   975  1204 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 14:19:21.396   975  1204 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 14:19:21.399   975  1204 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 14:19:21.402   975  1204 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 14:19:21.408   975  1204 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 14:19:21.414   975  1204 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 14:19:21.418   975  1204 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 14:19:21.418   975  1204 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 14:19:21.419   975  1204 I I2C     : Automatically initializing I2C device RevColorSensorV3 (USB (embedded); module 2; bus 1; addr7=0x52)
+03-04 14:19:21.419   975  1204 V BroadcomColorSensorImpl: internalInitialize()...
+03-04 14:19:21.429   975  1204 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 14:19:21.430   975  1204 V BroadcomColorSensorImpl: setGain(0x01)
+03-04 14:19:21.434   975  1204 V BroadcomColorSensorImpl: setLEDParameters(0x37)
+03-04 14:19:21.439   975  1204 V BroadcomColorSensorImpl: setProximityPulseCount(0x20)
+03-04 14:19:21.444   975  1204 V BroadcomColorSensorImpl: setPSMeasRate(0x1d)
+03-04 14:19:21.448   975  1204 V BroadcomColorSensorImpl: setLSMeasRate(0x42)
+03-04 14:19:21.458   975  1204 V BroadcomColorSensorImpl: enable() enabled=0x07...
+03-04 14:19:21.468   975  1204 V BroadcomColorSensorImpl: ...enable() enabled=0x07
+03-04 14:19:21.474   975  1204 V BroadcomColorSensorImpl: state: 07 37 20 1d 42 01 c2 
+03-04 14:19:21.474   975  1204 V BroadcomColorSensorImpl: ...internalInitialize()
+03-04 14:19:21.515   975  1204 I I2C     : Automatically initializing I2C device LynxEmbeddedIMU (USB (embedded); module 173; bus 0; addr7=0x28)
+03-04 14:19:21.515   975  1204 V BNO055  : Suppressing I2C warnings while we check for a BNO055 IMU
+03-04 14:19:21.519   975  1204 V BNO055  : Found BNO055 IMU
+03-04 14:19:21.955   975  1204 V BNO055IMU: Now polling until IMU comes out of reset. It is normal to see I2C failures below
+03-04 14:19:21.959   975  1204 V RobotCore: addr=false data=true arb=false clock=false
+03-04 14:19:21.959   975  1204 E LynxI2cDeviceSynch: readStatusQuery: cbExpected=1 cbRead=0
+03-04 14:19:21.959   975  1204 E LynxI2cDeviceSynch: placeholder: readStatusQuery
+03-04 14:19:22.024   975  1204 V RobotCore: addr=false data=true arb=false clock=false
+03-04 14:19:22.025   975  1204 E LynxI2cDeviceSynch: readStatusQuery: cbExpected=1 cbRead=0
+03-04 14:19:22.190   975  1204 V BNO055IMU: IMU has come out of reset. No more I2C failures should occur.
+03-04 14:19:22.244   975  1204 D Vuforia : using camera by direction (classic): BACK
+03-04 14:19:22.385   975  1204 D skia    : JPEG Decode 89
+03-04 14:19:22.510   975  1204 I System.out: Native library libVuforia.so loaded
+03-04 14:19:22.511   975  1204 D Vuforia : Vuforia.init()...
+03-04 14:19:22.522   975  1204 I AR      : Vuforia selected rendering API OpenGL ES 2.x
+03-04 14:19:22.522   975  1204 I AR      : Vuforia SDK version 7.4.3
+03-04 14:19:22.569   975  1204 I CameraManagerGlobal: Connecting to camera service
+03-04 14:19:23.155   975  1204 D Vuforia : ...Vuforia.init()
+03-04 14:19:23.161   975  1227 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+03-04 14:19:23.399   975  1204 I AR      : ObjectTracker: This device doesn't support model targets extended tracking, extended tracking will be turned off
+03-04 14:19:23.645   975  1190 V Robocol : sending CMD_STREAM_CHANGE(249), attempt: 0
+03-04 14:19:23.646   975  1190 V Robocol : sending CMD_STREAM_CHANGE(250), attempt: 0
+03-04 14:19:24.199   975  1263 I tflite  : Initialized TensorFlow Lite runtime.
+03-04 14:19:24.254   975  1263 I native  : Initializing object tracker. 272x153 @0x6fb5107264
+03-04 14:19:24.258   975  1263 I native  : Initialized!
+03-04 14:19:24.449   975  1264 E cpuinfo : failed to parse file /sys/devices/system/cpu/kernel_max: "-1
+03-04 14:19:24.449   975  1264 E cpuinfo : " is not an unsigned number
+03-04 14:19:24.450   975  1264 E cpuinfo : failed to parse file /sys/devices/system/cpu/kernel_max: "-1
+03-04 14:19:24.450   975  1264 E cpuinfo : " is not an unsigned number
+03-04 14:19:24.451   975  1264 E cpuinfo : failed to parse file /sys/devices/system/cpu/kernel_max: "-1
+03-04 14:19:24.451   975  1264 E cpuinfo : " is not an unsigned number
+03-04 14:19:24.451   975  1264 E cpuinfo : failed to parse file /sys/devices/system/cpu/kernel_max: "-1
+03-04 14:19:24.451   975  1264 E cpuinfo : " is not an unsigned number
+03-04 14:19:25.742   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10198) 
+03-04 14:19:25.825   975  1265 I native  : Registering the position of 98584134 at 204.91,62.73,245.71,105.06
+03-04 14:19:25.830   975  1265 I native  : Registering the position of 98584134 at 204.91,62.73,245.71,105.06 at time 40695192359
+03-04 14:19:25.845   975  1265 I native  : Registering the position of 101412871 at 206.72,26.52,243.89,61.20
+03-04 14:19:25.846   975  1265 I native  : Registering the position of 101412871 at 206.72,26.52,243.89,61.20 at time 40695192359
+03-04 14:19:26.125   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(282), attempt: 0
+03-04 14:19:26.126   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(283), attempt: 0
+03-04 14:19:26.129   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(284), attempt: 0
+03-04 14:19:26.132   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(285), attempt: 0
+03-04 14:19:26.135   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(286), attempt: 0
+03-04 14:19:26.137   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(287), attempt: 0
+03-04 14:19:26.139   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10206) 
+03-04 14:19:26.140   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(288), attempt: 0
+03-04 14:19:26.142   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(289), attempt: 0
+03-04 14:19:26.144   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(290), attempt: 0
+03-04 14:19:26.147   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(291), attempt: 0
+03-04 14:19:26.149   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(292), attempt: 0
+03-04 14:19:26.151   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(293), attempt: 0
+03-04 14:19:26.153   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(294), attempt: 0
+03-04 14:19:26.156   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(295), attempt: 0
+03-04 14:19:26.158   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(296), attempt: 0
+03-04 14:19:26.167   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(297), attempt: 0
+03-04 14:19:26.170   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(298), attempt: 0
+03-04 14:19:26.174   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(299), attempt: 0
+03-04 14:19:26.178   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(301), attempt: 0
+03-04 14:19:26.539   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10232) 
+03-04 14:19:26.645   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(330), attempt: 0
+03-04 14:19:26.646   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(331), attempt: 0
+03-04 14:19:26.648   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(332), attempt: 0
+03-04 14:19:26.650   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(333), attempt: 0
+03-04 14:19:26.652   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(334), attempt: 0
+03-04 14:19:26.654   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(335), attempt: 0
+03-04 14:19:26.685   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(336), attempt: 0
+03-04 14:19:26.685   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 145ms
+03-04 14:19:26.687   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(337), attempt: 0
+03-04 14:19:26.689   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(338), attempt: 0
+03-04 14:19:26.691   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(339), attempt: 0
+03-04 14:19:26.693   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(342), attempt: 0
+03-04 14:19:26.696   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(344), attempt: 0
+03-04 14:19:26.698   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(346), attempt: 0
+03-04 14:19:26.700   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(347), attempt: 0
+03-04 14:19:26.703   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(348), attempt: 0
+03-04 14:19:26.706   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(349), attempt: 0
+03-04 14:19:26.708   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(350), attempt: 0
+03-04 14:19:26.710   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(351), attempt: 0
+03-04 14:19:26.712   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(352), attempt: 0
+03-04 14:19:26.714   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(354), attempt: 0
+03-04 14:19:26.717   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(355), attempt: 0
+03-04 14:19:26.726   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(356), attempt: 0
+03-04 14:19:26.782   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10261) 
+03-04 14:19:26.863   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10266) 
+03-04 14:19:27.057   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10272) 
+03-04 14:19:27.086   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(386), attempt: 0
+03-04 14:19:27.087   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(387), attempt: 0
+03-04 14:19:27.089   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(388), attempt: 0
+03-04 14:19:27.098   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(389), attempt: 0
+03-04 14:19:27.099   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(390), attempt: 0
+03-04 14:19:27.102   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(391), attempt: 0
+03-04 14:19:27.106   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(392), attempt: 0
+03-04 14:19:27.106   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 224ms
+03-04 14:19:27.107   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 244ms
+03-04 14:19:27.109   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(393), attempt: 0
+03-04 14:19:27.111   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(394), attempt: 0
+03-04 14:19:27.113   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(395), attempt: 0
+03-04 14:19:27.115   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(396), attempt: 0
+03-04 14:19:27.118   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(397), attempt: 0
+03-04 14:19:27.120   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(398), attempt: 0
+03-04 14:19:27.123   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(399), attempt: 0
+03-04 14:19:27.125   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(400), attempt: 0
+03-04 14:19:27.127   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(401), attempt: 0
+03-04 14:19:27.130   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(402), attempt: 0
+03-04 14:19:27.132   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(403), attempt: 0
+03-04 14:19:27.134   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(404), attempt: 0
+03-04 14:19:27.136   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(405), attempt: 0
+03-04 14:19:27.141   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(409), attempt: 0
+03-04 14:19:27.147   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(410), attempt: 0
+03-04 14:19:27.217   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10299) 
+03-04 14:19:27.336   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10304) 
+03-04 14:19:27.456   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10309) 
+03-04 14:19:27.498   975  1265 I native  : Registering the position of 113934546 at 202.19,61.20,249.33,107.10
+03-04 14:19:27.498   975  1265 I native  : Registering the position of 113934546 at 202.19,61.20,249.33,107.10 at time 42424743782
+03-04 14:19:27.503   975  1265 I native  : Registering the position of 199558563 at 207.63,27.03,246.61,63.24
+03-04 14:19:27.504   975  1265 I native  : Registering the position of 199558563 at 207.63,27.03,246.61,63.24 at time 42424743782
+03-04 14:19:27.618   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10312) 
+03-04 14:19:27.725   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(446), attempt: 0
+03-04 14:19:27.726   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(447), attempt: 0
+03-04 14:19:27.729   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(448), attempt: 0
+03-04 14:19:27.731   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(449), attempt: 0
+03-04 14:19:27.733   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(450), attempt: 0
+03-04 14:19:27.740   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10316) 
+03-04 14:19:27.744   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(451), attempt: 0
+03-04 14:19:27.746   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(452), attempt: 0
+03-04 14:19:27.748   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(453), attempt: 0
+03-04 14:19:27.750   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(454), attempt: 0
+03-04 14:19:27.759   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(455), attempt: 0
+03-04 14:19:27.769   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(456), attempt: 0
+03-04 14:19:27.789   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(457), attempt: 0
+03-04 14:19:27.796   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(462), attempt: 0
+03-04 14:19:27.800   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 454ms
+03-04 14:19:27.801   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 461ms
+03-04 14:19:27.801   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(463), attempt: 0
+03-04 14:19:27.807   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(464), attempt: 0
+03-04 14:19:27.810   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(465), attempt: 0
+03-04 14:19:27.812   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(466), attempt: 0
+03-04 14:19:27.816   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(467), attempt: 0
+03-04 14:19:27.818   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10328) 
+03-04 14:19:27.819   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(468), attempt: 0
+03-04 14:19:27.823   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(473), attempt: 0
+03-04 14:19:27.827   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(478), attempt: 0
+03-04 14:19:27.830   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(479), attempt: 0
+03-04 14:19:27.980   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10352) 
+03-04 14:19:28.057   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10357) 
+03-04 14:19:28.109   975  1264 I native  : Registering the position of 122503328 at 201.28,61.20,248.43,107.10
+03-04 14:19:28.110   975  1264 I native  : Registering the position of 122503328 at 201.28,61.20,248.43,107.10 at time 42999583549
+03-04 14:19:28.111   975  1264 I native  : Registering the position of 22377561 at 207.63,26.52,246.61,63.24
+03-04 14:19:28.112   975  1264 I native  : Registering the position of 22377561 at 207.63,26.52,246.61,63.24 at time 42999583549
+03-04 14:19:28.137   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10362) 
+03-04 14:19:28.218   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10364) 
+03-04 14:19:28.285   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(513), attempt: 0
+03-04 14:19:28.286   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(514), attempt: 0
+03-04 14:19:28.307   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10368) 
+03-04 14:19:28.325   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(515), attempt: 0
+03-04 14:19:28.327   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(516), attempt: 0
+03-04 14:19:28.329   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(517), attempt: 0
+03-04 14:19:28.331   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(518), attempt: 0
+03-04 14:19:28.333   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(520), attempt: 0
+03-04 14:19:28.335   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(521), attempt: 0
+03-04 14:19:28.336   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(522), attempt: 0
+03-04 14:19:28.339   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(524), attempt: 0
+03-04 14:19:28.341   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(526), attempt: 0
+03-04 14:19:28.343   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(527), attempt: 0
+03-04 14:19:28.345   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(528), attempt: 0
+03-04 14:19:28.347   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(529), attempt: 0
+03-04 14:19:28.348   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(530), attempt: 0
+03-04 14:19:28.350   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 282ms
+03-04 14:19:28.352   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(531), attempt: 0
+03-04 14:19:28.355   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(532), attempt: 0
+03-04 14:19:28.366   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(533), attempt: 0
+03-04 14:19:28.368   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(534), attempt: 0
+03-04 14:19:28.370   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(535), attempt: 0
+03-04 14:19:28.373   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(540), attempt: 0
+03-04 14:19:28.375   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(541), attempt: 0
+03-04 14:19:28.400   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10381) 
+03-04 14:19:28.537   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10403) 
+03-04 14:19:28.578   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10405) 
+03-04 14:19:28.656   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10410) 
+03-04 14:19:28.818   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10414) 
+03-04 14:19:28.897   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10417) 
+03-04 14:19:28.977   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10420) 
+03-04 14:19:29.045   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(582), attempt: 0
+03-04 14:19:29.046   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(583), attempt: 0
+03-04 14:19:29.048   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(584), attempt: 0
+03-04 14:19:29.051   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(585), attempt: 0
+03-04 14:19:29.054   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(586), attempt: 0
+03-04 14:19:29.069   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(587), attempt: 0
+03-04 14:19:29.085   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(588), attempt: 0
+03-04 14:19:29.088   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(593), attempt: 0
+03-04 14:19:29.090   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(594), attempt: 0
+03-04 14:19:29.101   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(595), attempt: 0
+03-04 14:19:29.103   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(596), attempt: 0
+03-04 14:19:29.114   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(597), attempt: 0
+03-04 14:19:29.117   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(598), attempt: 0
+03-04 14:19:29.129   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(599), attempt: 0
+03-04 14:19:29.130   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 577ms
+03-04 14:19:29.131   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 594ms
+03-04 14:19:29.132   975  1163 E Robocol : command processing took 594 ms: command=CMD_REQUEST_FRAME
+03-04 14:19:29.133   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(600), attempt: 0
+03-04 14:19:29.140   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(601), attempt: 0
+03-04 14:19:29.147   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(607), attempt: 0
+03-04 14:19:29.157   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(608), attempt: 0
+03-04 14:19:29.161   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(609), attempt: 0
+03-04 14:19:29.166   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(610), attempt: 0
+03-04 14:19:29.171   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(611), attempt: 0
+03-04 14:19:29.176   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(612), attempt: 0
+03-04 14:19:29.183   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10440) 
+03-04 14:19:29.279   975  1265 I native  : Registering the position of 171464959 at 202.19,61.20,249.33,107.10
+03-04 14:19:29.283   975  1265 I native  : Registering the position of 171464959 at 202.19,61.20,249.33,107.10 at time 44128093329
+03-04 14:19:29.284   975  1265 I native  : Registering the position of 156616396 at 207.63,27.03,246.61,63.75
+03-04 14:19:29.288   975  1265 I native  : Registering the position of 156616396 at 207.63,27.03,246.61,63.75 at time 44128093329
+03-04 14:19:29.299   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10460) 
+03-04 14:19:29.538   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10466) 
+03-04 14:19:29.605   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(650), attempt: 0
+03-04 14:19:29.606   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(651), attempt: 0
+03-04 14:19:29.609   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(652), attempt: 0
+03-04 14:19:29.611   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(653), attempt: 0
+03-04 14:19:29.611   975  1264 I native  : Registering the position of 165674261 at 201.28,60.69,248.43,106.59
+03-04 14:19:29.612   975  1264 I native  : Registering the position of 165674261 at 201.28,60.69,248.43,106.59 at time 44627799754
+03-04 14:19:29.612   975  1264 I native  : Registering the position of 112810026 at 207.63,26.52,246.61,63.24
+03-04 14:19:29.614   975  1264 I native  : Registering the position of 112810026 at 207.63,26.52,246.61,63.24 at time 44627799754
+03-04 14:19:29.615   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(654), attempt: 0
+03-04 14:19:29.620   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(655), attempt: 0
+03-04 14:19:29.624   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(656), attempt: 0
+03-04 14:19:29.628   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(657), attempt: 0
+03-04 14:19:29.645   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(658), attempt: 0
+03-04 14:19:29.648   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(659), attempt: 0
+03-04 14:19:29.650   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(662), attempt: 0
+03-04 14:19:29.654   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(663), attempt: 0
+03-04 14:19:29.658   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(664), attempt: 0
+03-04 14:19:29.661   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(665), attempt: 0
+03-04 14:19:29.663   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(666), attempt: 0
+03-04 14:19:29.669   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(667), attempt: 0
+03-04 14:19:29.671   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(668), attempt: 0
+03-04 14:19:29.673   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(669), attempt: 0
+03-04 14:19:29.675   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(670), attempt: 0
+03-04 14:19:29.686   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(671), attempt: 0
+03-04 14:19:29.688   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(673), attempt: 0
+03-04 14:19:29.689   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(674), attempt: 0
+03-04 14:19:29.700   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10486) 
+03-04 14:19:29.784   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10499) 
+03-04 14:19:29.937   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10505) 
+03-04 14:19:30.018   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10507) 
+03-04 14:19:30.046   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(707), attempt: 0
+03-04 14:19:30.047   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(708), attempt: 0
+03-04 14:19:30.049   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(709), attempt: 0
+03-04 14:19:30.055   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(710), attempt: 0
+03-04 14:19:30.057   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(711), attempt: 0
+03-04 14:19:30.059   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(712), attempt: 0
+03-04 14:19:30.063   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(713), attempt: 0
+03-04 14:19:30.065   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(714), attempt: 0
+03-04 14:19:30.067   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(715), attempt: 0
+03-04 14:19:30.069   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(716), attempt: 0
+03-04 14:19:30.070   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(717), attempt: 0
+03-04 14:19:30.071   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 275ms
+03-04 14:19:30.072   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(718), attempt: 0
+03-04 14:19:30.073   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 285ms
+03-04 14:19:30.074   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(719), attempt: 0
+03-04 14:19:30.076   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(720), attempt: 0
+03-04 14:19:30.078   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(721), attempt: 0
+03-04 14:19:30.081   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(722), attempt: 0
+03-04 14:19:30.086   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(723), attempt: 0
+03-04 14:19:30.091   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(726), attempt: 0
+03-04 14:19:30.102   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(727), attempt: 0
+03-04 14:19:30.105   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(728), attempt: 0
+03-04 14:19:30.110   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(729), attempt: 0
+03-04 14:19:30.113   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(730), attempt: 0
+03-04 14:19:30.139   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10530) 
+03-04 14:19:30.297   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10542) 
+03-04 14:19:30.538   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10548) 
+03-04 14:19:30.565   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(765), attempt: 0
+03-04 14:19:30.567   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(766), attempt: 0
+03-04 14:19:30.569   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(767), attempt: 0
+03-04 14:19:30.583   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(769), attempt: 0
+03-04 14:19:30.585   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(770), attempt: 0
+03-04 14:19:30.587   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(771), attempt: 0
+03-04 14:19:30.590   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(772), attempt: 0
+03-04 14:19:30.593   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(773), attempt: 0
+03-04 14:19:30.598   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(774), attempt: 0
+03-04 14:19:30.601   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(775), attempt: 0
+03-04 14:19:30.604   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(776), attempt: 0
+03-04 14:19:30.606   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(777), attempt: 0
+03-04 14:19:30.608   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(778), attempt: 0
+03-04 14:19:30.610   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(779), attempt: 0
+03-04 14:19:30.614   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(780), attempt: 0
+03-04 14:19:30.616   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(781), attempt: 0
+03-04 14:19:30.623   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(782), attempt: 0
+03-04 14:19:30.627   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10558) 
+03-04 14:19:30.628   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(784), attempt: 0
+03-04 14:19:30.630   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(786), attempt: 0
+03-04 14:19:30.633   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(787), attempt: 0
+03-04 14:19:30.645   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(788), attempt: 0
+03-04 14:19:30.647   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(789), attempt: 0
+03-04 14:19:30.859   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10581) 
+03-04 14:19:30.877   975  1265 I native  : Registering the position of 4425243 at 202.19,61.20,249.33,106.59
+03-04 14:19:30.878   975  1265 I native  : Registering the position of 4425243 at 202.19,61.20,249.33,106.59 at time 45933983260
+03-04 14:19:30.879   975  1265 I native  : Registering the position of 58622904 at 207.63,26.52,246.61,63.24
+03-04 14:19:30.879   975  1265 I native  : Registering the position of 58622904 at 207.63,26.52,246.61,63.24 at time 45933983260
+03-04 14:19:30.979   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10587) 
+03-04 14:19:31.017   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10589) 
+03-04 14:19:31.125   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(827), attempt: 0
+03-04 14:19:31.126   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(828), attempt: 0
+03-04 14:19:31.129   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(829), attempt: 0
+03-04 14:19:31.134   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(830), attempt: 0
+03-04 14:19:31.136   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 263ms
+03-04 14:19:31.138   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10593) 
+03-04 14:19:31.140   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 270ms
+03-04 14:19:31.141   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(831), attempt: 0
+03-04 14:19:31.146   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(832), attempt: 0
+03-04 14:19:31.148   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(833), attempt: 0
+03-04 14:19:31.151   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(834), attempt: 0
+03-04 14:19:31.153   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(835), attempt: 0
+03-04 14:19:31.155   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(836), attempt: 0
+03-04 14:19:31.157   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(837), attempt: 0
+03-04 14:19:31.159   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(838), attempt: 0
+03-04 14:19:31.162   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(839), attempt: 0
+03-04 14:19:31.164   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(840), attempt: 0
+03-04 14:19:31.166   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(841), attempt: 0
+03-04 14:19:31.168   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(842), attempt: 0
+03-04 14:19:31.171   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(843), attempt: 0
+03-04 14:19:31.173   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(844), attempt: 0
+03-04 14:19:31.175   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(845), attempt: 0
+03-04 14:19:31.177   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(846), attempt: 0
+03-04 14:19:31.179   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(847), attempt: 0
+03-04 14:19:31.181   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(848), attempt: 0
+03-04 14:19:31.298   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10624) 
+03-04 14:19:31.460   975  1264 I native  : Registering the position of 22042001 at 204.00,61.20,248.43,106.08
+03-04 14:19:31.460   975  1264 I native  : Registering the position of 22042001 at 204.00,61.20,248.43,106.08 at time 46368799095
+03-04 14:19:31.464   975  1264 I native  : Registering the position of 141348086 at 207.63,26.52,246.61,63.24
+03-04 14:19:31.464   975  1264 I native  : Registering the position of 141348086 at 207.63,26.52,246.61,63.24 at time 46368799095
+03-04 14:19:31.498   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10630) 
+03-04 14:19:31.605   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(886), attempt: 0
+03-04 14:19:31.606   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(887), attempt: 0
+03-04 14:19:31.607   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(888), attempt: 0
+03-04 14:19:31.645   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(889), attempt: 0
+03-04 14:19:31.647   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(890), attempt: 0
+03-04 14:19:31.648   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(891), attempt: 0
+03-04 14:19:31.650   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(892), attempt: 0
+03-04 14:19:31.651   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(896), attempt: 0
+03-04 14:19:31.653   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(897), attempt: 0
+03-04 14:19:31.655   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(898), attempt: 0
+03-04 14:19:31.663   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10636) 
+03-04 14:19:31.667   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(899), attempt: 0
+03-04 14:19:31.669   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(900), attempt: 0
+03-04 14:19:31.669   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 360ms
+03-04 14:19:31.670   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(901), attempt: 0
+03-04 14:19:31.670   975  1175 W art     : Long monitor contention with owner ReceiveLoopService-#1 (1163) at org.firstinspires.ftc.robotcore.internal.network.CallbackResult com.qualcomm.robotcore.eventloop.EventLoopManager.commandEvent(com.qualcomm.robotcore.robocol.Command)(EventLoopManager.java:825) waiters=0 in void com.qualcomm.robotcore.eventloop.EventLoopManager$EventLoopRunnable$1.run() for 365ms
+03-04 14:19:31.672   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(902), attempt: 0
+03-04 14:19:31.674   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(903), attempt: 0
+03-04 14:19:31.676   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(904), attempt: 0
+03-04 14:19:31.687   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(905), attempt: 0
+03-04 14:19:31.689   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(906), attempt: 0
+03-04 14:19:31.691   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(907), attempt: 0
+03-04 14:19:31.704   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(908), attempt: 0
+03-04 14:19:31.707   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(913), attempt: 0
+03-04 14:19:31.710   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(914), attempt: 0
+03-04 14:19:31.897   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10664) 
+03-04 14:19:32.018   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10669) 
+03-04 14:19:32.126   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(944), attempt: 0
+03-04 14:19:32.127   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(945), attempt: 0
+03-04 14:19:32.129   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(946), attempt: 0
+03-04 14:19:32.131   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(947), attempt: 0
+03-04 14:19:32.132   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(948), attempt: 0
+03-04 14:19:32.134   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(949), attempt: 0
+03-04 14:19:32.142   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(950), attempt: 0
+03-04 14:19:32.143   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(951), attempt: 0
+03-04 14:19:32.145   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(952), attempt: 0
+03-04 14:19:32.147   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(953), attempt: 0
+03-04 14:19:32.149   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(954), attempt: 0
+03-04 14:19:32.150   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(955), attempt: 0
+03-04 14:19:32.182   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(956), attempt: 0
+03-04 14:19:32.184   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(957), attempt: 0
+03-04 14:19:32.186   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(958), attempt: 0
+03-04 14:19:32.195   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(959), attempt: 0
+03-04 14:19:32.205   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(961), attempt: 0
+03-04 14:19:32.207   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(962), attempt: 0
+03-04 14:19:32.208   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(965), attempt: 0
+03-04 14:19:32.210   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(966), attempt: 0
+03-04 14:19:32.218   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(967), attempt: 0
+03-04 14:19:32.226   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(968), attempt: 0
+03-04 14:19:32.233   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10689) 
+03-04 14:19:32.460   975  1162 V Robocol : received command: CMD_REQUEST_FRAME(10703) 
+03-04 14:19:32.568   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(1000), attempt: 0
+03-04 14:19:32.568   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1001), attempt: 0
+03-04 14:19:32.570   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1002), attempt: 0
+03-04 14:19:32.571   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1003), attempt: 0
+03-04 14:19:32.573   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1004), attempt: 0
+03-04 14:19:32.579   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1005), attempt: 0
+03-04 14:19:32.594   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1006), attempt: 0
+03-04 14:19:32.605   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1007), attempt: 0
+03-04 14:19:32.607   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1008), attempt: 0
+03-04 14:19:32.608   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1011), attempt: 0
+03-04 14:19:32.610   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1012), attempt: 0
+03-04 14:19:32.620   975  1163 W art     : Long monitor contention with owner VuforiaFrameGenerator (1263) at void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.accept(android.graphics.Bitmap)(TFObjectDetectorImpl.java:254) waiters=0 in void org.firstinspires.ftc.robotcore.internal.tfod.TFObjectDetectorImpl.getFrameBitmap(org.firstinspires.ftc.robotcore.external.function.Continuation) for 139ms
+03-04 14:19:32.635   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1013), attempt: 0
+03-04 14:19:32.636   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1014), attempt: 0
+03-04 14:19:32.641   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1015), attempt: 0
+03-04 14:19:32.642   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1016), attempt: 0
+03-04 14:19:32.644   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1017), attempt: 0
+03-04 14:19:32.645   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1018), attempt: 0
+03-04 14:19:32.647   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1019), attempt: 0
+03-04 14:19:32.649   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1020), attempt: 0
+03-04 14:19:32.650   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1021), attempt: 0
+03-04 14:19:32.652   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1025), attempt: 0
+03-04 14:19:32.654   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1026), attempt: 0
+03-04 14:19:32.682   975  1265 I native  : Registering the position of 151677175 at 204.91,62.22,246.61,107.10
+03-04 14:19:32.683   975  1265 I native  : Registering the position of 151677175 at 204.91,62.22,246.61,107.10 at time 47450784829
+03-04 14:19:32.684   975  1265 I native  : Registering the position of 192160612 at 204.91,26.01,250.24,63.24
+03-04 14:19:32.685   975  1265 I native  : Registering the position of 192160612 at 204.91,26.01,250.24,63.24 at time 47450784829
+03-04 14:19:33.016   975  1264 I native  : Registering the position of 110344653 at 205.81,27.03,249.33,62.22
+03-04 14:19:33.016   975  1264 I native  : Registering the position of 110344653 at 205.81,27.03,249.33,62.22 at time 47956129172
+03-04 14:19:33.018   975  1264 I native  : Registering the position of 17875586 at 205.81,61.71,246.61,106.59
+03-04 14:19:33.018   975  1264 I native  : Registering the position of 17875586 at 205.81,61.71,246.61,106.59 at time 47956129172
+03-04 14:19:33.245   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_BEGIN(1050), attempt: 0
+03-04 14:19:33.246   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1051), attempt: 0
+03-04 14:19:33.247   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1052), attempt: 0
+03-04 14:19:33.249   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1053), attempt: 0
+03-04 14:19:33.250   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1054), attempt: 0
+03-04 14:19:33.252   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1055), attempt: 0
+03-04 14:19:33.286   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1056), attempt: 0
+03-04 14:19:33.287   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1057), attempt: 0
+03-04 14:19:33.290   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1058), attempt: 0
+03-04 14:19:33.303   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1059), attempt: 0
+03-04 14:19:33.305   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1060), attempt: 0
+03-04 14:19:33.315   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1065), attempt: 0
+03-04 14:19:33.321   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1066), attempt: 0
+03-04 14:19:33.323   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1067), attempt: 0
+03-04 14:19:33.325   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1068), attempt: 0
+03-04 14:19:33.327   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1073), attempt: 0
+03-04 14:19:33.330   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1074), attempt: 0
+03-04 14:19:33.333   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1075), attempt: 0
+03-04 14:19:33.341   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1076), attempt: 0
+03-04 14:19:33.368   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1077), attempt: 0
+03-04 14:19:33.369   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1078), attempt: 0
+03-04 14:19:33.372   975  1190 V Robocol : sending CMD_RECEIVE_FRAME_CHUNK(1079), attempt: 0
+03-04 14:19:34.046   975  1265 I native  : Registering the position of 50467280 at 204.91,61.71,245.71,106.59
+03-04 14:19:34.047   975  1265 I native  : Registering the position of 50467280 at 204.91,61.71,245.71,106.59 at time 48925327394
+03-04 14:19:34.058   975  1265 I native  : Registering the position of 3089865 at 204.00,26.01,249.33,62.73
+03-04 14:19:34.059   975  1265 I native  : Registering the position of 3089865 at 204.00,26.01,249.33,62.73 at time 48925327394
+03-04 14:19:34.551   975  1264 I native  : Registering the position of 67929294 at 205.81,62.22,246.61,105.57
+03-04 14:19:34.553   975  1264 I native  : Registering the position of 67929294 at 205.81,62.22,246.61,105.57 at time 49650323883
+03-04 14:19:34.557   975  1264 I native  : Registering the position of 253722607 at 205.81,26.52,249.33,63.24
+03-04 14:19:34.557   975  1264 I native  : Registering the position of 253722607 at 205.81,26.52,249.33,63.24 at time 49650323883
+03-04 14:19:35.629   975  1265 I native  : Registering the position of 188644092 at 205.81,61.71,246.61,106.59
+03-04 14:19:35.630   975  1265 I native  : Registering the position of 188644092 at 205.81,61.71,246.61,106.59 at time 50428286170
+03-04 14:19:35.637   975  1265 I native  : Registering the position of 234575237 at 204.91,26.52,249.33,63.24
+03-04 14:19:35.637   975  1265 I native  : Registering the position of 234575237 at 204.91,26.52,249.33,63.24 at time 50428286170
+03-04 14:19:35.804   975  1264 I native  : Registering the position of 32514010 at 205.81,61.71,246.61,107.10
+03-04 14:19:35.805   975  1264 I native  : Registering the position of 32514010 at 205.81,61.71,246.61,107.10 at time 50820852918
+03-04 14:19:35.820   975  1264 I native  : Registering the position of 160312331 at 204.91,27.03,249.33,63.24
+03-04 14:19:35.821   975  1264 I native  : Registering the position of 160312331 at 204.91,27.03,249.33,63.24 at time 50820852918
+03-04 14:19:36.775   975  1265 I native  : Registering the position of 242633448 at 205.81,61.71,245.71,107.61
+03-04 14:19:36.775   975  1265 I native  : Registering the position of 242633448 at 205.81,61.71,245.71,107.61 at time 51945503656
+03-04 14:19:36.778   975  1265 I native  : Registering the position of 178308353 at 206.72,26.52,248.43,63.24
+03-04 14:19:36.779   975  1265 I native  : Registering the position of 178308353 at 206.72,26.52,248.43,63.24 at time 51945503656
+03-04 14:19:37.235   975  1264 I native  : Registering the position of 37773222 at 204.91,27.54,248.43,63.75
+03-04 14:19:37.236   975  1264 I native  : Registering the position of 37773222 at 204.91,27.54,248.43,63.75 at time 52159720594
+03-04 14:19:37.245   975  1264 I native  : Registering the position of 49380839 at 205.81,61.71,244.80,107.61
+03-04 14:19:37.245   975  1264 I native  : Registering the position of 49380839 at 205.81,61.71,244.80,107.61 at time 52159720594
+03-04 14:19:37.935   975  1265 I native  : Registering the position of 215559572 at 204.91,60.69,248.43,106.08
+03-04 14:19:37.936   975  1265 I native  : Registering the position of 215559572 at 204.91,60.69,248.43,106.08 at time 53059793518
+03-04 14:19:37.938   975  1265 I native  : Registering the position of 148090941 at 207.63,27.03,247.52,63.75
+03-04 14:19:37.939   975  1265 I native  : Registering the position of 148090941 at 207.63,27.03,247.52,63.75 at time 53059793518
+03-04 14:19:38.711   975  1264 I native  : Registering the position of 189665667 at 203.09,60.69,248.43,106.08
+03-04 14:19:38.713   975  1264 I native  : Registering the position of 189665667 at 203.09,60.69,248.43,106.08 at time 53577954570
+03-04 14:19:38.730   975  1264 I native  : Registering the position of 132484864 at 206.72,26.52,246.61,63.24
+03-04 14:19:38.730   975  1264 I native  : Registering the position of 132484864 at 206.72,26.52,246.61,63.24 at time 53577954570
+03-04 14:19:39.589   975  1265 I native  : Registering the position of 139465529 at 204.00,61.20,247.52,106.08
+03-04 14:19:39.589   975  1265 I native  : Registering the position of 139465529 at 204.00,61.20,247.52,106.08 at time 54295792684
+03-04 14:19:39.594   975  1265 I native  : Registering the position of 118078846 at 207.63,27.03,247.52,63.75
+03-04 14:19:39.594   975  1265 I native  : Registering the position of 118078846 at 207.63,27.03,247.52,63.75 at time 54295792684
+03-04 14:19:40.143   975  1264 I native  : Registering the position of 72762079 at 205.81,61.20,245.71,107.10
+03-04 14:19:40.144   975  1264 I native  : Registering the position of 72762079 at 205.81,61.20,245.71,107.10 at time 55076335345
+03-04 14:19:40.147   975  1264 I native  : Registering the position of 143956780 at 204.91,26.01,251.15,63.75
+03-04 14:19:40.148   975  1264 I native  : Registering the position of 143956780 at 204.91,26.01,251.15,63.75 at time 55076335345
+03-04 14:19:41.041   975  1265 I native  : Registering the position of 244689397 at 199.47,61.20,248.43,107.61
+03-04 14:19:41.042   975  1265 I native  : Registering the position of 244689397 at 199.47,61.20,248.43,107.61 at time 56001192938
+03-04 14:19:41.046   975  1265 I native  : Registering the position of 134230922 at 207.63,26.52,246.61,62.73
+03-04 14:19:41.047   975  1265 I native  : Registering the position of 134230922 at 207.63,26.52,246.61,62.73 at time 56001192938
+03-04 14:19:41.552   975  1264 I native  : Registering the position of 243674619 at 201.28,59.67,248.43,107.10
+03-04 14:19:41.553   975  1264 I native  : Registering the position of 243674619 at 201.28,59.67,248.43,107.10 at time 56499669113
+03-04 14:19:41.560   975  1264 I native  : Registering the position of 205930008 at 206.72,27.03,246.61,63.24
+03-04 14:19:41.561   975  1264 I native  : Registering the position of 205930008 at 206.72,27.03,246.61,63.24 at time 56499669113
+03-04 14:19:42.372   975  1265 I native  : Registering the position of 258207857 at 200.37,60.18,249.33,107.61
+03-04 14:19:42.372   975  1265 I native  : Registering the position of 258207857 at 200.37,60.18,249.33,107.61 at time 57343618073
+03-04 14:19:42.376   975  1265 I native  : Registering the position of 154533462 at 206.72,27.03,246.61,63.24
+03-04 14:19:42.377   975  1265 I native  : Registering the position of 154533462 at 206.72,27.03,246.61,63.24 at time 57343618073
+03-04 14:19:43.102   975  1264 I native  : Registering the position of 201305815 at 199.47,61.20,248.43,106.59
+03-04 14:19:43.102   975  1264 I native  : Registering the position of 201305815 at 199.47,61.20,248.43,106.59 at time 57917647881
+03-04 14:19:43.107   975  1264 I native  : Registering the position of 74261444 at 206.72,26.52,246.61,62.73
+03-04 14:19:43.108   975  1264 I native  : Registering the position of 74261444 at 206.72,26.52,246.61,62.73 at time 57917647881
+03-04 14:19:43.694   975  1265 I native  : Registering the position of 103524834 at 199.47,61.20,248.43,107.10
+03-04 14:19:43.695   975  1265 I native  : Registering the position of 103524834 at 199.47,61.20,248.43,107.10 at time 58720993628
+03-04 14:19:43.701   975  1265 I native  : Registering the position of 86401395 at 206.72,26.52,246.61,62.73
+03-04 14:19:43.702   975  1265 I native  : Registering the position of 86401395 at 206.72,26.52,246.61,62.73 at time 58720993628
+03-04 14:19:44.585   975  1264 I native  : Registering the position of 83540016 at 200.37,61.20,248.43,107.10
+03-04 14:19:44.586   975  1264 I native  : Registering the position of 83540016 at 200.37,61.20,248.43,107.10 at time 59477932871
+03-04 14:19:44.591   975  1264 I native  : Registering the position of 134167721 at 207.63,26.52,246.61,62.22
+03-04 14:19:44.592   975  1264 I native  : Registering the position of 134167721 at 207.63,26.52,246.61,62.22 at time 59477932871
+03-04 14:19:45.091   975  1265 I native  : Registering the position of 266240558 at 206.72,27.54,246.61,63.75
+03-04 14:19:45.092   975  1265 I native  : Registering the position of 266240558 at 206.72,27.54,246.61,63.75 at time 60041365261
+03-04 14:19:45.100   975  1265 I native  : Registering the position of 184263119 at 199.47,59.67,249.33,108.12
+03-04 14:19:45.100   975  1265 I native  : Registering the position of 184263119 at 199.47,59.67,249.33,108.12 at time 60041365261
+03-04 14:19:45.727   975  1264 I native  : Registering the position of 227223388 at 199.47,61.20,248.43,107.61
+03-04 14:19:45.727   975  1264 I native  : Registering the position of 227223388 at 199.47,61.20,248.43,107.61 at time 60976034521
+03-04 14:19:45.730   975  1264 I native  : Registering the position of 124123749 at 206.72,26.52,246.61,62.73
+03-04 14:19:45.730   975  1264 I native  : Registering the position of 124123749 at 206.72,26.52,246.61,62.73 at time 60976034521
+03-04 14:19:46.672   975  1265 I native  : Registering the position of 131371834 at 206.72,27.03,247.52,63.24
+03-04 14:19:46.672   975  1265 I native  : Registering the position of 131371834 at 206.72,27.03,247.52,63.24 at time 61514007326
+03-04 14:19:46.677   975  1265 I native  : Registering the position of 54168555 at 198.56,59.67,248.43,108.12
+03-04 14:19:46.678   975  1265 I native  : Registering the position of 54168555 at 198.56,59.67,248.43,108.12 at time 61514007326
+03-04 14:19:46.796   975  1264 I native  : Registering the position of 156327240 at 205.81,27.03,246.61,63.24
+03-04 14:19:46.797   975  1264 I native  : Registering the position of 156327240 at 205.81,27.03,246.61,63.24 at time 62019641293
+03-04 14:19:46.800   975  1264 I native  : Registering the position of 264296417 at 199.47,60.69,249.33,108.12
+03-04 14:19:46.800   975  1264 I native  : Registering the position of 264296417 at 199.47,60.69,249.33,108.12 at time 62019641293
+03-04 14:19:48.303   975  1265 I native  : Registering the position of 171178951 at 198.56,60.69,248.43,107.10
+03-04 14:19:48.303   975  1265 I native  : Registering the position of 171178951 at 198.56,60.69,248.43,107.10 at time 63093312193
+03-04 14:19:48.308   975  1265 I native  : Registering the position of 29558260 at 206.72,27.03,247.52,63.24
+03-04 14:19:48.309   975  1265 I native  : Registering the position of 29558260 at 206.72,27.03,247.52,63.24 at time 63093312193
+03-04 14:19:48.321   975  1264 I native  : Registering the position of 177344797 at 199.47,60.69,249.33,107.61
+03-04 14:19:48.322   975  1264 I native  : Registering the position of 177344797 at 199.47,60.69,249.33,107.61 at time 63251594750
+03-04 14:19:48.327   975  1264 I native  : Registering the position of 181817234 at 206.72,26.52,247.52,62.73
+03-04 14:19:48.328   975  1264 I native  : Registering the position of 181817234 at 206.72,26.52,247.52,62.73 at time 63251594750
+03-04 14:19:49.882   975  1264 I native  : Registering the position of 107646307 at 199.47,59.67,248.43,106.59
+03-04 14:19:49.883   975  1264 I native  : Registering the position of 107646307 at 199.47,59.67,248.43,106.59 at time 64736085191
+03-04 14:19:49.886   975  1264 I native  : Registering the position of 298336 at 206.72,27.03,246.61,63.24
+03-04 14:19:49.886   975  1264 I native  : Registering the position of 298336 at 206.72,27.03,246.61,63.24 at time 64736085191
+03-04 14:19:49.905   975  1265 I native  : Registering the position of 222536217 at 199.47,60.18,248.43,106.59
+03-04 14:19:49.906   975  1265 I native  : Registering the position of 222536217 at 199.47,60.18,248.43,106.59 at time 64592492135
+03-04 14:19:49.911   975  1265 I native  : Registering the position of 159765214 at 206.72,27.03,247.52,63.24
+03-04 14:19:49.912   975  1265 I native  : Registering the position of 159765214 at 206.72,27.03,247.52,63.24 at time 64592492135
+03-04 14:19:51.049   975  1264 I native  : Registering the position of 166632639 at 200.37,61.71,249.33,107.10
+03-04 14:19:51.049   975  1264 I native  : Registering the position of 166632639 at 200.37,61.71,249.33,107.10 at time 66194185046
+03-04 14:19:51.052   975  1264 I native  : Registering the position of 152379276 at 207.63,27.03,247.52,62.73
+03-04 14:19:51.053   975  1264 I native  : Registering the position of 152379276 at 207.63,27.03,247.52,62.73 at time 66194185046
+03-04 14:19:51.659   975  1265 I native  : Registering the position of 266553045 at 200.37,61.71,249.33,107.10
+03-04 14:19:51.660   975  1265 I native  : Registering the position of 266553045 at 200.37,61.71,249.33,107.10 at time 66296222014
+03-04 14:19:51.677   975  1265 I native  : Registering the position of 18366186 at 207.63,27.03,246.61,62.73
+03-04 14:19:51.677   975  1265 I native  : Registering the position of 18366186 at 207.63,27.03,246.61,62.73 at time 66296222014
+03-04 14:19:52.334   975  1264 I native  : Registering the position of 226117083 at 199.47,59.67,249.33,107.61
+03-04 14:19:52.335   975  1264 I native  : Registering the position of 226117083 at 199.47,59.67,249.33,107.61 at time 67338195161
+03-04 14:19:52.339   975  1264 I native  : Registering the position of 12232824 at 206.72,26.52,246.61,62.73
+03-04 14:19:52.339   975  1264 I native  : Registering the position of 12232824 at 206.72,26.52,246.61,62.73 at time 67338195161
+03-04 14:19:53.240   975  1265 I native  : Registering the position of 60717905 at 198.56,60.69,248.43,107.61
+03-04 14:19:53.240   975  1265 I native  : Registering the position of 60717905 at 198.56,60.69,248.43,107.61 at time 68000296644
+03-04 14:19:53.246   975  1265 I native  : Registering the position of 95641526 at 205.81,27.03,246.61,63.24
+03-04 14:19:53.246   975  1265 I native  : Registering the position of 95641526 at 205.81,27.03,246.61,63.24 at time 68000296644
+03-04 14:19:53.338   975  1187 E ControlHubApChannelManager: Timeout while getting current channel from AP service
+03-04 14:19:53.693   975  1264 I native  : Registering the position of 254661668 at 199.47,61.20,249.33,106.59
+03-04 14:19:53.697   975  1264 I native  : Registering the position of 254661668 at 199.47,61.20,249.33,106.59 at time 68618017831
+03-04 14:19:53.703   975  1264 I native  : Registering the position of 83786637 at 206.72,27.03,245.71,62.73
+03-04 14:19:53.704   975  1264 I native  : Registering the position of 83786637 at 206.72,27.03,245.71,62.73 at time 68618017831
+03-04 14:19:54.380   975  1265 I native  : Registering the position of 101564738 at 199.47,61.71,248.43,107.10
+03-04 14:19:54.387   975  1265 I native  : Registering the position of 101564738 at 199.47,61.71,248.43,107.10 at time 69511415962
+03-04 14:19:54.390   975  1265 I native  : Registering the position of 264869203 at 207.63,27.03,246.61,62.73
+03-04 14:19:54.390   975  1265 I native  : Registering the position of 264869203 at 207.63,27.03,246.61,62.73 at time 69511415962
+03-04 14:19:55.104   975  1264 I native  : Registering the position of 92671632 at 199.47,61.71,247.52,107.10
+03-04 14:19:55.104   975  1264 I native  : Registering the position of 92671632 at 199.47,61.71,247.52,107.10 at time 70043691058
+03-04 14:19:55.108   975  1264 I native  : Registering the position of 98845577 at 207.63,27.03,246.61,62.73
+03-04 14:19:55.108   975  1264 I native  : Registering the position of 98845577 at 207.63,27.03,246.61,62.73 at time 70043691058
+03-04 14:19:55.854   975  1265 I native  : Registering the position of 62566286 at 200.37,61.71,249.33,107.10
+03-04 14:19:55.855   975  1265 I native  : Registering the position of 62566286 at 200.37,61.71,249.33,107.10 at time 70674741121
+03-04 14:19:55.863   975  1265 I native  : Registering the position of 231617455 at 207.63,27.03,246.61,62.73
+03-04 14:19:55.864   975  1265 I native  : Registering the position of 231617455 at 207.63,27.03,246.61,62.73 at time 70674741121
+03-04 14:19:56.709   975  1264 I native  : Registering the position of 216368060 at 200.37,61.71,248.43,107.10
+03-04 14:19:56.710   975  1264 I native  : Registering the position of 216368060 at 200.37,61.71,248.43,107.10 at time 71405448444
+03-04 14:19:56.715   975  1264 I native  : Registering the position of 189042501 at 207.63,27.03,246.61,62.73
+03-04 14:19:56.716   975  1264 I native  : Registering the position of 189042501 at 207.63,27.03,246.61,62.73 at time 71405448444
+03-04 14:19:57.253   975  1265 I native  : Registering the position of 70661786 at 200.37,61.71,248.43,107.10
+03-04 14:19:57.254   975  1265 I native  : Registering the position of 70661786 at 200.37,61.71,248.43,107.10 at time 72195450149
+03-04 14:19:57.258   975  1265 I native  : Registering the position of 81025995 at 207.63,27.03,247.52,62.73
+03-04 14:19:57.258   975  1265 I native  : Registering the position of 81025995 at 207.63,27.03,247.52,62.73 at time 72195450149
+03-04 14:19:58.038   975  1264 I native  : Registering the position of 207953832 at 200.37,61.20,249.33,106.59
+03-04 14:19:58.042   975  1264 I native  : Registering the position of 207953832 at 200.37,61.20,249.33,106.59 at time 72986198520
+03-04 14:19:58.046   975  1264 I native  : Registering the position of 178510529 at 206.72,27.03,246.61,62.73
+03-04 14:19:58.046   975  1264 I native  : Registering the position of 178510529 at 206.72,27.03,246.61,62.73 at time 72986198520
+03-04 14:19:58.411   975  1265 I native  : Registering the position of 46852519 at 200.37,61.71,248.43,107.10
+03-04 14:19:58.412   975  1265 I native  : Registering the position of 46852519 at 200.37,61.71,248.43,107.10 at time 73525568991
+03-04 14:19:58.414   975  1265 I native  : Registering the position of 29396564 at 207.63,27.03,246.61,62.73
+03-04 14:19:58.415   975  1265 I native  : Registering the position of 29396564 at 207.63,27.03,246.61,62.73 at time 73525568991
+03-04 14:19:59.475   975  1264 I native  : Registering the position of 55730685 at 200.37,61.71,248.43,107.10
+03-04 14:19:59.476   975  1264 I native  : Registering the position of 55730685 at 200.37,61.71,248.43,107.10 at time 74399126495
+03-04 14:19:59.486   975  1264 I native  : Registering the position of 178061042 at 207.63,27.03,246.61,62.73
+03-04 14:19:59.486   975  1264 I native  : Registering the position of 178061042 at 207.63,27.03,246.61,62.73 at time 74399126495
+03-04 14:19:59.773   975  1265 I native  : Registering the position of 196245827 at 200.37,61.71,249.33,107.10
+03-04 14:19:59.774   975  1265 I native  : Registering the position of 196245827 at 200.37,61.71,249.33,107.10 at time 74798589702
+03-04 14:19:59.778   975  1265 I native  : Registering the position of 146947008 at 207.63,27.03,246.61,62.73
+03-04 14:19:59.778   975  1265 I native  : Registering the position of 146947008 at 207.63,27.03,246.61,62.73 at time 74798589702
+03-04 14:20:00.946   975  1264 I native  : Registering the position of 258482425 at 200.37,61.20,249.33,107.10
+03-04 14:20:00.947   975  1264 I native  : Registering the position of 258482425 at 200.37,61.20,249.33,107.10 at time 75867505268
+03-04 14:20:00.951   975  1264 I native  : Registering the position of 49813566 at 207.63,27.03,246.61,62.73
+03-04 14:20:00.952   975  1264 I native  : Registering the position of 49813566 at 207.63,27.03,246.61,62.73 at time 75867505268
+03-04 14:20:01.286   975  1265 I native  : Registering the position of 150562463 at 199.47,61.20,248.43,107.10
+03-04 14:20:01.287   975  1265 I native  : Registering the position of 150562463 at 199.47,61.20,248.43,107.10 at time 76160152255
+03-04 14:20:01.291   975  1265 I native  : Registering the position of 225399788 at 207.63,27.03,246.61,62.73
+03-04 14:20:01.292   975  1265 I native  : Registering the position of 225399788 at 207.63,27.03,246.61,62.73 at time 76160152255
+03-04 14:20:02.137   975  1264 I native  : Registering the position of 142660533 at 199.47,61.20,248.43,107.10
+03-04 14:20:02.137   975  1264 I native  : Registering the position of 142660533 at 199.47,61.20,248.43,107.10 at time 77342858666
+03-04 14:20:02.139   975  1264 I native  : Registering the position of 39418442 at 206.72,26.52,246.61,62.73
+03-04 14:20:02.140   975  1264 I native  : Registering the position of 39418442 at 206.72,26.52,246.61,62.73 at time 77342858666
+03-04 14:20:02.797   975  1265 I native  : Registering the position of 43503035 at 199.47,61.20,248.43,107.10
+03-04 14:20:02.797   975  1265 I native  : Registering the position of 43503035 at 199.47,61.20,248.43,107.10 at time 77624141444
+03-04 14:20:02.800   975  1265 I native  : Registering the position of 83083992 at 206.72,27.03,246.61,63.24
+03-04 14:20:02.801   975  1265 I native  : Registering the position of 83083992 at 206.72,27.03,246.61,63.24 at time 77624141444
+03-04 14:20:03.582   975  1264 I native  : Registering the position of 196931862 at 199.47,61.20,248.43,107.10
+03-04 14:20:03.585   975  1264 I native  : Registering the position of 196931862 at 199.47,61.20,248.43,107.10 at time 78408239523
+03-04 14:20:03.589   975  1264 I native  : Registering the position of 233540247 at 207.63,26.52,247.52,62.73
+03-04 14:20:03.593   975  1264 I native  : Registering the position of 233540247 at 207.63,26.52,247.52,62.73 at time 78408239523
+03-04 14:20:04.148   975  1265 I native  : Registering the position of 156120196 at 199.47,61.20,248.43,107.10
+03-04 14:20:04.148   975  1265 I native  : Registering the position of 156120196 at 199.47,61.20,248.43,107.10 at time 79201221478
+03-04 14:20:04.151   975  1265 I native  : Registering the position of 207930477 at 207.63,27.03,246.61,63.24
+03-04 14:20:04.152   975  1265 I native  : Registering the position of 207930477 at 207.63,27.03,246.61,63.24 at time 79201221478
+03-04 14:20:05.144   975  1264 I native  : Registering the position of 68094114 at 200.37,61.20,249.33,107.10
+03-04 14:20:05.145   975  1264 I native  : Registering the position of 68094114 at 200.37,61.20,249.33,107.10 at time 79971267055
+03-04 14:20:05.149   975  1264 I native  : Registering the position of 240400691 at 206.72,27.03,246.61,63.24
+03-04 14:20:05.150   975  1264 I native  : Registering the position of 240400691 at 206.72,27.03,246.61,63.24 at time 79971267055
+03-04 14:20:05.369   975  1265 I native  : Registering the position of 62657776 at 199.47,61.20,248.43,107.10
+03-04 14:20:05.370   975  1265 I native  : Registering the position of 62657776 at 199.47,61.20,248.43,107.10 at time 80421125309
+03-04 14:20:05.373   975  1265 I native  : Registering the position of 118897257 at 206.72,26.52,246.61,62.73
+03-04 14:20:05.373   975  1265 I native  : Registering the position of 118897257 at 206.72,26.52,246.61,62.73 at time 80421125309
+03-04 14:20:06.497   975  1264 I native  : Registering the position of 7933166 at 199.47,61.20,249.33,107.10
+03-04 14:20:06.497   975  1264 I native  : Registering the position of 7933166 at 199.47,61.20,249.33,107.10 at time 81440399203
+03-04 14:20:06.500   975  1264 I native  : Registering the position of 59717007 at 207.63,27.03,246.61,62.73
+03-04 14:20:06.502   975  1264 I native  : Registering the position of 59717007 at 207.63,27.03,246.61,62.73 at time 81440399203
+03-04 14:20:06.782   975  1265 I native  : Registering the position of 31821852 at 199.47,61.20,248.43,106.59
+03-04 14:20:06.783   975  1265 I native  : Registering the position of 31821852 at 199.47,61.20,248.43,106.59 at time 81719386856
+03-04 14:20:06.788   975  1265 I native  : Registering the position of 38736933 at 207.63,27.03,246.61,62.73
+03-04 14:20:06.788   975  1265 I native  : Registering the position of 38736933 at 207.63,27.03,246.61,62.73 at time 81719386856
+03-04 14:20:07.727   975  1264 I native  : Registering the position of 225249786 at 200.37,61.71,248.43,107.10
+03-04 14:20:07.728   975  1264 I native  : Registering the position of 225249786 at 200.37,61.71,248.43,107.10 at time 82739686542
+03-04 14:20:07.732   975  1264 I native  : Registering the position of 30645163 at 207.63,27.03,246.61,62.73
+03-04 14:20:07.732   975  1264 I native  : Registering the position of 30645163 at 207.63,27.03,246.61,62.73 at time 82739686542
+03-04 14:20:08.443   975  1265 I native  : Registering the position of 125947297 at 200.37,61.71,248.43,107.10
+03-04 14:20:08.443   975  1265 I native  : Registering the position of 125947297 at 200.37,61.71,248.43,107.10 at time 83097178619
+03-04 14:20:08.448   975  1265 I native  : Registering the position of 175229894 at 207.63,27.03,246.61,62.73
+03-04 14:20:08.448   975  1265 I native  : Registering the position of 175229894 at 207.63,27.03,246.61,62.73 at time 83097178619
+03-04 14:20:09.031   975  1264 I native  : Registering the position of 263079815 at 200.37,61.20,249.33,107.10
+03-04 14:20:09.031   975  1264 I native  : Registering the position of 263079815 at 200.37,61.20,249.33,107.10 at time 84012739044
+03-04 14:20:09.035   975  1264 I native  : Registering the position of 6932148 at 207.63,27.03,246.61,62.73
+03-04 14:20:09.035   975  1264 I native  : Registering the position of 6932148 at 207.63,27.03,246.61,62.73 at time 84012739044
+03-04 14:20:09.701   975  1265 I native  : Registering the position of 181183197 at 200.37,61.71,248.43,107.61
+03-04 14:20:09.702   975  1265 I native  : Registering the position of 181183197 at 200.37,61.71,248.43,107.61 at time 84811503583
+03-04 14:20:09.705   975  1265 I native  : Registering the position of 112123474 at 207.63,27.03,246.61,62.73
+03-04 14:20:09.705   975  1265 I native  : Registering the position of 112123474 at 207.63,27.03,246.61,62.73 at time 84811503583
+03-04 14:20:10.601   975  1264 I native  : Registering the position of 94229795 at 200.37,61.71,248.43,107.10
+03-04 14:20:10.602   975  1264 I native  : Registering the position of 94229795 at 200.37,61.71,248.43,107.10 at time 85330298135
+03-04 14:20:10.606   975  1264 I native  : Registering the position of 121018912 at 207.63,27.03,246.61,62.73
+03-04 14:20:10.606   975  1264 I native  : Registering the position of 121018912 at 207.63,27.03,246.61,62.73 at time 85330298135
+03-04 14:20:11.038   975  1265 I native  : Registering the position of 167088089 at 200.37,61.71,249.33,107.10
+03-04 14:20:11.039   975  1265 I native  : Registering the position of 167088089 at 200.37,61.71,249.33,107.10 at time 86111683130
+03-04 14:20:11.044   975  1265 I native  : Registering the position of 171478430 at 207.63,27.03,246.61,62.73
+03-04 14:20:11.044   975  1265 I native  : Registering the position of 171478430 at 207.63,27.03,246.61,62.73 at time 86111683130
+03-04 14:20:12.030   975  1264 I native  : Registering the position of 191799423 at 206.72,27.03,247.52,63.24
+03-04 14:20:12.030   975  1264 I native  : Registering the position of 191799423 at 206.72,27.03,247.52,63.24 at time 86926329212
+03-04 14:20:12.042   975  1264 I native  : Registering the position of 70989900 at 199.47,59.16,249.33,107.61
+03-04 14:20:12.044   975  1264 I native  : Registering the position of 70989900 at 199.47,59.16,249.33,107.61 at time 86926329212
+03-04 14:20:12.525   975  1265 I native  : Registering the position of 254169237 at 200.37,60.18,250.24,108.12
+03-04 14:20:12.525   975  1265 I native  : Registering the position of 254169237 at 200.37,60.18,250.24,108.12 at time 87389052009
+03-04 14:20:12.529   975  1265 I native  : Registering the position of 136045994 at 206.72,26.52,246.61,63.24
+03-04 14:20:12.530   975  1265 I native  : Registering the position of 136045994 at 206.72,26.52,246.61,63.24 at time 87389052009
+03-04 14:20:13.489   975  1264 I native  : Registering the position of 151620920 at 200.37,61.71,248.43,106.59
+03-04 14:20:13.489   975  1264 I native  : Registering the position of 151620920 at 200.37,61.71,248.43,106.59 at time 88325018311
+03-04 14:20:13.494   975  1264 I native  : Registering the position of 57172241 at 207.63,27.03,246.61,62.73
+03-04 14:20:13.494   975  1264 I native  : Registering the position of 57172241 at 207.63,27.03,246.61,62.73 at time 88325018311
+03-04 14:20:13.966   975  1265 I native  : Registering the position of 86684278 at 200.37,61.71,248.43,107.10
+03-04 14:20:13.966   975  1265 I native  : Registering the position of 86684278 at 200.37,61.71,248.43,107.10 at time 88793760233
+03-04 14:20:13.971   975  1265 I native  : Registering the position of 47325303 at 207.63,26.52,246.61,62.73
+03-04 14:20:13.972   975  1265 I native  : Registering the position of 47325303 at 207.63,26.52,246.61,62.73 at time 88793760233
+03-04 14:20:14.851   975  1264 I native  : Registering the position of 208028900 at 200.37,60.69,249.33,107.10
+03-04 14:20:14.852   975  1264 I native  : Registering the position of 208028900 at 200.37,60.69,249.33,107.10 at time 89849272548
+03-04 14:20:14.855   975  1264 I native  : Registering the position of 216071501 at 206.72,26.52,246.61,62.73
+03-04 14:20:14.855   975  1264 I native  : Registering the position of 216071501 at 206.72,26.52,246.61,62.73 at time 89849272548
+03-04 14:20:15.331   975  1265 I native  : Registering the position of 260538370 at 199.47,61.20,247.52,107.10
+03-04 14:20:15.332   975  1265 I native  : Registering the position of 260538370 at 199.47,61.20,247.52,107.10 at time 90263797714
+03-04 14:20:15.336   975  1265 I native  : Registering the position of 155077907 at 207.63,27.03,246.61,63.24
+03-04 14:20:15.337   975  1265 I native  : Registering the position of 155077907 at 207.63,27.03,246.61,63.24 at time 90263797714
+03-04 14:20:16.223   975  1264 I native  : Registering the position of 179620688 at 200.37,61.71,248.43,106.59
+03-04 14:20:16.223   975  1264 I native  : Registering the position of 179620688 at 200.37,61.71,248.43,106.59 at time 91124845051
+03-04 14:20:16.227   975  1264 I native  : Registering the position of 80552265 at 207.63,26.52,246.61,62.73
+03-04 14:20:16.228   975  1264 I native  : Registering the position of 80552265 at 207.63,26.52,246.61,62.73 at time 91124845051
+03-04 14:20:16.552   975  1265 I native  : Registering the position of 49388110 at 200.37,61.71,248.43,107.10
+03-04 14:20:16.552   975  1265 I native  : Registering the position of 49388110 at 200.37,61.71,248.43,107.10 at time 91610097641
+03-04 14:20:16.562   975  1265 I native  : Registering the position of 70690671 at 207.63,26.52,246.61,62.73
+03-04 14:20:16.563   975  1265 I native  : Registering the position of 70690671 at 207.63,26.52,246.61,62.73 at time 91610097641
+03-04 14:20:17.565   975  1264 I native  : Registering the position of 19090556 at 200.37,61.20,248.43,106.59
+03-04 14:20:17.567   975  1264 I native  : Registering the position of 19090556 at 200.37,61.20,248.43,106.59 at time 92523908358
+03-04 14:20:17.575   975  1264 I native  : Registering the position of 20809989 at 207.63,26.52,246.61,62.73
+03-04 14:20:17.576   975  1264 I native  : Registering the position of 20809989 at 207.63,26.52,246.61,62.73 at time 92523908358
+03-04 14:20:18.024   975  1265 I native  : Registering the position of 97586522 at 199.47,61.20,248.43,106.59
+03-04 14:20:18.025   975  1265 I native  : Registering the position of 97586522 at 199.47,61.20,248.43,106.59 at time 92888425811
+03-04 14:20:18.030   975  1265 I native  : Registering the position of 162548619 at 206.72,26.52,245.71,62.73
+03-04 14:20:18.030   975  1265 I native  : Registering the position of 162548619 at 206.72,26.52,245.71,62.73 at time 92888425811
+03-04 14:20:18.979   975  1264 I native  : Registering the position of 244494465 at 206.72,27.03,247.52,63.24
+03-04 14:20:18.980   975  1264 I native  : Registering the position of 244494465 at 206.72,27.03,247.52,63.24 at time 93850682366
+03-04 14:20:18.983   975  1264 I native  : Registering the position of 184722726 at 199.47,59.67,248.43,107.10
+03-04 14:20:18.983   975  1264 I native  : Registering the position of 184722726 at 199.47,59.67,248.43,107.10 at time 93850682366
+03-04 14:20:19.411   975  1265 I native  : Registering the position of 265688423 at 199.47,60.69,249.33,107.10
+03-04 14:20:19.412   975  1265 I native  : Registering the position of 265688423 at 199.47,60.69,249.33,107.10 at time 94357669667
+03-04 14:20:19.417   975  1265 I native  : Registering the position of 223784724 at 206.72,26.52,246.61,62.73
+03-04 14:20:19.418   975  1265 I native  : Registering the position of 223784724 at 206.72,26.52,246.61,62.73 at time 94357669667
+03-04 14:20:20.228   975  1264 I native  : Registering the position of 79221693 at 198.56,60.69,248.43,107.10
+03-04 14:20:20.228   975  1264 I native  : Registering the position of 79221693 at 198.56,60.69,248.43,107.10 at time 95348343017
+03-04 14:20:20.231   975  1264 I native  : Registering the position of 73657778 at 206.72,27.03,246.61,63.24
+03-04 14:20:20.231   975  1264 I native  : Registering the position of 73657778 at 206.72,27.03,246.61,63.24 at time 95348343017
+03-04 14:20:20.691   975  1265 I native  : Registering the position of 178561283 at 198.56,60.69,248.43,107.10
+03-04 14:20:20.692   975  1265 I native  : Registering the position of 178561283 at 198.56,60.69,248.43,107.10 at time 95680425967
+03-04 14:20:20.699   975  1265 I native  : Registering the position of 209299584 at 206.72,27.03,246.61,62.73
+03-04 14:20:20.700   975  1265 I native  : Registering the position of 209299584 at 206.72,27.03,246.61,62.73 at time 95680425967
+03-04 14:20:21.589   975  1264 I native  : Registering the position of 69463737 at 198.56,60.69,249.33,107.10
+03-04 14:20:21.589   975  1264 I native  : Registering the position of 69463737 at 198.56,60.69,249.33,107.10 at time 96486786964
+03-04 14:20:21.593   975  1264 I native  : Registering the position of 35599102 at 206.72,27.03,245.71,62.73
+03-04 14:20:21.594   975  1264 I native  : Registering the position of 35599102 at 206.72,27.03,245.71,62.73 at time 96486786964
+03-04 14:20:21.953   975  1265 I native  : Registering the position of 122047071 at 198.56,60.18,248.43,107.10
+03-04 14:20:21.953   975  1265 I native  : Registering the position of 122047071 at 198.56,60.18,248.43,107.10 at time 96994595890
+03-04 14:20:21.961   975  1265 I native  : Registering the position of 135318700 at 206.72,27.03,246.61,63.24
+03-04 14:20:21.961   975  1265 I native  : Registering the position of 135318700 at 206.72,27.03,246.61,63.24 at time 96994595890
+03-04 14:20:23.115   975  1264 I native  : Registering the position of 109821301 at 200.37,61.20,248.43,106.59
+03-04 14:20:23.116   975  1264 I native  : Registering the position of 109821301 at 200.37,61.20,248.43,106.59 at time 97971178239
+03-04 14:20:23.120   975  1264 I native  : Registering the position of 179798282 at 207.63,27.03,246.61,63.24
+03-04 14:20:23.120   975  1264 I native  : Registering the position of 179798282 at 207.63,27.03,246.61,63.24 at time 97971178239
+03-04 14:20:23.451   975  1265 I native  : Registering the position of 152307608 at 199.47,61.20,248.43,107.10
+03-04 14:20:23.452   975  1265 I native  : Registering the position of 152307608 at 199.47,61.20,248.43,107.10 at time 98271488477
+03-04 14:20:23.457   975  1265 I native  : Registering the position of 258456561 at 206.72,27.03,246.61,62.73
+03-04 14:20:23.457   975  1265 I native  : Registering the position of 258456561 at 206.72,27.03,246.61,62.73 at time 98271488477
+03-04 14:20:24.514   975  1264 I native  : Registering the position of 131376086 at 200.37,61.20,249.33,106.59
+03-04 14:20:24.515   975  1264 I native  : Registering the position of 131376086 at 200.37,61.20,249.33,106.59 at time 99479492890
+03-04 14:20:24.519   975  1264 I native  : Registering the position of 217654871 at 207.63,26.52,247.52,62.22
+03-04 14:20:24.520   975  1264 I native  : Registering the position of 217654871 at 207.63,26.52,247.52,62.22 at time 99479492890
+03-04 14:20:24.708   975  1265 I native  : Registering the position of 235799876 at 200.37,61.20,249.33,106.59
+03-04 14:20:24.709   975  1265 I native  : Registering the position of 235799876 at 200.37,61.20,249.33,106.59 at time 99758337043
+03-04 14:20:24.713   975  1265 I native  : Registering the position of 137045549 at 206.72,26.52,246.61,62.73
+03-04 14:20:24.714   975  1265 I native  : Registering the position of 137045549 at 206.72,26.52,246.61,62.73 at time 99758337043
+03-04 14:20:25.847   975  1265 I native  : Registering the position of 63907682 at 206.72,27.03,247.52,63.24
+03-04 14:20:25.847   975  1265 I native  : Registering the position of 63907682 at 206.72,27.03,247.52,63.24 at time 101068348383
+03-04 14:20:25.850   975  1265 I native  : Registering the position of 83874035 at 199.47,59.67,248.43,107.10
+03-04 14:20:25.850   975  1265 I native  : Registering the position of 83874035 at 199.47,59.67,248.43,107.10 at time 101068348383
+03-04 14:20:27.142   975  1265 I native  : Registering the position of 25702832 at 199.47,61.20,248.43,107.10
+03-04 14:20:27.143   975  1265 I native  : Registering the position of 25702832 at 199.47,61.20,248.43,107.10 at time 102145584616
+03-04 14:20:27.146   975  1265 I native  : Registering the position of 71366697 at 206.72,27.03,246.61,63.24
+03-04 14:20:27.147   975  1265 I native  : Registering the position of 71366697 at 206.72,27.03,246.61,63.24 at time 102145584616
+03-04 14:20:27.577   975  1264 I native  : Registering the position of 66869166 at 199.47,61.20,248.43,106.59
+03-04 14:20:27.577   975  1264 I native  : Registering the position of 66869166 at 199.47,61.20,248.43,106.59 at time 102376543515
+03-04 14:20:27.582   975  1264 I native  : Registering the position of 62687567 at 207.63,27.03,247.52,62.73
+03-04 14:20:27.582   975  1264 I native  : Registering the position of 62687567 at 207.63,27.03,247.52,62.73 at time 102376543515
+03-04 14:20:28.587   975  1265 I native  : Registering the position of 147320293 at 199.47,61.71,248.43,107.10
+03-04 14:20:28.587   975  1265 I native  : Registering the position of 147320293 at 199.47,61.71,248.43,107.10 at time 103501571378
+03-04 14:20:28.591   975  1265 I native  : Registering the position of 196755642 at 207.63,27.03,246.61,62.73
+03-04 14:20:28.591   975  1265 I native  : Registering the position of 196755642 at 207.63,27.03,246.61,62.73 at time 103501571378
+03-04 14:20:29.036   975  1264 I native  : Registering the position of 132279147 at 198.56,60.69,249.33,107.61
+03-04 14:20:29.037   975  1264 I native  : Registering the position of 132279147 at 198.56,60.69,249.33,107.61 at time 103949671756
+03-04 14:20:29.042   975  1264 I native  : Registering the position of 132417224 at 206.72,27.03,246.61,62.73
+03-04 14:20:29.043   975  1264 I native  : Registering the position of 132417224 at 206.72,27.03,246.61,62.73 at time 103949671756
+03-04 14:20:29.899   975  1265 I native  : Registering the position of 68060001 at 199.47,61.20,248.43,107.10
+03-04 14:20:29.899   975  1265 I native  : Registering the position of 68060001 at 199.47,61.20,248.43,107.10 at time 104875887641
+03-04 14:20:29.903   975  1265 I native  : Registering the position of 71020166 at 206.72,27.03,246.61,62.73
+03-04 14:20:29.903   975  1265 I native  : Registering the position of 71020166 at 206.72,27.03,246.61,62.73 at time 104875887641
+03-04 14:20:30.431   975  1264 I native  : Registering the position of 238703431 at 198.56,60.69,248.43,107.10
+03-04 14:20:30.431   975  1264 I native  : Registering the position of 238703431 at 198.56,60.69,248.43,107.10 at time 105309016476
+03-04 14:20:30.436   975  1264 I native  : Registering the position of 69158772 at 206.72,26.52,247.52,62.73
+03-04 14:20:30.436   975  1264 I native  : Registering the position of 69158772 at 206.72,26.52,247.52,62.73 at time 105309016476
+03-04 14:20:31.300   975  1265 I native  : Registering the position of 13563037 at 201.28,60.18,248.43,106.08
+03-04 14:20:31.301   975  1265 I native  : Registering the position of 13563037 at 201.28,60.18,248.43,106.08 at time 106171310979
+03-04 14:20:31.305   975  1265 I native  : Registering the position of 85208338 at 206.72,27.03,247.52,63.75
+03-04 14:20:31.306   975  1265 I native  : Registering the position of 85208338 at 206.72,27.03,247.52,63.75 at time 106171310979
+03-04 14:20:31.723   975  1264 I native  : Registering the position of 222223587 at 199.47,60.69,249.33,107.61
+03-04 14:20:31.724   975  1264 I native  : Registering the position of 222223587 at 199.47,60.69,249.33,107.61 at time 106717663951
+03-04 14:20:31.727   975  1264 I native  : Registering the position of 94594784 at 206.72,27.03,246.61,63.24
+03-04 14:20:31.727   975  1264 I native  : Registering the position of 94594784 at 206.72,27.03,246.61,63.24 at time 106717663951
+03-04 14:20:32.736   975  1265 I native  : Registering the position of 19611033 at 200.37,59.67,248.43,107.61
+03-04 14:20:32.737   975  1265 I native  : Registering the position of 19611033 at 200.37,59.67,248.43,107.61 at time 107654671212
+03-04 14:20:32.742   975  1265 I native  : Registering the position of 159647838 at 206.72,27.03,247.52,63.75
+03-04 14:20:32.742   975  1265 I native  : Registering the position of 159647838 at 206.72,27.03,247.52,63.75 at time 107654671212
+03-04 14:20:33.254   975  1264 I native  : Registering the position of 242771007 at 200.37,59.67,247.52,106.59
+03-04 14:20:33.255   975  1264 I native  : Registering the position of 242771007 at 200.37,59.67,247.52,106.59 at time 108058820627
+03-04 14:20:33.266   975  1264 I native  : Registering the position of 260575500 at 206.72,27.03,247.52,63.75
+03-04 14:20:33.267   975  1264 I native  : Registering the position of 260575500 at 206.72,27.03,247.52,63.75 at time 108058820627
+03-04 14:20:34.026   975  1265 I native  : Registering the position of 243551338 at 200.37,60.69,248.43,106.08
+03-04 14:20:34.026   975  1265 I native  : Registering the position of 243551338 at 200.37,60.69,248.43,106.08 at time 109066287853
+03-04 14:20:34.029   975  1265 I native  : Registering the position of 26805595 at 206.72,27.03,245.71,63.24
+03-04 14:20:34.029   975  1265 I native  : Registering the position of 26805595 at 206.72,27.03,245.71,63.24 at time 109066287853
+03-04 14:20:34.595   975  1264 I native  : Registering the position of 220934648 at 198.56,61.20,248.43,107.61
+03-04 14:20:34.595   975  1264 I native  : Registering the position of 220934648 at 198.56,61.20,248.43,107.61 at time 109564110112
+03-04 14:20:34.598   975  1264 I native  : Registering the position of 40765137 at 207.63,27.03,247.52,62.73
+03-04 14:20:34.599   975  1264 I native  : Registering the position of 40765137 at 207.63,27.03,247.52,62.73 at time 109564110112
+03-04 14:20:35.698   975  1265 I native  : Registering the position of 93504822 at 199.47,61.20,249.33,107.61
+03-04 14:20:35.698   975  1265 I native  : Registering the position of 93504822 at 199.47,61.20,249.33,107.61 at time 110327298313
+03-04 14:20:35.702   975  1265 I native  : Registering the position of 89693239 at 206.72,27.03,246.61,62.73
+03-04 14:20:35.703   975  1265 I native  : Registering the position of 89693239 at 206.72,27.03,246.61,62.73 at time 110327298313
+03-04 14:20:35.725   975  1264 I native  : Registering the position of 266171812 at 199.47,61.20,248.43,107.10
+03-04 14:20:35.732   975  1264 I native  : Registering the position of 266171812 at 199.47,61.20,248.43,107.10 at time 110906337788
+03-04 14:20:35.734   975  1264 I native  : Registering the position of 201015053 at 206.72,26.52,246.61,62.73
+03-04 14:20:35.735   975  1264 I native  : Registering the position of 201015053 at 206.72,26.52,246.61,62.73 at time 110906337788
+03-04 14:20:37.120   975  1265 I native  : Registering the position of 138280642 at 201.28,60.18,247.52,106.08
+03-04 14:20:37.120   975  1265 I native  : Registering the position of 138280642 at 201.28,60.18,247.52,106.08 at time 112041430194
+03-04 14:20:37.124   975  1265 I native  : Registering the position of 34653395 at 206.72,27.03,246.61,63.24
+03-04 14:20:37.125   975  1265 I native  : Registering the position of 34653395 at 206.72,27.03,246.61,63.24 at time 112041430194
+03-04 14:20:37.348   975  1264 I native  : Registering the position of 189679632 at 201.28,59.67,248.43,106.59
+03-04 14:20:37.348   975  1264 I native  : Registering the position of 189679632 at 201.28,59.67,248.43,106.59 at time 112126212744
+03-04 14:20:37.353   975  1264 I native  : Registering the position of 111787785 at 205.81,27.03,246.61,63.24
+03-04 14:20:37.354   975  1264 I native  : Registering the position of 111787785 at 205.81,27.03,246.61,63.24 at time 112126212744
+03-04 14:20:38.375   975  1265 I native  : Registering the position of 141640974 at 199.47,60.69,249.33,107.10
+03-04 14:20:38.376   975  1265 I native  : Registering the position of 141640974 at 199.47,60.69,249.33,107.10 at time 113422321208
+03-04 14:20:38.379   975  1265 I native  : Registering the position of 35183407 at 206.72,27.03,245.71,62.73
+03-04 14:20:38.380   975  1265 I native  : Registering the position of 35183407 at 206.72,27.03,245.71,62.73 at time 113422321208
+03-04 14:20:38.728   975  1264 I native  : Registering the position of 213374268 at 198.56,61.20,248.43,107.61
+03-04 14:20:38.728   975  1264 I native  : Registering the position of 213374268 at 198.56,61.20,248.43,107.61 at time 113691021193
+03-04 14:20:38.732   975  1264 I native  : Registering the position of 94782149 at 207.63,27.03,246.61,62.73
+03-04 14:20:38.733   975  1264 I native  : Registering the position of 94782149 at 207.63,27.03,246.61,62.73 at time 113691021193
+03-04 14:20:39.818   975  1265 I native  : Registering the position of 159425562 at 199.47,61.20,249.33,107.10
+03-04 14:20:39.818   975  1265 I native  : Registering the position of 159425562 at 199.47,61.20,249.33,107.10 at time 114677851834
+03-04 14:20:39.822   975  1265 I native  : Registering the position of 65141579 at 207.63,27.03,246.61,62.73
+03-04 14:20:39.823   975  1265 I native  : Registering the position of 65141579 at 207.63,27.03,246.61,62.73 at time 114677851834
+03-04 14:20:39.961   975   990 W art     : Suspending all threads took: 5.020ms
+03-04 14:20:40.325   975  1264 I native  : Registering the position of 147523880 at 199.47,60.69,248.43,107.10
+03-04 14:20:40.325   975  1264 I native  : Registering the position of 147523880 at 199.47,60.69,248.43,107.10 at time 115061435831
+03-04 14:20:40.330   975  1264 I native  : Registering the position of 137184833 at 207.63,27.03,246.61,63.24
+03-04 14:20:40.332   975  1264 I native  : Registering the position of 137184833 at 207.63,27.03,246.61,63.24 at time 115061435831
+03-04 14:20:41.047   975  1265 I native  : Registering the position of 234153958 at 200.37,61.71,248.43,107.10
+03-04 14:20:41.047   975  1265 I native  : Registering the position of 234153958 at 200.37,61.71,248.43,107.10 at time 116134957397
+03-04 14:20:41.054   975  1265 I native  : Registering the position of 30605607 at 207.63,27.03,246.61,62.73
+03-04 14:20:41.055   975  1265 I native  : Registering the position of 30605607 at 207.63,27.03,246.61,62.73 at time 116134957397
+03-04 14:20:41.771   975  1264 I native  : Registering the position of 207327188 at 200.37,61.71,248.43,107.10
+03-04 14:20:41.773   975  1264 I native  : Registering the position of 207327188 at 200.37,61.71,248.43,107.10 at time 116628158780
+03-04 14:20:41.778   975  1264 I native  : Registering the position of 180815229 at 207.63,27.03,246.61,62.73
+03-04 14:20:41.779   975  1264 I native  : Registering the position of 180815229 at 207.63,27.03,246.61,62.73 at time 116628158780
+03-04 14:20:42.329   975  1265 I native  : Registering the position of 102210674 at 200.37,61.71,248.43,107.10
+03-04 14:20:42.330   975  1265 I native  : Registering the position of 102210674 at 200.37,61.71,248.43,107.10 at time 117348377769
+03-04 14:20:42.334   975  1265 I native  : Registering the position of 199526595 at 207.63,27.03,246.61,62.73
+03-04 14:20:42.335   975  1265 I native  : Registering the position of 199526595 at 207.63,27.03,246.61,62.73 at time 117348377769
+03-04 14:20:43.046   975  1264 I native  : Registering the position of 197907776 at 200.37,59.67,249.33,107.61
+03-04 14:20:43.046   975  1264 I native  : Registering the position of 197907776 at 200.37,59.67,249.33,107.61 at time 118115975971
+03-04 14:20:43.050   975  1264 I native  : Registering the position of 4422777 at 206.72,27.03,247.52,63.75
+03-04 14:20:43.050   975  1264 I native  : Registering the position of 4422777 at 206.72,27.03,247.52,63.75 at time 118115975971
+03-04 14:20:43.405   975  1265 I native  : Registering the position of 188681662 at 200.37,59.67,248.43,107.10
+03-04 14:20:43.405   975  1265 I native  : Registering the position of 188681662 at 200.37,59.67,248.43,107.10 at time 118655424025
+03-04 14:20:43.409   975  1265 I native  : Registering the position of 251457055 at 206.72,27.03,247.52,63.75
+03-04 14:20:43.409   975  1265 I native  : Registering the position of 251457055 at 206.72,27.03,247.52,63.75 at time 118655424025
+03-04 14:20:44.396   975  1264 I native  : Registering the position of 221840748 at 200.37,61.20,249.33,107.10
+03-04 14:20:44.400   975  1264 I native  : Registering the position of 221840748 at 200.37,61.20,249.33,107.10 at time 119311705591
+03-04 14:20:44.406   975  1264 I native  : Registering the position of 242640693 at 207.63,27.03,246.61,62.73
+03-04 14:20:44.406   975  1264 I native  : Registering the position of 242640693 at 207.63,27.03,246.61,62.73 at time 119311705591
+03-04 14:20:44.914   975  1265 I native  : Registering the position of 64636874 at 199.47,61.20,249.33,107.61
+03-04 14:20:44.915   975  1265 I native  : Registering the position of 64636874 at 199.47,61.20,249.33,107.61 at time 119713373215
+03-04 14:20:44.918   975  1265 I native  : Registering the position of 101469499 at 206.72,26.52,246.61,62.73
+03-04 14:20:44.919   975  1265 I native  : Registering the position of 101469499 at 206.72,26.52,246.61,62.73 at time 119713373215
+03-04 14:20:45.681   975  1264 I native  : Registering the position of 157748312 at 200.37,61.71,248.43,107.61
+03-04 14:20:45.682   975  1264 I native  : Registering the position of 157748312 at 200.37,61.71,248.43,107.61 at time 120726158400
+03-04 14:20:45.686   975  1264 I native  : Registering the position of 179519921 at 207.63,27.03,246.61,62.73
+03-04 14:20:45.686   975  1264 I native  : Registering the position of 179519921 at 207.63,27.03,246.61,62.73 at time 120726158400
+03-04 14:20:46.469   975  1265 I native  : Registering the position of 205330070 at 200.37,62.22,248.43,107.61
+03-04 14:20:46.470   975  1265 I native  : Registering the position of 205330070 at 200.37,62.22,248.43,107.61 at time 121302989666
+03-04 14:20:46.477   975  1265 I native  : Registering the position of 15237655 at 207.63,27.03,247.52,62.73
+03-04 14:20:46.479   975  1265 I native  : Registering the position of 15237655 at 207.63,27.03,247.52,62.73 at time 121302989666
+03-04 14:20:46.958   975  1264 I native  : Registering the position of 258774532 at 200.37,61.71,249.33,107.10
+03-04 14:20:46.958   975  1264 I native  : Registering the position of 258774532 at 200.37,61.71,249.33,107.10 at time 122083090453
+03-04 14:20:46.961   975  1264 I native  : Registering the position of 34162669 at 207.63,27.03,246.61,62.73
+03-04 14:20:46.962   975  1264 I native  : Registering the position of 34162669 at 207.63,27.03,246.61,62.73 at time 122083090453
+03-04 14:20:47.803   975  1265 I native  : Registering the position of 2885154 at 199.47,61.71,248.43,107.10
+03-04 14:20:47.804   975  1265 I native  : Registering the position of 2885154 at 199.47,61.71,248.43,107.10 at time 122833067028
+03-04 14:20:47.809   975  1265 I native  : Registering the position of 216606899 at 207.63,27.03,246.61,62.73
+03-04 14:20:47.810   975  1265 I native  : Registering the position of 216606899 at 207.63,27.03,246.61,62.73 at time 122833067028
+03-04 14:20:48.313   975  1264 I native  : Registering the position of 119475824 at 199.47,61.71,248.43,107.10
+03-04 14:20:48.313   975  1264 I native  : Registering the position of 119475824 at 199.47,61.71,248.43,107.10 at time 123331889703
+03-04 14:20:48.317   975  1264 I native  : Registering the position of 155153897 at 207.63,27.03,246.61,62.73
+03-04 14:20:48.321   975  1264 I native  : Registering the position of 155153897 at 207.63,27.03,246.61,62.73 at time 123331889703
+03-04 14:20:49.178   975  1265 I native  : Registering the position of 19423854 at 199.47,61.71,248.43,107.10
+03-04 14:20:49.179   975  1265 I native  : Registering the position of 19423854 at 199.47,61.71,248.43,107.10 at time 124149955869
+03-04 14:20:49.183   975  1265 I native  : Registering the position of 188980495 at 207.63,27.03,247.52,62.73
+03-04 14:20:49.184   975  1265 I native  : Registering the position of 188980495 at 207.63,27.03,247.52,62.73 at time 124149955869
+03-04 14:20:49.667   975  1264 I native  : Registering the position of 238985628 at 199.47,61.71,248.43,107.10
+03-04 14:20:49.669   975  1264 I native  : Registering the position of 238985628 at 199.47,61.71,248.43,107.10 at time 124663100254
+03-04 14:20:49.673   975  1264 I native  : Registering the position of 9471909 at 207.63,27.03,246.61,62.73
+03-04 14:20:49.674   975  1264 I native  : Registering the position of 9471909 at 207.63,27.03,246.61,62.73 at time 124663100254
+03-04 14:20:50.522   975  1265 I native  : Registering the position of 92026746 at 200.37,61.71,248.43,107.10
+03-04 14:20:50.523   975  1265 I native  : Registering the position of 92026746 at 200.37,61.71,248.43,107.10 at time 125482742878
+03-04 14:20:50.526   975  1265 I native  : Registering the position of 19331883 at 207.63,27.03,247.52,62.73
+03-04 14:20:50.526   975  1265 I native  : Registering the position of 19331883 at 207.63,27.03,247.52,62.73 at time 125482742878
+03-04 14:20:51.067   975  1264 I native  : Registering the position of 207764360 at 200.37,62.22,248.43,107.61
+03-04 14:20:51.068   975  1264 I native  : Registering the position of 207764360 at 200.37,62.22,248.43,107.61 at time 126019715849
+03-04 14:20:51.072   975  1264 I native  : Registering the position of 119994657 at 207.63,27.03,247.52,62.73
+03-04 14:20:51.072   975  1264 I native  : Registering the position of 119994657 at 207.63,27.03,247.52,62.73 at time 126019715849
+03-04 14:20:51.771   975  1265 I native  : Registering the position of 201740614 at 200.37,62.22,248.43,107.10
+03-04 14:20:51.771   975  1265 I native  : Registering the position of 201740614 at 200.37,62.22,248.43,107.10 at time 126861545558
+03-04 14:20:51.773   975  1265 I native  : Registering the position of 228073223 at 206.72,27.54,247.52,63.24
+03-04 14:20:51.778   975  1265 I native  : Registering the position of 228073223 at 206.72,27.54,247.52,63.24 at time 126861545558
+03-04 14:20:52.409   975  1264 I native  : Registering the position of 161712180 at 200.37,62.22,249.33,107.61
+03-04 14:20:52.409   975  1264 I native  : Registering the position of 161712180 at 200.37,62.22,249.33,107.61 at time 127358414650
+03-04 14:20:52.412   975  1264 I native  : Registering the position of 173606493 at 206.72,27.54,247.52,63.24
+03-04 14:20:52.412   975  1264 I native  : Registering the position of 173606493 at 206.72,27.54,247.52,63.24 at time 127358414650
+03-04 14:20:53.072   975  1265 I native  : Registering the position of 12991442 at 200.37,62.22,249.33,107.61
+03-04 14:20:53.073   975  1265 I native  : Registering the position of 12991442 at 200.37,62.22,249.33,107.61 at time 128166261981
+03-04 14:20:53.076   975  1265 I native  : Registering the position of 17671331 at 207.63,27.54,247.52,63.24
+03-04 14:20:53.077   975  1265 I native  : Registering the position of 17671331 at 207.63,27.54,247.52,63.24 at time 128166261981
+03-04 14:20:54.022   975  1264 I native  : Registering the position of 67826592 at 200.37,62.73,248.43,107.10
+03-04 14:20:54.023   975  1264 I native  : Registering the position of 67826592 at 200.37,62.73,248.43,107.10 at time 128820981672
+03-04 14:20:54.029   975  1264 I native  : Registering the position of 212118361 at 206.72,27.54,246.61,63.24
+03-04 14:20:54.030   975  1264 I native  : Registering the position of 212118361 at 206.72,27.54,246.61,63.24 at time 128820981672
+03-04 14:20:54.420   975  1265 I native  : Registering the position of 237519646 at 200.37,62.22,248.43,107.10
+03-04 14:20:54.421   975  1265 I native  : Registering the position of 237519646 at 200.37,62.22,248.43,107.10 at time 129453649027
+03-04 14:20:54.425   975  1265 I native  : Registering the position of 46917631 at 207.63,27.54,247.52,63.24
+03-04 14:20:54.427   975  1265 I native  : Registering the position of 46917631 at 207.63,27.54,247.52,63.24 at time 129453649027
+03-04 14:20:55.445   975  1265 I native  : Registering the position of 263956940 at 200.37,62.22,248.43,107.61
+03-04 14:20:55.446   975  1265 I native  : Registering the position of 263956940 at 200.37,62.22,248.43,107.61 at time 130773896410
+03-04 14:20:55.448   975  1265 I native  : Registering the position of 7054357 at 207.63,27.54,247.52,62.73
+03-04 14:20:55.448   975  1265 I native  : Registering the position of 7054357 at 207.63,27.54,247.52,62.73 at time 130773896410
+03-04 14:20:56.694   975  1264 I native  : Registering the position of 118584106 at 200.37,62.22,248.43,107.61
+03-04 14:20:56.698   975  1264 I native  : Registering the position of 118584106 at 200.37,62.22,248.43,107.61 at time 131712937462
+03-04 14:20:56.702   975  1264 I native  : Registering the position of 66843 at 206.72,27.03,246.61,62.73
+03-04 14:20:56.702   975  1264 I native  : Registering the position of 66843 at 206.72,27.03,246.61,62.73 at time 131712937462
+03-04 14:20:56.864   975  1265 I native  : Registering the position of 232756920 at 200.37,62.22,248.43,107.61
+03-04 14:20:56.865   975  1265 I native  : Registering the position of 232756920 at 200.37,62.22,248.43,107.61 at time 131863613352
+03-04 14:20:56.876   975  1265 I native  : Registering the position of 40856721 at 207.63,27.03,247.52,62.73
+03-04 14:20:56.876   975  1265 I native  : Registering the position of 40856721 at 207.63,27.03,247.52,62.73 at time 131863613352
+03-04 14:20:58.009   975  1264 I native  : Registering the position of 95131638 at 199.47,62.22,248.43,107.61
+03-04 14:20:58.010   975  1264 I native  : Registering the position of 95131638 at 199.47,62.22,248.43,107.61 at time 132968678672
+03-04 14:20:58.015   975  1264 I native  : Registering the position of 10541047 at 206.72,27.03,246.61,62.73
+03-04 14:20:58.015   975  1264 I native  : Registering the position of 10541047 at 206.72,27.03,246.61,62.73 at time 132968678672
+03-04 14:20:58.062   975  1265 I native  : Registering the position of 106128996 at 200.37,62.22,248.43,108.12
+03-04 14:20:58.063   975  1265 I native  : Registering the position of 106128996 at 200.37,62.22,248.43,108.12 at time 133219391280
+03-04 14:20:58.065   975  1265 I native  : Registering the position of 868557 at 207.63,27.03,247.52,63.24
+03-04 14:20:58.066   975  1265 I native  : Registering the position of 868557 at 207.63,27.03,247.52,63.24 at time 133219391280
+03-04 14:20:59.347   975  1264 I native  : Registering the position of 183582082 at 199.47,62.22,247.52,107.61
+03-04 14:20:59.348   975  1264 I native  : Registering the position of 183582082 at 199.47,62.22,247.52,107.61 at time 134370231063
+03-04 14:20:59.351   975  1264 I native  : Registering the position of 234945683 at 207.63,27.03,246.61,62.73
+03-04 14:20:59.351   975  1264 I native  : Registering the position of 234945683 at 207.63,27.03,246.61,62.73 at time 134370231063
+03-04 14:20:59.448   975  1265 I native  : Registering the position of 1213648 at 200.37,62.22,248.43,107.61
+03-04 14:20:59.449   975  1265 I native  : Registering the position of 1213648 at 200.37,62.22,248.43,107.61 at time 134495901200
+03-04 14:20:59.453   975  1265 I native  : Registering the position of 87694537 at 207.63,27.03,247.52,62.73
+03-04 14:20:59.453   975  1265 I native  : Registering the position of 87694537 at 207.63,27.03,247.52,62.73 at time 134495901200
+03-04 14:21:00.690   975  1265 I native  : Registering the position of 184135630 at 199.47,61.71,247.52,108.12
+03-04 14:21:00.690   975  1265 I native  : Registering the position of 184135630 at 199.47,61.71,247.52,108.12 at time 135840847794
+03-04 14:21:00.696   975  1265 I native  : Registering the position of 120901359 at 207.63,27.03,246.61,62.73
+03-04 14:21:00.696   975  1265 I native  : Registering the position of 120901359 at 207.63,27.03,246.61,62.73 at time 135840847794
+03-04 14:21:02.108   975  1265 I native  : Registering the position of 73604604 at 199.47,61.20,248.43,107.10
+03-04 14:21:02.108   975  1265 I native  : Registering the position of 73604604 at 199.47,61.20,248.43,107.10 at time 137009137703
+03-04 14:21:02.111   975  1265 I native  : Registering the position of 238992517 at 207.63,27.03,247.52,63.24
+03-04 14:21:02.112   975  1265 I native  : Registering the position of 238992517 at 207.63,27.03,247.52,63.24 at time 137009137703
+03-04 14:21:02.134   975  1264 I native  : Registering the position of 33880794 at 199.47,61.20,249.33,107.61
+03-04 14:21:02.135   975  1264 I native  : Registering the position of 33880794 at 199.47,61.20,249.33,107.61 at time 137123249964
+03-04 14:21:02.139   975  1264 I native  : Registering the position of 254372619 at 207.63,27.03,247.52,63.24
+03-04 14:21:02.139   975  1264 I native  : Registering the position of 254372619 at 207.63,27.03,247.52,63.24 at time 137123249964
+03-04 14:21:03.420   975  1265 I native  : Registering the position of 146939368 at 199.47,61.20,248.43,107.10
+03-04 14:21:03.420   975  1265 I native  : Registering the position of 146939368 at 199.47,61.20,248.43,107.10 at time 138373169215
+03-04 14:21:03.427   975  1265 I native  : Registering the position of 154377217 at 207.63,27.03,246.61,62.73
+03-04 14:21:03.428   975  1265 I native  : Registering the position of 154377217 at 207.63,27.03,246.61,62.73 at time 138373169215
+03-04 14:21:03.460   975  1264 I native  : Registering the position of 239594150 at 199.47,61.20,248.43,107.10
+03-04 14:21:03.461   975  1264 I native  : Registering the position of 239594150 at 199.47,61.20,248.43,107.10 at time 138511893479
+03-04 14:21:03.464   975  1264 I native  : Registering the position of 8498407 at 206.72,26.52,246.61,62.73
+03-04 14:21:03.464   975  1264 I native  : Registering the position of 8498407 at 206.72,26.52,246.61,62.73 at time 138511893479
+03-04 14:21:04.802   975  1265 I native  : Registering the position of 193933460 at 199.47,61.71,248.43,107.10
+03-04 14:21:04.802   975  1265 I native  : Registering the position of 193933460 at 199.47,61.71,248.43,107.10 at time 139784392107
+03-04 14:21:04.812   975  1265 I native  : Registering the position of 54327101 at 207.63,27.03,246.61,62.73
+03-04 14:21:04.813   975  1265 I native  : Registering the position of 54327101 at 207.63,27.03,246.61,62.73 at time 139784392107
+03-04 14:21:04.826   975  1264 I native  : Registering the position of 175639346 at 199.47,62.22,248.43,107.61
+03-04 14:21:04.827   975  1264 I native  : Registering the position of 175639346 at 199.47,62.22,248.43,107.61 at time 139890349367
+03-04 14:21:04.830   975  1264 I native  : Registering the position of 53620867 at 206.72,27.03,246.61,62.73
+03-04 14:21:04.830   975  1264 I native  : Registering the position of 53620867 at 206.72,27.03,246.61,62.73 at time 139890349367
+03-04 14:21:06.198   975  1265 I native  : Registering the position of 259572224 at 200.37,62.22,248.43,107.61
+03-04 14:21:06.202   975  1265 I native  : Registering the position of 259572224 at 200.37,62.22,248.43,107.61 at time 141162793745
+03-04 14:21:06.205   975  1265 I native  : Registering the position of 226937401 at 206.72,27.03,246.61,62.73
+03-04 14:21:06.206   975  1265 I native  : Registering the position of 226937401 at 206.72,27.03,246.61,62.73 at time 141162793745
+03-04 14:21:06.318   975  1264 I native  : Registering the position of 85436542 at 199.47,61.20,249.33,107.10
+03-04 14:21:06.318   975  1264 I native  : Registering the position of 85436542 at 199.47,61.20,249.33,107.10 at time 141335840471
+03-04 14:21:06.321   975  1264 I native  : Registering the position of 266162655 at 206.72,26.52,247.52,63.24
+03-04 14:21:06.322   975  1264 I native  : Registering the position of 266162655 at 206.72,26.52,247.52,63.24 at time 141335840471
+03-04 14:21:07.545   975  1265 I native  : Registering the position of 27786796 at 200.37,61.71,248.43,107.61
+03-04 14:21:07.546   975  1265 I native  : Registering the position of 27786796 at 200.37,61.71,248.43,107.61 at time 142554344302
+03-04 14:21:07.550   975  1265 I native  : Registering the position of 100716789 at 207.63,27.03,246.61,63.24
+03-04 14:21:07.550   975  1265 I native  : Registering the position of 100716789 at 207.63,27.03,246.61,63.24 at time 142554344302
+03-04 14:21:07.774   975  1264 I native  : Registering the position of 8507018 at 200.37,61.71,248.43,107.10
+03-04 14:21:07.774   975  1264 I native  : Registering the position of 8507018 at 200.37,61.71,248.43,107.10 at time 142684496481
+03-04 14:21:07.778   975  1264 I native  : Registering the position of 217001211 at 207.63,27.03,246.61,62.73
+03-04 14:21:07.778   975  1264 I native  : Registering the position of 217001211 at 207.63,27.03,246.61,62.73 at time 142684496481
+03-04 14:21:08.868   975  1265 I native  : Registering the position of 111989016 at 199.47,61.20,248.43,106.59
+03-04 14:21:08.871   975  1265 I native  : Registering the position of 111989016 at 199.47,61.20,248.43,106.59 at time 143890857352
+03-04 14:21:08.878   975  1265 I native  : Registering the position of 265979761 at 207.63,26.52,246.61,62.73
+03-04 14:21:08.880   975  1265 I native  : Registering the position of 265979761 at 207.63,26.52,246.61,62.73 at time 143890857352
+03-04 14:21:09.331   975  1264 I native  : Registering the position of 129386838 at 199.47,61.71,248.43,107.10
+03-04 14:21:09.332   975  1264 I native  : Registering the position of 129386838 at 199.47,61.71,248.43,107.10 at time 144080896288
+03-04 14:21:09.336   975  1264 I native  : Registering the position of 24747479 at 206.72,27.03,246.61,62.73
+03-04 14:21:09.337   975  1264 I native  : Registering the position of 24747479 at 206.72,27.03,246.61,62.73 at time 144080896288
+03-04 14:21:10.198   975  1265 I native  : Registering the position of 170518212 at 200.37,61.71,248.43,107.10
+03-04 14:21:10.198   975  1265 I native  : Registering the position of 170518212 at 200.37,61.71,248.43,107.10 at time 145197635859
+03-04 14:21:10.202   975  1265 I native  : Registering the position of 129968557 at 207.63,27.03,246.61,62.73
+03-04 14:21:10.202   975  1265 I native  : Registering the position of 129968557 at 207.63,27.03,246.61,62.73 at time 145197635859
+03-04 14:21:10.528   975  1264 I native  : Registering the position of 65381602 at 200.37,61.71,248.43,107.10
+03-04 14:21:10.529   975  1264 I native  : Registering the position of 65381602 at 200.37,61.71,248.43,107.10 at time 145619833610
+03-04 14:21:10.533   975  1264 I native  : Registering the position of 164642931 at 207.63,27.03,246.61,62.73
+03-04 14:21:10.534   975  1264 I native  : Registering the position of 164642931 at 207.63,27.03,246.61,62.73 at time 145619833610
+03-04 14:21:11.479   975  1265 I native  : Registering the position of 222341936 at 200.37,61.71,248.43,107.10
+03-04 14:21:11.487   975  1265 I native  : Registering the position of 222341936 at 200.37,61.71,248.43,107.10 at time 146545020202
+03-04 14:21:11.490   975  1265 I native  : Registering the position of 265401257 at 207.63,27.03,246.61,62.73
+03-04 14:21:11.490   975  1265 I native  : Registering the position of 265401257 at 207.63,27.03,246.61,62.73 at time 146545020202
+03-04 14:21:11.861   975  1264 I native  : Registering the position of 247278894 at 200.37,61.71,248.43,107.10
+03-04 14:21:11.861   975  1264 I native  : Registering the position of 247278894 at 200.37,61.71,248.43,107.10 at time 146808902729
+03-04 14:21:11.865   975  1264 I native  : Registering the position of 165966031 at 207.63,26.52,246.61,62.73
+03-04 14:21:11.866   975  1264 I native  : Registering the position of 165966031 at 207.63,26.52,246.61,62.73 at time 146808902729
+03-04 14:21:12.791   975  1265 I native  : Registering the position of 264063580 at 199.47,61.20,248.43,107.10
+03-04 14:21:12.792   975  1265 I native  : Registering the position of 264063580 at 199.47,61.20,248.43,107.10 at time 147787807911
+03-04 14:21:12.797   975  1265 I native  : Registering the position of 258531685 at 206.72,26.52,246.61,62.73
+03-04 14:21:12.797   975  1265 I native  : Registering the position of 258531685 at 206.72,26.52,246.61,62.73 at time 147787807911
+03-04 14:21:13.199   975  1264 I native  : Registering the position of 225635898 at 200.37,61.71,248.43,107.10
+03-04 14:21:13.200   975  1264 I native  : Registering the position of 225635898 at 200.37,61.71,248.43,107.10 at time 148237992248
+03-04 14:21:13.203   975  1264 I native  : Registering the position of 157371115 at 207.63,27.03,246.61,62.73
+03-04 14:21:13.204   975  1264 I native  : Registering the position of 157371115 at 207.63,27.03,246.61,62.73 at time 148237992248
+03-04 14:21:14.154   975  1265 I native  : Registering the position of 176200 at 199.47,61.20,248.43,106.59
+03-04 14:21:14.155   975  1265 I native  : Registering the position of 176200 at 199.47,61.20,248.43,106.59 at time 149048906162
+03-04 14:21:14.158   975  1265 I native  : Registering the position of 42675937 at 207.63,27.03,246.61,62.73
+03-04 14:21:14.158   975  1265 I native  : Registering the position of 42675937 at 207.63,27.03,246.61,62.73 at time 149048906162
+03-04 14:21:14.535   975  1264 I native  : Registering the position of 9548806 at 198.56,60.69,248.43,107.61
+03-04 14:21:14.536   975  1264 I native  : Registering the position of 9548806 at 198.56,60.69,248.43,107.61 at time 149526236210
+03-04 14:21:14.538   975  1264 I native  : Registering the position of 92777159 at 206.72,27.03,245.71,63.24
+03-04 14:21:14.539   975  1264 I native  : Registering the position of 92777159 at 206.72,27.03,245.71,63.24 at time 149526236210
+03-04 14:21:15.508   975  1265 I native  : Registering the position of 230066420 at 200.37,61.71,248.43,106.59
+03-04 14:21:15.508   975  1265 I native  : Registering the position of 230066420 at 200.37,61.71,248.43,106.59 at time 150459798304
+03-04 14:21:15.511   975  1265 I native  : Registering the position of 86693917 at 207.63,27.54,246.61,62.73
+03-04 14:21:15.512   975  1265 I native  : Registering the position of 86693917 at 207.63,27.54,246.61,62.73 at time 150459798304
+03-04 14:21:15.898   975  1264 I native  : Registering the position of 75827858 at 200.37,61.71,248.43,107.61
+03-04 14:21:15.899   975  1264 I native  : Registering the position of 75827858 at 200.37,61.71,248.43,107.61 at time 150841962468
+03-04 14:21:15.903   975  1264 I native  : Registering the position of 80358499 at 207.63,27.03,247.52,62.73
+03-04 14:21:15.903   975  1264 I native  : Registering the position of 80358499 at 207.63,27.03,247.52,62.73 at time 150841962468
+03-04 14:21:16.625   975  1265 I native  : Registering the position of 187514976 at 200.37,61.71,248.43,107.10
+03-04 14:21:16.625   975  1265 I native  : Registering the position of 187514976 at 200.37,61.71,248.43,107.10 at time 151771697311
+03-04 14:21:16.629   975  1265 I native  : Registering the position of 102881561 at 206.72,26.52,246.61,63.24
+03-04 14:21:16.629   975  1265 I native  : Registering the position of 102881561 at 206.72,26.52,246.61,63.24 at time 151771697311
+03-04 14:21:17.152   975  1264 I native  : Registering the position of 249904606 at 200.37,60.69,248.43,107.10
+03-04 14:21:17.153   975  1264 I native  : Registering the position of 249904606 at 200.37,60.69,248.43,107.10 at time 152182368394
+03-04 14:21:17.155   975  1264 I native  : Registering the position of 136915903 at 206.72,27.03,246.61,63.75
+03-04 14:21:17.156   975  1264 I native  : Registering the position of 136915903 at 206.72,27.03,246.61,63.75 at time 152182368394
+03-04 14:21:17.990   975  1265 I native  : Registering the position of 160825996 at 205.81,26.52,245.71,63.24
+03-04 14:21:17.990   975  1265 I native  : Registering the position of 160825996 at 205.81,26.52,245.71,63.24 at time 153004271727
+03-04 14:21:17.995   975  1265 I native  : Registering the position of 233696725 at 200.37,60.69,248.43,107.61
+03-04 14:21:17.996   975  1265 I native  : Registering the position of 233696725 at 200.37,60.69,248.43,107.61 at time 153004271727
+03-04 14:21:18.626   975  1264 I native  : Registering the position of 75717098 at 206.72,27.03,247.52,63.75
+03-04 14:21:18.626   975  1264 I native  : Registering the position of 75717098 at 206.72,27.03,247.52,63.75 at time 153555422324
+03-04 14:21:18.629   975  1264 I native  : Registering the position of 105825499 at 202.19,60.69,248.43,106.59
+03-04 14:21:18.629   975  1264 I native  : Registering the position of 105825499 at 202.19,60.69,248.43,106.59 at time 153555422324
+03-04 14:21:19.139   975  1265 I native  : Registering the position of 199670648 at 204.00,61.71,248.43,106.08
+03-04 14:21:19.147   975  1265 I native  : Registering the position of 199670648 at 204.00,61.71,248.43,106.08 at time 154251627227
+03-04 14:21:19.150   975  1265 I native  : Registering the position of 86807121 at 207.63,27.03,246.61,63.75
+03-04 14:21:19.150   975  1265 I native  : Registering the position of 86807121 at 207.63,27.03,246.61,63.75 at time 154251627227
+03-04 14:21:19.752   975  1264 I native  : Registering the position of 70593206 at 201.28,60.69,249.33,107.61
+03-04 14:21:19.753   975  1264 I native  : Registering the position of 70593206 at 201.28,60.69,249.33,107.61 at time 154912827460
+03-04 14:21:19.755   975  1264 I native  : Registering the position of 208327607 at 207.63,27.03,246.61,63.24
+03-04 14:21:19.755   975  1264 I native  : Registering the position of 208327607 at 207.63,27.03,246.61,63.24 at time 154912827460
+03-04 14:21:20.439   975  1265 I native  : Registering the position of 210245412 at 205.81,27.03,245.71,63.24
+03-04 14:21:20.440   975  1265 I native  : Registering the position of 210245412 at 205.81,27.03,245.71,63.24 at time 155440165513
+03-04 14:21:20.443   975  1265 I native  : Registering the position of 114754189 at 199.47,60.18,248.43,108.12
+03-04 14:21:20.444   975  1265 I native  : Registering the position of 114754189 at 199.47,60.18,248.43,108.12 at time 155440165513
+03-04 14:21:21.290   975  1264 I native  : Registering the position of 39926850 at 199.47,61.20,248.43,107.10
+03-04 14:21:21.291   975  1264 I native  : Registering the position of 39926850 at 199.47,61.20,248.43,107.10 at time 156009424237
+03-04 14:21:21.295   975  1264 I native  : Registering the position of 13562963 at 206.72,27.03,245.71,63.75
+03-04 14:21:21.295   975  1264 I native  : Registering the position of 13562963 at 206.72,27.03,245.71,63.75 at time 156009424237
+03-04 14:21:21.696   975  1265 I native  : Registering the position of 29458832 at 200.37,61.20,248.43,106.59
+03-04 14:21:21.697   975  1265 I native  : Registering the position of 29458832 at 200.37,61.20,248.43,106.59 at time 156725326850
+03-04 14:21:21.699   975  1265 I native  : Registering the position of 171850377 at 206.72,26.52,245.71,62.73
+03-04 14:21:21.700   975  1265 I native  : Registering the position of 171850377 at 206.72,26.52,245.71,62.73 at time 156725326850
+03-04 14:21:22.630   975  1264 I native  : Registering the position of 21682830 at 200.37,61.20,249.33,106.59
+03-04 14:21:22.636   975  1264 I native  : Registering the position of 21682830 at 200.37,61.20,249.33,106.59 at time 157608093731
+03-04 14:21:22.639   975  1264 I native  : Registering the position of 55214767 at 207.63,27.03,246.61,63.24
+03-04 14:21:22.639   975  1264 I native  : Registering the position of 55214767 at 207.63,27.03,246.61,63.24 at time 157608093731
+03-04 14:21:23.137   975  1265 I native  : Registering the position of 216344252 at 206.72,27.03,246.61,63.24
+03-04 14:21:23.137   975  1265 I native  : Registering the position of 216344252 at 206.72,27.03,246.61,63.24 at time 158066185443
+03-04 14:21:23.140   975  1265 I native  : Registering the position of 13039173 at 198.56,60.69,249.33,107.61
+03-04 14:21:23.140   975  1265 I native  : Registering the position of 13039173 at 198.56,60.69,249.33,107.61 at time 158066185443
+03-04 14:21:24.043   975  1264 I native  : Registering the position of 35525018 at 198.56,60.69,248.43,107.61
+03-04 14:21:24.044   975  1264 I native  : Registering the position of 35525018 at 198.56,60.69,248.43,107.61 at time 158912040153
+03-04 14:21:24.048   975  1264 I native  : Registering the position of 122067659 at 206.72,27.03,246.61,63.24
+03-04 14:21:24.048   975  1264 I native  : Registering the position of 122067659 at 206.72,27.03,246.61,63.24 at time 158912040153
+03-04 14:21:24.439   975  1265 I native  : Registering the position of 3928744 at 199.47,61.20,248.43,107.10
+03-04 14:21:24.441   975  1265 I native  : Registering the position of 3928744 at 199.47,61.20,248.43,107.10 at time 159434750623
+03-04 14:21:24.450   975  1265 I native  : Registering the position of 56996289 at 206.72,27.03,245.71,63.24
+03-04 14:21:24.451   975  1265 I native  : Registering the position of 56996289 at 206.72,27.03,245.71,63.24 at time 159434750623
+03-04 14:21:25.381   975  1264 I native  : Registering the position of 180071782 at 199.47,61.20,249.33,107.10
+03-04 14:21:25.382   975  1264 I native  : Registering the position of 180071782 at 199.47,61.20,249.33,107.10 at time 160415432346
+03-04 14:21:25.385   975  1264 I native  : Registering the position of 60954791 at 207.63,27.03,246.61,63.24
+03-04 14:21:25.386   975  1264 I native  : Registering the position of 60954791 at 207.63,27.03,246.61,63.24 at time 160415432346
+03-04 14:21:25.948   975  1265 I native  : Registering the position of 129077588 at 199.47,61.20,248.43,107.10
+03-04 14:21:25.949   975  1265 I native  : Registering the position of 129077588 at 199.47,61.20,248.43,107.10 at time 160863577058
+03-04 14:21:25.957   975  1265 I native  : Registering the position of 198879485 at 207.63,27.03,245.71,63.24
+03-04 14:21:25.958   975  1265 I native  : Registering the position of 198879485 at 207.63,27.03,245.71,63.24 at time 160863577058
+03-04 14:21:26.888   975  1264 I native  : Registering the position of 205863410 at 200.37,61.20,249.33,107.10
+03-04 14:21:26.890   975  1264 I native  : Registering the position of 205863410 at 200.37,61.20,249.33,107.10 at time 161742257396
+03-04 14:21:26.893   975  1264 I native  : Registering the position of 72194115 at 207.63,27.03,245.71,63.24
+03-04 14:21:26.893   975  1264 I native  : Registering the position of 72194115 at 207.63,27.03,245.71,63.24 at time 161742257396
+03-04 14:21:27.398   975  1265 I native  : Registering the position of 4222656 at 199.47,61.20,249.33,107.61
+03-04 14:21:27.399   975  1265 I native  : Registering the position of 4222656 at 199.47,61.20,249.33,107.61 at time 162320858204
+03-04 14:21:27.403   975  1265 I native  : Registering the position of 95279097 at 207.63,27.54,246.61,63.24
+03-04 14:21:27.404   975  1265 I native  : Registering the position of 95279097 at 207.63,27.54,246.61,63.24 at time 162320858204
+03-04 14:21:28.410   975  1264 I native  : Registering the position of 107545406 at 199.47,60.69,249.33,107.10
+03-04 14:21:28.411   975  1264 I native  : Registering the position of 107545406 at 199.47,60.69,249.33,107.10 at time 163187754333
+03-04 14:21:28.415   975  1264 I native  : Registering the position of 161969567 at 206.72,26.52,245.71,62.73
+03-04 14:21:28.416   975  1264 I native  : Registering the position of 161969567 at 206.72,26.52,245.71,62.73 at time 163187754333
+03-04 14:21:28.868   975  1265 I native  : Registering the position of 169719532 at 201.28,60.18,248.43,107.10
+03-04 14:21:28.869   975  1265 I native  : Registering the position of 169719532 at 201.28,60.18,248.43,107.10 at time 163761668057
+03-04 14:21:28.876   975  1265 I native  : Registering the position of 48954037 at 207.63,27.03,246.61,63.75
+03-04 14:21:28.876   975  1265 I native  : Registering the position of 48954037 at 207.63,27.03,246.61,63.75 at time 163761668057
+03-04 14:21:29.443   975  1264 I native  : Registering the position of 57546058 at 204.91,61.20,248.43,104.55
+03-04 14:21:29.445   975  1264 I native  : Registering the position of 57546058 at 204.91,61.20,248.43,104.55 at time 164739646614
+03-04 14:21:29.455   975  1264 I native  : Registering the position of 26725563 at 206.72,27.54,247.52,64.26
+03-04 14:21:29.458   975  1264 I native  : Registering the position of 26725563 at 206.72,27.54,247.52,64.26 at time 164739646614
+03-04 14:21:30.375   975  1265 I native  : Registering the position of 27612632 at 204.91,61.71,248.43,105.57
+03-04 14:21:30.376   975  1265 I native  : Registering the position of 27612632 at 204.91,61.71,248.43,105.57 at time 165194206535
+03-04 14:21:30.384   975  1265 I native  : Registering the position of 10325297 at 206.72,27.03,248.43,64.77
+03-04 14:21:30.384   975  1265 I native  : Registering the position of 10325297 at 206.72,27.03,248.43,64.77 at time 165194206535
+03-04 14:21:31.082   975  1264 I native  : Registering the position of 151010326 at 198.56,61.20,248.43,107.10
+03-04 14:21:31.082   975  1264 I native  : Registering the position of 151010326 at 198.56,61.20,248.43,107.10 at time 165822979848
+03-04 14:21:31.087   975  1264 I native  : Registering the position of 107772311 at 206.72,27.03,246.61,62.73
+03-04 14:21:31.087   975  1264 I native  : Registering the position of 107772311 at 206.72,27.03,246.61,62.73 at time 165822979848
+03-04 14:21:31.845   975  1265 I native  : Registering the position of 184940420 at 200.37,60.18,249.33,107.10
+03-04 14:21:31.845   975  1265 I native  : Registering the position of 184940420 at 200.37,60.18,249.33,107.10 at time 166738090523
+03-04 14:21:31.850   975  1265 I native  : Registering the position of 118279021 at 205.81,27.54,245.71,63.24
+03-04 14:21:31.851   975  1265 I native  : Registering the position of 118279021 at 205.81,27.54,245.71,63.24 at time 166738090523
+03-04 14:21:32.453   975  1264 I native  : Registering the position of 163316642 at 201.28,60.69,249.33,106.59
+03-04 14:21:32.455   975  1264 I native  : Registering the position of 163316642 at 201.28,60.69,249.33,106.59 at time 167356906044
+03-04 14:21:32.464   975  1264 I native  : Registering the position of 259332147 at 206.72,27.03,246.61,63.75
+03-04 14:21:32.465   975  1264 I native  : Registering the position of 259332147 at 206.72,27.03,246.61,63.75 at time 167356906044
+03-04 14:21:33.116   975  1265 I native  : Registering the position of 212666352 at 202.19,60.18,248.43,106.59
+03-04 14:21:33.116   975  1265 I native  : Registering the position of 212666352 at 202.19,60.18,248.43,106.59 at time 168225165423
+03-04 14:21:33.119   975  1265 I native  : Registering the position of 28815721 at 206.72,27.54,246.61,63.75
+03-04 14:21:33.119   975  1265 I native  : Registering the position of 28815721 at 206.72,27.54,246.61,63.75 at time 168225165423
+03-04 14:21:33.896   975  1264 I native  : Registering the position of 58374126 at 198.56,61.20,249.33,107.61
+03-04 14:21:33.897   975  1264 I native  : Registering the position of 58374126 at 198.56,61.20,249.33,107.61 at time 168773012019
+03-04 14:21:33.900   975  1264 I native  : Registering the position of 257885327 at 206.72,27.03,246.61,63.24
+03-04 14:21:33.900   975  1264 I native  : Registering the position of 257885327 at 206.72,27.03,246.61,63.24 at time 168773012019
+03-04 14:21:34.434   975  1265 I native  : Registering the position of 74625820 at 198.56,61.20,248.43,107.10
+03-04 14:21:34.435   975  1265 I native  : Registering the position of 74625820 at 198.56,61.20,248.43,107.10 at time 169393826332
+03-04 14:21:34.451   975  1265 I native  : Registering the position of 185662245 at 206.72,27.03,246.61,63.24
+03-04 14:21:34.453   975  1265 I native  : Registering the position of 185662245 at 206.72,27.03,246.61,63.24 at time 169393826332
+03-04 14:21:35.188   975  1264 I native  : Registering the position of 106849530 at 205.81,27.54,246.61,63.75
+03-04 14:21:35.190   975  1264 I native  : Registering the position of 106849530 at 205.81,27.54,246.61,63.75 at time 170254274293
+03-04 14:21:35.197   975  1264 I native  : Registering the position of 206658219 at 198.56,60.69,249.33,107.61
+03-04 14:21:35.198   975  1264 I native  : Registering the position of 206658219 at 198.56,60.69,249.33,107.61 at time 170254274293
+03-04 14:21:35.719   975  1265 I native  : Registering the position of 59106568 at 198.56,60.69,249.33,107.61
+03-04 14:21:35.720   975  1265 I native  : Registering the position of 59106568 at 198.56,60.69,249.33,107.61 at time 170791247264
+03-04 14:21:35.726   975  1265 I native  : Registering the position of 133899425 at 205.81,27.03,245.71,63.24
+03-04 14:21:35.727   975  1265 I native  : Registering the position of 133899425 at 205.81,27.03,245.71,63.24 at time 170791247264
+03-04 14:21:36.666   975  1264 I native  : Registering the position of 10344134 at 200.37,59.67,249.33,107.61
+03-04 14:21:36.666   975  1264 I native  : Registering the position of 10344134 at 200.37,59.67,249.33,107.61 at time 171550060173
+03-04 14:21:36.669   975  1264 I native  : Registering the position of 231274119 at 206.72,27.03,247.52,63.75
+03-04 14:21:36.669   975  1264 I native  : Registering the position of 231274119 at 206.72,27.03,247.52,63.75 at time 171550060173
+03-04 14:21:37.043   975  1265 I native  : Registering the position of 219695540 at 199.47,59.67,248.43,107.61
+03-04 14:21:37.044   975  1265 I native  : Registering the position of 219695540 at 199.47,59.67,248.43,107.61 at time 172136286899
+03-04 14:21:37.052   975  1265 I native  : Registering the position of 251947485 at 206.72,27.03,246.61,63.24
+03-04 14:21:37.054   975  1265 I native  : Registering the position of 251947485 at 206.72,27.03,246.61,63.24 at time 172136286899
+03-04 14:21:38.114   975  1264 I native  : Registering the position of 185637202 at 199.47,60.18,248.43,108.12
+03-04 14:21:38.115   975  1264 I native  : Registering the position of 185637202 at 199.47,60.18,248.43,108.12 at time 173070909201
+03-04 14:21:38.124   975  1264 I native  : Registering the position of 204764195 at 206.72,27.03,246.61,63.75
+03-04 14:21:38.124   975  1264 I native  : Registering the position of 204764195 at 206.72,27.03,246.61,63.75 at time 173070909201
+03-04 14:21:38.444   975  1265 I native  : Registering the position of 63589664 at 200.37,59.67,248.43,107.61
+03-04 14:21:38.445   975  1265 I native  : Registering the position of 63589664 at 200.37,59.67,248.43,107.61 at time 173359331980
+03-04 14:21:38.449   975  1265 I native  : Registering the position of 123913945 at 206.72,27.03,247.52,63.75
+03-04 14:21:38.450   975  1265 I native  : Registering the position of 123913945 at 206.72,27.03,247.52,63.75 at time 173359331980
+03-04 14:21:39.520   975  1264 I native  : Registering the position of 41613470 at 205.81,26.52,246.61,63.75
+03-04 14:21:39.520   975  1264 I native  : Registering the position of 41613470 at 205.81,26.52,246.61,63.75 at time 174414859169
+03-04 14:21:39.525   975  1264 I native  : Registering the position of 240136063 at 199.47,60.18,248.43,108.12
+03-04 14:21:39.525   975  1264 I native  : Registering the position of 240136063 at 199.47,60.18,248.43,108.12 at time 174414859169
+03-04 14:21:40.005   975  1265 I native  : Registering the position of 30874444 at 205.81,26.52,246.61,63.75
+03-04 14:21:40.005   975  1265 I native  : Registering the position of 30874444 at 205.81,26.52,246.61,63.75 at time 174762681913
+03-04 14:21:40.010   975  1265 I native  : Registering the position of 196081557 at 200.37,59.67,248.43,107.61
+03-04 14:21:40.010   975  1265 I native  : Registering the position of 196081557 at 200.37,59.67,248.43,107.61 at time 174762681913
+03-04 14:21:40.743   975  1264 I native  : Registering the position of 161087658 at 199.47,60.18,248.43,107.61
+03-04 14:21:40.743   975  1264 I native  : Registering the position of 161087658 at 199.47,60.18,248.43,107.61 at time 175803774517
+03-04 14:21:40.746   975  1264 I native  : Registering the position of 4342939 at 205.81,27.03,246.61,64.26
+03-04 14:21:40.746   975  1264 I native  : Registering the position of 4342939 at 205.81,27.03,246.61,64.26 at time 175803774517
+03-04 14:21:41.391   975  1265 I native  : Registering the position of 134258744 at 206.72,27.03,247.52,63.75
+03-04 14:21:41.392   975  1265 I native  : Registering the position of 134258744 at 206.72,27.03,247.52,63.75 at time 176277813982
+03-04 14:21:41.394   975  1265 I native  : Registering the position of 207976465 at 199.47,60.69,249.33,108.12
+03-04 14:21:41.395   975  1265 I native  : Registering the position of 207976465 at 199.47,60.69,249.33,108.12 at time 176277813982
+03-04 14:21:42.217   975  1264 I native  : Registering the position of 267353462 at 206.72,26.52,246.61,63.75
+03-04 14:21:42.218   975  1264 I native  : Registering the position of 267353462 at 206.72,26.52,246.61,63.75 at time 177006609722
+03-04 14:21:42.223   975  1264 I native  : Registering the position of 7769975 at 199.47,60.18,248.43,107.61
+03-04 14:21:42.224   975  1264 I native  : Registering the position of 7769975 at 199.47,60.18,248.43,107.61 at time 177006609722
+03-04 14:21:42.546   975  1265 I native  : Registering the position of 255559652 at 199.47,60.69,249.33,107.61
+03-04 14:21:42.547   975  1265 I native  : Registering the position of 255559652 at 199.47,60.69,249.33,107.61 at time 177773079465
+03-04 14:21:42.549   975  1265 I native  : Registering the position of 236487757 at 206.72,26.52,247.52,63.75
+03-04 14:21:42.549   975  1265 I native  : Registering the position of 236487757 at 206.72,26.52,247.52,63.75 at time 177773079465
+03-04 14:21:43.672   975  1265 I native  : Registering the position of 156105474 at 200.37,61.20,249.33,107.61
+03-04 14:21:43.672   975  1265 I native  : Registering the position of 156105474 at 200.37,61.20,249.33,107.61 at time 178939666041
+03-04 14:21:43.674   975  1265 I native  : Registering the position of 238726163 at 205.81,27.03,246.61,63.24
+03-04 14:21:43.676   975  1265 I native  : Registering the position of 238726163 at 205.81,27.03,246.61,63.24 at time 178939666041
+03-04 14:21:44.929   975  1265 I native  : Registering the position of 152780368 at 199.47,61.20,248.43,107.10
+03-04 14:21:44.929   975  1265 I native  : Registering the position of 152780368 at 199.47,61.20,248.43,107.10 at time 180035113067
+03-04 14:21:44.931   975  1265 I native  : Registering the position of 259397705 at 206.72,27.03,246.61,62.73
+03-04 14:21:44.932   975  1265 I native  : Registering the position of 259397705 at 206.72,27.03,246.61,62.73 at time 180035113067
+03-04 14:21:45.221   975  1264 I native  : Registering the position of 35964238 at 199.47,61.20,248.43,107.10
+03-04 14:21:45.222   975  1264 I native  : Registering the position of 35964238 at 199.47,61.20,248.43,107.10 at time 180159405955
+03-04 14:21:45.225   975  1264 I native  : Registering the position of 102364783 at 206.72,27.03,245.71,63.24
+03-04 14:21:45.225   975  1264 I native  : Registering the position of 102364783 at 206.72,27.03,245.71,63.24 at time 180159405955
+03-04 14:21:46.340   975  1265 I native  : Registering the position of 184414076 at 206.72,27.03,246.61,63.75
+03-04 14:21:46.340   975  1265 I native  : Registering the position of 184414076 at 206.72,27.03,246.61,63.75 at time 181264818649
+03-04 14:21:46.343   975  1265 I native  : Registering the position of 50262021 at 199.47,59.67,248.43,108.12
+03-04 14:21:46.344   975  1265 I native  : Registering the position of 50262021 at 199.47,59.67,248.43,108.12 at time 181264818649
+03-04 14:21:46.532   975  1264 I native  : Registering the position of 210495578 at 199.47,61.20,249.33,107.10
+03-04 14:21:46.533   975  1264 I native  : Registering the position of 210495578 at 199.47,61.20,249.33,107.10 at time 181552717012
+03-04 14:21:46.537   975  1264 I native  : Registering the position of 133794443 at 206.72,27.03,246.61,63.24
+03-04 14:21:46.537   975  1264 I native  : Registering the position of 133794443 at 206.72,27.03,246.61,63.24 at time 181552717012
+03-04 14:21:47.867   975  1265 I native  : Registering the position of 267945832 at 199.47,61.20,249.33,107.10
+03-04 14:21:47.867   975  1265 I native  : Registering the position of 267945832 at 199.47,61.20,249.33,107.10 at time 182668482707
+03-04 14:21:47.873   975  1265 I native  : Registering the position of 142837633 at 206.72,27.54,245.71,63.24
+03-04 14:21:47.874   975  1265 I native  : Registering the position of 142837633 at 206.72,27.54,245.71,63.24 at time 182668482707
+03-04 14:21:47.992   975  1264 I native  : Registering the position of 34615334 at 198.56,61.20,249.33,107.10
+03-04 14:21:47.993   975  1264 I native  : Registering the position of 34615334 at 198.56,61.20,249.33,107.10 at time 182914293565
+03-04 14:21:47.997   975  1264 I native  : Registering the position of 49562727 at 206.72,27.54,245.71,63.24
+03-04 14:21:47.997   975  1264 I native  : Registering the position of 49562727 at 206.72,27.54,245.71,63.24 at time 182914293565
+03-04 14:21:49.269   975  1265 I native  : Registering the position of 226669076 at 199.47,61.20,248.43,107.10
+03-04 14:21:49.269   975  1265 I native  : Registering the position of 226669076 at 199.47,61.20,248.43,107.10 at time 184158085773
+03-04 14:21:49.279   975  1265 I native  : Registering the position of 39852733 at 207.63,27.03,246.61,63.24
+03-04 14:21:49.279   975  1265 I native  : Registering the position of 39852733 at 207.63,27.03,246.61,63.24 at time 184158085773
+03-04 14:21:49.354   975  1264 I native  : Registering the position of 104802482 at 198.56,61.20,248.43,107.10
+03-04 14:21:49.355   975  1264 I native  : Registering the position of 104802482 at 198.56,61.20,248.43,107.10 at time 184308622539
+03-04 14:21:49.358   975  1264 I native  : Registering the position of 49725443 at 207.63,27.03,246.61,63.24
+03-04 14:21:49.358   975  1264 I native  : Registering the position of 49725443 at 207.63,27.03,246.61,63.24 at time 184308622539
+03-04 14:21:50.694   975  1264 I native  : Registering the position of 115530624 at 198.56,60.18,249.33,108.12
+03-04 14:21:50.695   975  1264 I native  : Registering the position of 115530624 at 198.56,60.18,249.33,108.12 at time 185760691018
+03-04 14:21:50.698   975  1264 I native  : Registering the position of 41461177 at 206.72,27.54,246.61,63.75
+03-04 14:21:50.699   975  1264 I native  : Registering the position of 41461177 at 206.72,27.54,246.61,63.75 at time 185760691018
+03-04 14:21:51.989   975  1265 I native  : Registering the position of 99819006 at 198.56,61.20,249.33,107.61
+03-04 14:21:51.991   975  1265 I native  : Registering the position of 99819006 at 198.56,61.20,249.33,107.61 at time 187017086436
+03-04 14:21:51.994   975  1265 I native  : Registering the position of 203118943 at 206.72,27.03,246.61,63.24
+03-04 14:21:51.995   975  1265 I native  : Registering the position of 203118943 at 206.72,27.03,246.61,63.24 at time 187017086436
+03-04 14:21:52.149   975  1264 I native  : Registering the position of 190459820 at 198.56,61.20,248.43,107.61
+03-04 14:21:52.149   975  1264 I native  : Registering the position of 190459820 at 198.56,61.20,248.43,107.61 at time 187158671075
+03-04 14:21:52.151   975  1264 I native  : Registering the position of 183821429 at 206.72,27.03,246.61,63.24
+03-04 14:21:52.151   975  1264 I native  : Registering the position of 183821429 at 206.72,27.03,246.61,63.24 at time 187158671075
+03-04 14:21:53.319   975  1265 I native  : Registering the position of 257891338 at 198.56,61.20,249.33,107.61
+03-04 14:21:53.319   975  1265 I native  : Registering the position of 257891338 at 198.56,61.20,249.33,107.61 at time 188264429978
+03-04 14:21:53.322   975  1265 I native  : Registering the position of 264645755 at 206.72,27.03,246.61,63.24
+03-04 14:21:53.322   975  1265 I native  : Registering the position of 264645755 at 206.72,27.03,246.61,63.24 at time 188264429978
+03-04 14:21:53.372   975  1264 I native  : Registering the position of 185637528 at 198.56,61.20,248.43,107.61
+03-04 14:21:53.373   975  1264 I native  : Registering the position of 185637528 at 198.56,61.20,248.43,107.61 at time 188416497701
+03-04 14:21:53.376   975  1264 I native  : Registering the position of 247223025 at 206.72,27.03,246.61,63.24
+03-04 14:21:53.377   975  1264 I native  : Registering the position of 247223025 at 206.72,27.03,246.61,63.24 at time 188416497701
+03-04 14:21:54.620   975  1265 I native  : Registering the position of 249229014 at 200.37,60.18,249.33,107.10
+03-04 14:21:54.621   975  1265 I native  : Registering the position of 249229014 at 200.37,60.18,249.33,107.10 at time 189705767456
+03-04 14:21:54.623   975  1265 I native  : Registering the position of 125900119 at 206.72,27.54,247.52,63.75
+03-04 14:21:54.624   975  1265 I native  : Registering the position of 125900119 at 206.72,27.54,247.52,63.75 at time 189705767456
+03-04 14:21:54.960   975  1264 I native  : Registering the position of 247515204 at 199.47,60.18,248.43,107.61
+03-04 14:21:54.961   975  1264 I native  : Registering the position of 247515204 at 199.47,60.18,248.43,107.61 at time 189859445471
+03-04 14:21:54.964   975  1264 I native  : Registering the position of 229780781 at 205.81,27.03,246.61,63.75
+03-04 14:21:54.965   975  1264 I native  : Registering the position of 229780781 at 205.81,27.03,246.61,63.75 at time 189859445471
+03-04 14:21:55.905   975  1265 I native  : Registering the position of 208609890 at 199.47,61.71,249.33,107.61
+03-04 14:21:55.905   975  1265 I native  : Registering the position of 208609890 at 199.47,61.71,249.33,107.61 at time 190920884745
+03-04 14:21:55.908   975  1265 I native  : Registering the position of 26718195 at 206.72,27.03,246.61,63.24
+03-04 14:21:55.909   975  1265 I native  : Registering the position of 26718195 at 206.72,27.03,246.61,63.24 at time 190920884745
+03-04 14:21:56.362   975  1264 I native  : Registering the position of 237249712 at 200.37,60.18,248.43,107.61
+03-04 14:21:56.362   975  1264 I native  : Registering the position of 237249712 at 200.37,60.18,248.43,107.61 at time 191259776070
+03-04 14:21:56.372   975  1264 I native  : Registering the position of 145846057 at 206.72,27.54,246.61,63.75
+03-04 14:21:56.373   975  1264 I native  : Registering the position of 145846057 at 206.72,27.54,246.61,63.75 at time 191259776070
+03-04 14:21:57.286   975  1265 I native  : Registering the position of 102826670 at 202.19,60.69,248.43,106.08
+03-04 14:21:57.287   975  1265 I native  : Registering the position of 102826670 at 202.19,60.69,248.43,106.08 at time 192223081459
+03-04 14:21:57.290   975  1265 I native  : Registering the position of 192108623 at 207.63,27.54,247.52,64.26
+03-04 14:21:57.290   975  1265 I native  : Registering the position of 192108623 at 207.63,27.54,247.52,64.26 at time 192223081459
+03-04 14:21:57.646   975  1264 I native  : Registering the position of 18799580 at 201.28,60.18,248.43,106.59
+03-04 14:21:57.646   975  1264 I native  : Registering the position of 18799580 at 201.28,60.18,248.43,106.59 at time 192676855338
+03-04 14:21:57.649   975  1264 I native  : Registering the position of 155768037 at 206.72,27.54,247.52,64.26
+03-04 14:21:57.650   975  1264 I native  : Registering the position of 155768037 at 206.72,27.54,247.52,64.26 at time 192676855338
+03-04 14:21:58.634   975  1265 I native  : Registering the position of 50240442 at 205.81,27.03,248.43,64.77
+03-04 14:21:58.634   975  1265 I native  : Registering the position of 50240442 at 205.81,27.03,248.43,64.77 at time 193561666218
+03-04 14:21:58.638   975  1265 I native  : Registering the position of 95890027 at 205.81,61.71,246.61,104.55
+03-04 14:21:58.638   975  1265 I native  : Registering the position of 95890027 at 205.81,61.71,246.61,104.55 at time 193561666218
+03-04 14:21:59.200   975  1264 I native  : Registering the position of 128702920 at 204.91,61.71,247.52,104.55
+03-04 14:21:59.202   975  1264 I native  : Registering the position of 128702920 at 204.91,61.71,247.52,104.55 at time 193985145844
+03-04 14:21:59.205   975  1264 I native  : Registering the position of 154589793 at 205.81,27.03,247.52,64.77
+03-04 14:21:59.205   975  1264 I native  : Registering the position of 154589793 at 205.81,27.03,247.52,64.77 at time 193985145844
+03-04 14:21:59.992   975  1265 I native  : Registering the position of 183155078 at 202.19,60.69,249.33,106.59
+03-04 14:21:59.992   975  1265 I native  : Registering the position of 183155078 at 202.19,60.69,249.33,106.59 at time 194944281857
+03-04 14:21:59.995   975  1265 I native  : Registering the position of 236716615 at 207.63,27.03,246.61,63.24
+03-04 14:21:59.995   975  1265 I native  : Registering the position of 236716615 at 207.63,27.03,246.61,63.24 at time 194944281857
+03-04 14:22:00.652   975  1264 I native  : Registering the position of 76073588 at 199.47,61.20,248.43,107.10
+03-04 14:22:00.653   975  1264 I native  : Registering the position of 76073588 at 199.47,61.20,248.43,107.10 at time 195602984840
+03-04 14:22:00.658   975  1264 I native  : Registering the position of 94747549 at 207.63,27.03,246.61,62.73
+03-04 14:22:00.658   975  1264 I native  : Registering the position of 94747549 at 207.63,27.03,246.61,62.73 at time 195602984840
+03-04 14:22:01.230   975  1265 I native  : Registering the position of 254339090 at 199.47,60.18,248.43,107.61
+03-04 14:22:01.232   975  1265 I native  : Registering the position of 254339090 at 199.47,60.18,248.43,107.61 at time 196249884655
+03-04 14:22:01.235   975  1265 I native  : Registering the position of 185367523 at 206.72,27.03,247.52,63.75
+03-04 14:22:01.236   975  1265 I native  : Registering the position of 185367523 at 206.72,27.03,247.52,63.75 at time 196249884655
+03-04 14:22:01.928   975  1264 I native  : Registering the position of 111286752 at 200.37,60.18,248.43,107.61
+03-04 14:22:01.929   975  1264 I native  : Registering the position of 111286752 at 200.37,60.18,248.43,107.61 at time 197072862196
+03-04 14:22:01.931   975  1264 I native  : Registering the position of 170357913 at 206.72,27.54,247.52,63.75
+03-04 14:22:01.931   975  1264 I native  : Registering the position of 170357913 at 206.72,27.54,247.52,63.75 at time 197072862196
+03-04 14:22:02.785   975  1265 I native  : Registering the position of 262763358 at 198.56,60.69,248.43,107.61
+03-04 14:22:02.785   975  1265 I native  : Registering the position of 262763358 at 198.56,60.69,248.43,107.61 at time 197628482002
+03-04 14:22:02.790   975  1265 I native  : Registering the position of 83948351 at 206.72,27.03,246.61,63.24
+03-04 14:22:02.791   975  1265 I native  : Registering the position of 83948351 at 206.72,27.03,246.61,63.24 at time 197628482002
+03-04 14:22:03.413   975  1264 I native  : Registering the position of 222229516 at 199.47,61.20,249.33,107.10
+03-04 14:22:03.413   975  1264 I native  : Registering the position of 222229516 at 199.47,61.20,249.33,107.10 at time 198235323730
+03-04 14:22:03.417   975  1264 I native  : Registering the position of 259113301 at 206.72,27.03,246.61,63.24
+03-04 14:22:03.418   975  1264 I native  : Registering the position of 259113301 at 206.72,27.03,246.61,63.24 at time 198235323730
+03-04 14:22:04.047   975  1265 I native  : Registering the position of 152397674 at 205.81,27.54,246.61,63.75
+03-04 14:22:04.048   975  1265 I native  : Registering the position of 152397674 at 205.81,27.54,246.61,63.75 at time 199107924859
+03-04 14:22:04.050   975  1265 I native  : Registering the position of 161186907 at 198.56,60.69,249.33,108.12
+03-04 14:22:04.051   975  1265 I native  : Registering the position of 161186907 at 198.56,60.69,249.33,108.12 at time 199107924859
+03-04 14:22:04.975   975  1264 I native  : Registering the position of 49104120 at 206.72,27.54,246.61,63.75
+03-04 14:22:04.976   975  1264 I native  : Registering the position of 49104120 at 206.72,27.54,246.61,63.75 at time 199776373301
+03-04 14:22:04.980   975  1264 I native  : Registering the position of 165289425 at 200.37,60.18,248.43,108.12
+03-04 14:22:04.980   975  1264 I native  : Registering the position of 165289425 at 200.37,60.18,248.43,108.12 at time 199776373301
+03-04 14:22:05.423   975  1265 I native  : Registering the position of 127569974 at 198.56,61.71,247.52,107.10
+03-04 14:22:05.424   975  1265 I native  : Registering the position of 127569974 at 198.56,61.71,247.52,107.10 at time 200376600028
+03-04 14:22:05.426   975  1265 I native  : Registering the position of 75762487 at 207.63,27.54,245.71,63.24
+03-04 14:22:05.427   975  1265 I native  : Registering the position of 75762487 at 207.63,27.54,245.71,63.24 at time 200376600028
+03-04 14:22:06.239   975  1264 I native  : Registering the position of 187545764 at 199.47,61.71,248.43,107.10
+03-04 14:22:06.239   975  1264 I native  : Registering the position of 187545764 at 199.47,61.71,248.43,107.10 at time 201334660374
+03-04 14:22:06.243   975  1264 I native  : Registering the position of 59885069 at 206.72,27.03,246.61,62.73
+03-04 14:22:06.244   975  1264 I native  : Registering the position of 59885069 at 206.72,27.03,246.61,62.73 at time 201334660374
+03-04 14:22:06.762   975  1265 I native  : Registering the position of 175602114 at 199.47,61.71,249.33,107.10
+03-04 14:22:06.763   975  1265 I native  : Registering the position of 175602114 at 199.47,61.71,249.33,107.10 at time 201734588206
+03-04 14:22:06.765   975  1265 I native  : Registering the position of 168043475 at 206.72,27.54,245.71,63.24
+03-04 14:22:06.766   975  1265 I native  : Registering the position of 168043475 at 206.72,27.54,245.71,63.24 at time 201734588206
+03-04 14:22:07.563   975  1264 I native  : Registering the position of 249543440 at 199.47,61.71,248.43,107.10
+03-04 14:22:07.566   975  1264 I native  : Registering the position of 249543440 at 199.47,61.71,248.43,107.10 at time 202502096283
+03-04 14:22:07.569   975  1264 I native  : Registering the position of 245478921 at 206.72,27.03,245.71,63.24
+03-04 14:22:07.570   975  1264 I native  : Registering the position of 245478921 at 206.72,27.03,245.71,63.24 at time 202502096283
+03-04 14:22:08.176   975  1265 I native  : Registering the position of 71790606 at 205.81,27.54,245.71,63.75
+03-04 14:22:08.177   975  1265 I native  : Registering the position of 71790606 at 205.81,27.54,245.71,63.75 at time 203072447007
+03-04 14:22:08.181   975  1265 I native  : Registering the position of 258157103 at 198.56,60.18,248.43,108.12
+03-04 14:22:08.182   975  1265 I native  : Registering the position of 258157103 at 198.56,60.18,248.43,108.12 at time 203072447007
+03-04 14:22:08.814   975  1264 I native  : Registering the position of 57505852 at 206.72,27.54,246.61,63.75
+03-04 14:22:08.814   975  1264 I native  : Registering the position of 57505852 at 206.72,27.54,246.61,63.75 at time 203921193009
+03-04 14:22:08.816   975  1264 I native  : Registering the position of 178694597 at 199.47,60.18,249.33,108.12
+03-04 14:22:08.817   975  1264 I native  : Registering the position of 178694597 at 199.47,60.18,249.33,108.12 at time 203921193009
+03-04 14:22:09.430   975  1265 I native  : Registering the position of 68058906 at 206.72,27.03,247.52,63.75
+03-04 14:22:09.430   975  1265 I native  : Registering the position of 68058906 at 206.72,27.03,247.52,63.75 at time 204512421235
+03-04 14:22:09.433   975  1265 I native  : Registering the position of 218249803 at 204.00,61.20,248.43,106.08
+03-04 14:22:09.434   975  1265 I native  : Registering the position of 218249803 at 204.00,61.20,248.43,106.08 at time 204512421235
+03-04 14:22:10.187   975  1264 I native  : Registering the position of 146267176 at 205.81,27.54,247.52,63.75
+03-04 14:22:10.188   975  1264 I native  : Registering the position of 146267176 at 205.81,27.54,247.52,63.75 at time 205136031465
+03-04 14:22:10.190   975  1264 I native  : Registering the position of 172825921 at 204.00,61.71,247.52,106.08
+03-04 14:22:10.191   975  1264 I native  : Registering the position of 172825921 at 204.00,61.71,247.52,106.08 at time 205136031465
+03-04 14:22:10.758   975  1265 I native  : Registering the position of 50688742 at 205.81,27.03,248.43,63.75
+03-04 14:22:10.758   975  1265 I native  : Registering the position of 50688742 at 205.81,27.03,248.43,63.75 at time 205749151901
+03-04 14:22:10.762   975  1265 I native  : Registering the position of 104345639 at 204.91,61.71,248.43,106.08
+03-04 14:22:10.762   975  1265 I native  : Registering the position of 104345639 at 204.91,61.71,248.43,106.08 at time 205749151901
+03-04 14:22:11.775   975  1264 I native  : Registering the position of 163746516 at 201.28,60.69,247.52,106.08
+03-04 14:22:11.776   975  1264 I native  : Registering the position of 163746516 at 201.28,60.69,247.52,106.08 at time 206479236224
+03-04 14:22:11.783   975  1264 I native  : Registering the position of 76369021 at 206.72,27.54,247.52,64.26
+03-04 14:22:11.784   975  1264 I native  : Registering the position of 76369021 at 206.72,27.54,247.52,64.26 at time 206479236224
+03-04 14:22:12.146   975  1265 I native  : Registering the position of 52811634 at 205.81,27.03,248.43,63.75
+03-04 14:22:12.146   975  1265 I native  : Registering the position of 52811634 at 205.81,27.03,248.43,63.75 at time 207090108786
+03-04 14:22:12.149   975  1265 I native  : Registering the position of 49129411 at 205.81,62.22,246.61,106.59
+03-04 14:22:12.150   975  1265 I native  : Registering the position of 49129411 at 205.81,62.22,246.61,106.59 at time 207090108786
+03-04 14:22:12.893   975  1264 I native  : Registering the position of 203425856 at 204.00,61.71,247.52,105.57
+03-04 14:22:12.893   975  1264 I native  : Registering the position of 203425856 at 204.00,61.71,247.52,105.57 at time 208037406339
+03-04 14:22:12.896   975  1264 I native  : Registering the position of 229061497 at 205.81,27.03,247.52,63.75
+03-04 14:22:12.896   975  1264 I native  : Registering the position of 229061497 at 205.81,27.03,247.52,63.75 at time 208037406339
+03-04 14:22:13.639   975  1265 I native  : Registering the position of 175503550 at 205.81,27.03,247.52,63.75
+03-04 14:22:13.640   975  1265 I native  : Registering the position of 175503550 at 205.81,27.03,247.52,63.75 at time 208397482292
+03-04 14:22:13.643   975  1265 I native  : Registering the position of 116981023 at 204.00,61.20,247.52,105.57
+03-04 14:22:13.643   975  1265 I native  : Registering the position of 116981023 at 204.00,61.20,247.52,105.57 at time 208397482292
+03-04 14:22:14.278   975  1264 I native  : Registering the position of 169699436 at 204.00,61.20,247.52,105.57
+03-04 14:22:14.279   975  1264 I native  : Registering the position of 169699436 at 204.00,61.20,247.52,105.57 at time 209232310834
+03-04 14:22:14.286   975  1264 I native  : Registering the position of 64917045 at 205.81,27.54,247.52,64.26
+03-04 14:22:14.286   975  1264 I native  : Registering the position of 64917045 at 205.81,27.54,247.52,64.26 at time 209232310834
+03-04 14:22:14.986   975  1265 I native  : Registering the position of 118809290 at 204.00,61.20,248.43,105.57
+03-04 14:22:14.986   975  1265 I native  : Registering the position of 118809290 at 204.00,61.20,248.43,105.57 at time 209952324490
+03-04 14:22:14.994   975  1265 I native  : Registering the position of 54152251 at 206.72,27.03,247.52,63.75
+03-04 14:22:14.994   975  1265 I native  : Registering the position of 54152251 at 206.72,27.03,247.52,63.75 at time 209952324490
+03-04 14:22:15.579   975  1264 I native  : Registering the position of 61775704 at 205.81,27.54,246.61,63.24
+03-04 14:22:15.580   975  1264 I native  : Registering the position of 61775704 at 205.81,27.54,246.61,63.24 at time 210551669800
+03-04 14:22:15.583   975  1264 I native  : Registering the position of 200726705 at 199.47,60.69,248.43,107.10
+03-04 14:22:15.583   975  1264 I native  : Registering the position of 200726705 at 199.47,60.69,248.43,107.10 at time 210551669800
+03-04 14:22:16.374   975  1265 I native  : Registering the position of 134635926 at 198.56,61.20,248.43,107.61
+03-04 14:22:16.377   975  1265 I native  : Registering the position of 134635926 at 198.56,61.20,248.43,107.61 at time 211286823583
+03-04 14:22:16.394   975  1265 I native  : Registering the position of 209154327 at 205.81,27.54,246.61,63.75
+03-04 14:22:16.396   975  1265 I native  : Registering the position of 209154327 at 205.81,27.54,246.61,63.75 at time 211286823583
+03-04 14:22:16.860   975  1264 I native  : Registering the position of 35281156 at 206.72,27.54,247.52,63.75
+03-04 14:22:16.860   975  1264 I native  : Registering the position of 35281156 at 206.72,27.54,247.52,63.75 at time 211878121517
+03-04 14:22:16.863   975  1264 I native  : Registering the position of 158289645 at 198.56,60.69,248.43,107.61
+03-04 14:22:16.864   975  1264 I native  : Registering the position of 158289645 at 198.56,60.69,248.43,107.61 at time 211878121517
+03-04 14:22:17.594   975  1265 I native  : Registering the position of 113180962 at 201.28,60.18,249.33,107.10
+03-04 14:22:17.595   975  1265 I native  : Registering the position of 113180962 at 201.28,60.18,249.33,107.10 at time 212747638563
+03-04 14:22:17.598   975  1265 I native  : Registering the position of 66586547 at 207.63,27.54,246.61,63.75
+03-04 14:22:17.598   975  1265 I native  : Registering the position of 66586547 at 207.63,27.54,246.61,63.75 at time 212747638563
+03-04 14:22:18.294   975  1264 I native  : Registering the position of 174457200 at 201.28,60.69,248.43,107.10
+03-04 14:22:18.295   975  1264 I native  : Registering the position of 174457200 at 201.28,60.69,248.43,107.10 at time 213159703229
+03-04 14:22:18.299   975  1264 I native  : Registering the position of 243199209 at 207.63,27.54,245.71,63.75
+03-04 14:22:18.299   975  1264 I native  : Registering the position of 243199209 at 207.63,27.54,245.71,63.75 at time 213159703229
+03-04 14:22:18.965   975  1265 I native  : Registering the position of 225447278 at 201.28,60.69,248.43,107.61
+03-04 14:22:18.965   975  1265 I native  : Registering the position of 225447278 at 201.28,60.69,248.43,107.61 at time 213854517757
+03-04 14:22:18.969   975  1265 I native  : Registering the position of 232877071 at 207.63,27.54,246.61,63.75
+03-04 14:22:18.969   975  1265 I native  : Registering the position of 232877071 at 207.63,27.54,246.61,63.75 at time 213854517757
+03-04 14:22:19.487   975  1264 I native  : Registering the position of 176276636 at 205.81,27.54,246.61,63.75
+03-04 14:22:19.488   975  1264 I native  : Registering the position of 176276636 at 205.81,27.54,246.61,63.75 at time 214594465082
+03-04 14:22:19.490   975  1264 I native  : Registering the position of 265318053 at 198.56,60.18,249.33,107.61
+03-04 14:22:19.490   975  1264 I native  : Registering the position of 265318053 at 198.56,60.18,249.33,107.61 at time 214594465082
+03-04 14:22:20.221   975  1265 I native  : Registering the position of 101945978 at 201.28,60.18,248.43,107.10
+03-04 14:22:20.221   975  1265 I native  : Registering the position of 101945978 at 201.28,60.18,248.43,107.10 at time 215297151110
+03-04 14:22:20.224   975  1265 I native  : Registering the position of 22198827 at 207.63,27.54,246.61,63.75
+03-04 14:22:20.224   975  1265 I native  : Registering the position of 22198827 at 207.63,27.54,246.61,63.75 at time 215297151110
+03-04 14:22:21.002   975  1264 I native  : Registering the position of 221548168 at 204.00,61.20,247.52,105.57
+03-04 14:22:21.003   975  1264 I native  : Registering the position of 221548168 at 204.00,61.20,247.52,105.57 at time 215829333164
+03-04 14:22:21.007   975  1264 I native  : Registering the position of 134107169 at 206.72,27.03,247.52,63.75
+03-04 14:22:21.008   975  1264 I native  : Registering the position of 134107169 at 206.72,27.03,247.52,63.75 at time 215829333164
+03-04 14:22:21.706   975  1265 I native  : Registering the position of 238574662 at 200.37,61.20,248.43,107.10
+03-04 14:22:21.712   975  1265 I native  : Registering the position of 238574662 at 200.37,61.20,248.43,107.10 at time 216635317620
+03-04 14:22:21.718   975  1265 I native  : Registering the position of 239128071 at 206.72,27.54,246.61,63.75
+03-04 14:22:21.718   975  1265 I native  : Registering the position of 239128071 at 206.72,27.54,246.61,63.75 at time 216635317620
+03-04 14:22:22.363   975  1264 I native  : Registering the position of 13110068 at 202.19,60.18,248.43,106.08
+03-04 14:22:22.364   975  1264 I native  : Registering the position of 13110068 at 202.19,60.18,248.43,106.08 at time 217316570230
+03-04 14:22:22.367   975  1264 I native  : Registering the position of 114216285 at 206.72,27.54,246.61,64.26
+03-04 14:22:22.367   975  1264 I native  : Registering the position of 114216285 at 206.72,27.54,246.61,64.26 at time 217316570230
+03-04 14:22:23.293   975  1265 I native  : Registering the position of 193853138 at 203.09,61.20,248.43,106.08
+03-04 14:22:23.293   975  1265 I native  : Registering the position of 193853138 at 203.09,61.20,248.43,106.08 at time 218053272179
+03-04 14:22:23.296   975  1265 I native  : Registering the position of 85083043 at 206.72,27.54,247.52,64.26
+03-04 14:22:23.300   975  1265 I native  : Registering the position of 85083043 at 206.72,27.54,247.52,64.26 at time 218053272179
+03-04 14:22:23.701   975  1264 I native  : Registering the position of 208971424 at 204.00,60.69,248.43,105.57
+03-04 14:22:23.702   975  1264 I native  : Registering the position of 208971424 at 204.00,60.69,248.43,105.57 at time 218632772779
+03-04 14:22:23.706   975  1264 I native  : Registering the position of 137355865 at 207.63,27.54,247.52,64.26
+03-04 14:22:23.710   975  1264 I native  : Registering the position of 137355865 at 207.63,27.54,247.52,64.26 at time 218632772779
+03-04 14:22:24.471   975  1265 I native  : Registering the position of 221294110 at 202.19,60.69,248.43,106.08
+03-04 14:22:24.471   975  1265 I native  : Registering the position of 221294110 at 202.19,60.69,248.43,106.08 at time 219547242371
+03-04 14:22:24.473   975  1265 I native  : Registering the position of 201029375 at 206.72,27.54,246.61,64.26
+03-04 14:22:24.473   975  1265 I native  : Registering the position of 201029375 at 206.72,27.54,246.61,64.26 at time 219547242371
+03-04 14:22:24.985   975  1264 I native  : Registering the position of 9276620 at 202.19,60.69,248.43,106.08
+03-04 14:22:24.987   975  1264 I native  : Registering the position of 9276620 at 202.19,60.69,248.43,106.08 at time 219984611748
+03-04 14:22:24.991   975  1264 I native  : Registering the position of 250825493 at 206.72,27.54,247.52,64.26
+03-04 14:22:24.992   975  1264 I native  : Registering the position of 250825493 at 206.72,27.54,247.52,64.26 at time 219984611748
+03-04 14:22:25.896   975  1265 I native  : Registering the position of 95784490 at 203.09,60.69,248.43,106.08
+03-04 14:22:25.897   975  1265 I native  : Registering the position of 95784490 at 203.09,60.69,248.43,106.08 at time 220764225160
+03-04 14:22:25.901   975  1265 I native  : Registering the position of 236618779 at 207.63,27.54,247.52,64.26
+03-04 14:22:25.902   975  1265 I native  : Registering the position of 236618779 at 207.63,27.54,247.52,64.26 at time 220764225160
+03-04 14:22:26.355   975  1264 I native  : Registering the position of 225225144 at 204.00,60.69,247.52,105.57
+03-04 14:22:26.355   975  1264 I native  : Registering the position of 225225144 at 204.00,60.69,247.52,105.57 at time 221251867959
+03-04 14:22:26.359   975  1264 I native  : Registering the position of 256541585 at 207.63,27.54,246.61,64.26
+03-04 14:22:26.359   975  1264 I native  : Registering the position of 256541585 at 207.63,27.54,246.61,64.26 at time 221251867959
+03-04 14:22:27.163   975  1265 I native  : Registering the position of 167142134 at 205.81,62.22,248.43,105.57
+03-04 14:22:27.163   975  1265 I native  : Registering the position of 167142134 at 205.81,62.22,248.43,105.57 at time 222205065638
+03-04 14:22:27.170   975  1265 I native  : Registering the position of 5457655 at 207.63,27.03,247.52,63.75
+03-04 14:22:27.171   975  1265 I native  : Registering the position of 5457655 at 207.63,27.03,247.52,63.75 at time 222205065638
+03-04 14:22:27.952   975  1264 I native  : Registering the position of 220113252 at 204.00,61.20,248.43,105.06
+03-04 14:22:27.953   975  1264 I native  : Registering the position of 220113252 at 204.00,61.20,248.43,105.06 at time 222654824141
+03-04 14:22:27.957   975  1264 I native  : Registering the position of 84068301 at 206.72,27.54,247.52,64.77
+03-04 14:22:27.957   975  1264 I native  : Registering the position of 84068301 at 206.72,27.54,247.52,64.77 at time 222654824141
+03-04 14:22:28.401   975  1265 I native  : Registering the position of 10336386 at 201.28,60.69,248.43,107.10
+03-04 14:22:28.402   975  1265 I native  : Registering the position of 10336386 at 201.28,60.69,248.43,107.10 at time 223520317062
+03-04 14:22:28.404   975  1265 I native  : Registering the position of 132864915 at 207.63,27.54,246.61,63.75
+03-04 14:22:28.404   975  1265 I native  : Registering the position of 132864915 at 207.63,27.54,246.61,63.75 at time 223520317062
+03-04 14:22:29.126   975  1264 I native  : Registering the position of 198113232 at 201.28,60.69,249.33,107.10
+03-04 14:22:29.126   975  1264 I native  : Registering the position of 198113232 at 201.28,60.69,249.33,107.10 at time 224223875174
+03-04 14:22:29.128   975  1264 I native  : Registering the position of 25236425 at 207.63,27.54,246.61,63.75
+03-04 14:22:29.129   975  1264 I native  : Registering the position of 25236425 at 207.63,27.54,246.61,63.75 at time 224223875174
+03-04 14:22:29.772   975  1265 I native  : Registering the position of 242408142 at 201.28,61.20,248.43,107.10
+03-04 14:22:29.774   975  1265 I native  : Registering the position of 242408142 at 201.28,61.20,248.43,107.10 at time 224710630723
+03-04 14:22:29.777   975  1265 I native  : Registering the position of 249961967 at 207.63,27.54,246.61,63.75
+03-04 14:22:29.778   975  1265 I native  : Registering the position of 249961967 at 207.63,27.54,246.61,63.75 at time 224710630723
+03-04 14:22:30.491   975  1264 I native  : Registering the position of 183746812 at 201.28,61.20,249.33,107.10
+03-04 14:22:30.492   975  1264 I native  : Registering the position of 183746812 at 201.28,61.20,249.33,107.10 at time 225462638174
+03-04 14:22:30.494   975  1264 I native  : Registering the position of 226370437 at 207.63,27.54,246.61,63.75
+03-04 14:22:30.494   975  1264 I native  : Registering the position of 226370437 at 207.63,27.54,246.61,63.75 at time 225462638174
+03-04 14:22:30.927   975  1265 I native  : Registering the position of 191223258 at 201.28,61.20,249.33,107.10
+03-04 14:22:30.929   975  1265 I native  : Registering the position of 191223258 at 201.28,61.20,249.33,107.10 at time 226070497526
+03-04 14:22:30.932   975  1265 I native  : Registering the position of 35695115 at 206.72,27.54,246.61,63.75
+03-04 14:22:30.933   975  1265 I native  : Registering the position of 35695115 at 206.72,27.54,246.61,63.75 at time 226070497526
+03-04 14:22:31.723   975  1264 I native  : Registering the position of 188346600 at 201.28,61.20,249.33,107.10
+03-04 14:22:31.724   975  1264 I native  : Registering the position of 188346600 at 201.28,61.20,249.33,107.10 at time 226754841220
+03-04 14:22:31.726   975  1264 I native  : Registering the position of 176321281 at 206.72,27.54,246.61,63.75
+03-04 14:22:31.727   975  1264 I native  : Registering the position of 176321281 at 206.72,27.54,246.61,63.75 at time 226754841220
+03-04 14:22:32.137   975  1265 I native  : Registering the position of 207320486 at 202.19,60.69,249.33,106.59
+03-04 14:22:32.138   975  1265 I native  : Registering the position of 207320486 at 202.19,60.69,249.33,106.59 at time 227303015650
+03-04 14:22:32.142   975  1265 I native  : Registering the position of 86891495 at 207.63,27.54,246.61,63.75
+03-04 14:22:32.143   975  1265 I native  : Registering the position of 86891495 at 207.63,27.54,246.61,63.75 at time 227303015650
+03-04 14:22:33.207   975  1264 I native  : Registering the position of 154219412 at 202.19,61.20,249.33,106.59
+03-04 14:22:33.209   975  1264 I native  : Registering the position of 154219412 at 202.19,61.20,249.33,106.59 at time 228011358555
+03-04 14:22:33.213   975  1264 I native  : Registering the position of 2244157 at 208.53,27.54,246.61,63.75
+03-04 14:22:33.213   975  1264 I native  : Registering the position of 2244157 at 208.53,27.54,246.61,63.75 at time 228011358555
+03-04 14:22:33.641   975  1265 I native  : Registering the position of 230245938 at 203.09,61.20,245.71,105.06
+03-04 14:22:33.641   975  1265 I native  : Registering the position of 230245938 at 203.09,61.20,245.71,105.06 at time 228493906228
+03-04 14:22:33.645   975  1265 I native  : Registering the position of 133320579 at 206.72,27.54,246.61,64.26
+03-04 14:22:33.645   975  1265 I native  : Registering the position of 133320579 at 206.72,27.54,246.61,64.26 at time 228493906228
+03-04 14:22:34.366   975  1264 I native  : Registering the position of 146273536 at 202.19,61.20,249.33,107.10
+03-04 14:22:34.367   975  1264 I native  : Registering the position of 146273536 at 202.19,61.20,249.33,107.10 at time 229487885620
+03-04 14:22:34.369   975  1264 I native  : Registering the position of 16351545 at 207.63,27.03,246.61,63.75
+03-04 14:22:34.370   975  1264 I native  : Registering the position of 16351545 at 207.63,27.03,246.61,63.75 at time 229487885620
+03-04 14:22:34.937   975  1265 I native  : Registering the position of 179409790 at 202.19,60.69,249.33,107.61
+03-04 14:22:34.938   975  1265 I native  : Registering the position of 179409790 at 202.19,60.69,249.33,107.61 at time 229939322373
+03-04 14:22:34.941   975  1265 I native  : Registering the position of 167796959 at 207.63,27.03,246.61,63.75
+03-04 14:22:34.942   975  1265 I native  : Registering the position of 167796959 at 207.63,27.03,246.61,63.75 at time 229939322373
+03-04 14:22:35.651   975  1264 I native  : Registering the position of 187130156 at 200.37,61.20,248.43,107.61
+03-04 14:22:35.652   975  1264 I native  : Registering the position of 187130156 at 200.37,61.20,248.43,107.61 at time 230700532492
+03-04 14:22:35.654   975  1264 I native  : Registering the position of 57145333 at 206.72,27.03,246.61,63.24
+03-04 14:22:35.654   975  1264 I native  : Registering the position of 57145333 at 206.72,27.03,246.61,63.24 at time 230700532492
+03-04 14:22:36.353   975  1265 I native  : Registering the position of 223308170 at 201.28,61.20,249.33,107.10
+03-04 14:22:36.353   975  1265 I native  : Registering the position of 223308170 at 201.28,61.20,249.33,107.10 at time 231200923458
+03-04 14:22:36.358   975  1265 I native  : Registering the position of 129248251 at 206.72,27.03,245.71,63.24
+03-04 14:22:36.358   975  1265 I native  : Registering the position of 129248251 at 206.72,27.03,245.71,63.24 at time 231200923458
+03-04 14:22:37.089   975  1264 I native  : Registering the position of 205480984 at 201.28,61.20,249.33,107.61
+03-04 14:22:37.091   975  1264 I native  : Registering the position of 205480984 at 201.28,61.20,249.33,107.61 at time 232011297498
+03-04 14:22:37.095   975  1264 I native  : Registering the position of 168631921 at 206.72,27.54,246.61,63.75
+03-04 14:22:37.100   975  1264 I native  : Registering the position of 168631921 at 206.72,27.54,246.61,63.75 at time 232011297498
+03-04 14:22:37.682   975  1265 I native  : Registering the position of 54694998 at 201.28,60.69,248.43,107.10
+03-04 14:22:37.682   975  1265 I native  : Registering the position of 54694998 at 201.28,60.69,248.43,107.10 at time 232656063188
+03-04 14:22:37.686   975  1265 I native  : Registering the position of 219122903 at 206.72,27.54,246.61,63.75
+03-04 14:22:37.686   975  1265 I native  : Registering the position of 219122903 at 206.72,27.54,246.61,63.75 at time 232656063188
+03-04 14:22:38.618   975  1264 I native  : Registering the position of 30583236 at 204.00,60.69,247.52,105.06
+03-04 14:22:38.618   975  1264 I native  : Registering the position of 30583236 at 204.00,60.69,247.52,105.06 at time 233419523806
+03-04 14:22:38.622   975  1264 I native  : Registering the position of 134492333 at 206.72,27.54,246.61,63.75
+03-04 14:22:38.622   975  1264 I native  : Registering the position of 134492333 at 206.72,27.54,246.61,63.75 at time 233419523806
+03-04 14:22:38.910   975  1265 I native  : Registering the position of 57384930 at 176.80,6.63,213.07,45.39
+03-04 14:22:38.912   975  1265 I native  : Registering the position of 57384930 at 176.80,6.63,213.07,45.39 at time 233950801693
+03-04 14:22:38.914   975  1265 I native  : Registering the position of 173416307 at 170.45,40.80,218.51,90.27
+03-04 14:22:38.915   975  1265 I native  : Registering the position of 173416307 at 170.45,40.80,218.51,90.27 at time 233950801693
+03-04 14:22:39.910   975  1264 I native  : Registering the position of 171089456 at 191.31,62.22,235.73,108.63
+03-04 14:22:39.911   975  1264 I native  : Registering the position of 171089456 at 191.31,62.22,235.73,108.63 at time 234892450538
+03-04 14:22:39.914   975  1264 I native  : Registering the position of 216017577 at 192.21,27.54,234.83,67.83
+03-04 14:22:39.914   975  1264 I native  : Registering the position of 216017577 at 192.21,27.54,234.83,67.83 at time 234892450538
+03-04 14:22:40.207   975  1265 I native  : Registering the position of 2611246 at 191.31,24.99,235.73,65.79
+03-04 14:22:40.208   975  1265 I native  : Registering the position of 2611246 at 191.31,24.99,235.73,65.79 at time 235206846819
+03-04 14:22:40.215   975  1265 I native  : Registering the position of 107560911 at 189.49,60.69,237.55,110.67
+03-04 14:22:40.215   975  1265 I native  : Registering the position of 107560911 at 189.49,60.69,237.55,110.67 at time 235206846819
+03-04 14:22:41.210   975  1264 I native  : Registering the position of 89877852 at 193.12,65.79,241.17,109.14
+03-04 14:22:41.210   975  1264 I native  : Registering the position of 89877852 at 193.12,65.79,241.17,109.14 at time 236214078087
+03-04 14:22:41.214   975  1264 I native  : Registering the position of 73910373 at 202.19,29.58,237.55,62.73
+03-04 14:22:41.214   975  1264 I native  : Registering the position of 73910373 at 202.19,29.58,237.55,62.73 at time 236214078087
+03-04 14:22:41.584   975  1265 I native  : Registering the position of 39668026 at 193.12,65.28,242.08,109.65
+03-04 14:22:41.584   975  1265 I native  : Registering the position of 39668026 at 193.12,65.28,242.08,109.65 at time 236498655532
+03-04 14:22:41.587   975  1265 I native  : Registering the position of 182716907 at 200.37,29.07,239.36,63.24
+03-04 14:22:41.587   975  1265 I native  : Registering the position of 182716907 at 200.37,29.07,239.36,63.24 at time 236498655532
+03-04 14:22:42.532   975  1264 I native  : Registering the position of 81789768 at 194.03,26.01,242.08,65.79
+03-04 14:22:42.533   975  1264 I native  : Registering the position of 81789768 at 194.03,26.01,242.08,65.79 at time 237522052135
+03-04 14:22:42.536   975  1264 I native  : Registering the position of 101811681 at 194.03,60.18,242.08,110.67
+03-04 14:22:42.536   975  1264 I native  : Registering the position of 101811681 at 194.03,60.18,242.08,110.67 at time 237522052135
+03-04 14:22:42.995   975  1265 I native  : Registering the position of 155631366 at 194.93,26.52,241.17,66.30
+03-04 14:22:42.996   975  1265 I native  : Registering the position of 155631366 at 194.93,26.52,241.17,66.30 at time 237860730836
+03-04 14:22:42.999   975  1265 I native  : Registering the position of 100096455 at 193.12,60.18,242.08,110.67
+03-04 14:22:42.999   975  1265 I native  : Registering the position of 100096455 at 193.12,60.18,242.08,110.67 at time 237860730836
+03-04 14:22:43.879   975  1264 I native  : Registering the position of 244714484 at 194.93,26.52,240.27,65.28
+03-04 14:22:43.884   975  1264 I native  : Registering the position of 244714484 at 194.93,26.52,240.27,65.28 at time 238844442101
+03-04 14:22:43.887   975  1264 I native  : Registering the position of 4169501 at 194.03,61.20,242.08,111.18
+03-04 14:22:43.887   975  1264 I native  : Registering the position of 4169501 at 194.03,61.20,242.08,111.18 at time 238844442101
+03-04 14:22:44.227   975  1265 I native  : Registering the position of 184534418 at 194.93,27.03,239.36,65.79
+03-04 14:22:44.227   975  1265 I native  : Registering the position of 184534418 at 194.93,27.03,239.36,65.79 at time 239265362060
+03-04 14:22:44.229   975  1265 I native  : Registering the position of 235260771 at 193.12,61.71,241.17,110.67
+03-04 14:22:44.230   975  1265 I native  : Registering the position of 235260771 at 193.12,61.71,241.17,110.67 at time 239265362060
+03-04 14:22:45.300   975  1264 I native  : Registering the position of 235008864 at 194.93,26.52,241.17,66.30
+03-04 14:22:45.301   975  1264 I native  : Registering the position of 235008864 at 194.93,26.52,241.17,66.30 at time 240227115490
+03-04 14:22:45.304   975  1264 I native  : Registering the position of 188485657 at 194.03,61.20,242.08,111.18
+03-04 14:22:45.304   975  1264 I native  : Registering the position of 188485657 at 194.03,61.20,242.08,111.18 at time 240227115490
+03-04 14:22:45.443   975  1265 I native  : Registering the position of 30451934 at 194.93,26.01,241.17,65.79
+03-04 14:22:45.444   975  1265 I native  : Registering the position of 30451934 at 194.93,26.01,241.17,65.79 at time 240525438895
+03-04 14:22:45.446   975  1265 I native  : Registering the position of 50313919 at 193.12,60.69,242.08,111.18
+03-04 14:22:45.447   975  1265 I native  : Registering the position of 50313919 at 193.12,60.69,242.08,111.18 at time 240525438895
+03-04 14:22:46.744   975  1264 I native  : Registering the position of 8578444 at 194.93,26.01,242.08,65.79
+03-04 14:22:46.744   975  1264 I native  : Registering the position of 8578444 at 194.93,26.01,242.08,65.79 at time 241612154880
+03-04 14:22:46.747   975  1264 I native  : Registering the position of 267687125 at 193.12,60.69,242.08,111.18
+03-04 14:22:46.748   975  1264 I native  : Registering the position of 267687125 at 193.12,60.69,242.08,111.18 at time 241612154880
+03-04 14:22:46.786   975  1265 I native  : Registering the position of 37385450 at 194.93,26.01,242.08,66.30
+03-04 14:22:46.787   975  1265 I native  : Registering the position of 37385450 at 194.93,26.01,242.08,66.30 at time 241797495940
+03-04 14:22:46.791   975  1265 I native  : Registering the position of 159335387 at 194.03,60.69,242.99,111.69
+03-04 14:22:46.791   975  1265 I native  : Registering the position of 159335387 at 194.03,60.69,242.99,111.69 at time 241797495940
+03-04 14:22:48.114   975  1264 I native  : Registering the position of 138333816 at 194.03,26.01,241.17,66.30
+03-04 14:22:48.114   975  1264 I native  : Registering the position of 138333816 at 194.03,26.01,241.17,66.30 at time 243173586120
+03-04 14:22:48.117   975  1264 I native  : Registering the position of 242657617 at 193.12,60.69,242.08,111.69
+03-04 14:22:48.117   975  1264 I native  : Registering the position of 242657617 at 193.12,60.69,242.08,111.69 at time 243173586120
+03-04 14:22:49.464   975  1264 I native  : Registering the position of 96662966 at 194.93,26.01,241.17,65.79
+03-04 14:22:49.465   975  1264 I native  : Registering the position of 96662966 at 194.93,26.01,241.17,65.79 at time 244431359371
+03-04 14:22:49.470   975  1264 I native  : Registering the position of 195314359 at 192.21,61.71,241.17,111.18
+03-04 14:22:49.470   975  1264 I native  : Registering the position of 195314359 at 192.21,61.71,241.17,111.18 at time 244431359371
+03-04 14:22:49.566   975  1265 I native  : Registering the position of 30300708 at 194.93,26.01,240.27,65.28
+03-04 14:22:49.566   975  1265 I native  : Registering the position of 30300708 at 194.93,26.01,240.27,65.28 at time 244536358798
+03-04 14:22:49.569   975  1265 I native  : Registering the position of 2853261 at 192.21,61.20,242.08,111.18
+03-04 14:22:49.569   975  1265 I native  : Registering the position of 2853261 at 192.21,61.20,242.08,111.18 at time 244536358798
+03-04 14:22:50.928   975  1264 I native  : Registering the position of 109098818 at 194.93,26.01,240.27,65.79
+03-04 14:22:50.929   975  1264 I native  : Registering the position of 109098818 at 194.93,26.01,240.27,65.79 at time 245731168502
+03-04 14:22:50.932   975  1264 I native  : Registering the position of 196105043 at 193.12,61.20,242.08,111.18
+03-04 14:22:50.933   975  1264 I native  : Registering the position of 196105043 at 193.12,61.20,242.08,111.18 at time 245731168502
+03-04 14:22:50.982   975  1265 I native  : Registering the position of 145290384 at 194.93,26.01,240.27,65.79
+03-04 14:22:50.983   975  1265 I native  : Registering the position of 145290384 at 194.93,26.01,240.27,65.79 at time 245866914557
+03-04 14:22:50.986   975  1265 I native  : Registering the position of 30683529 at 194.03,61.20,242.08,111.18
+03-04 14:22:50.987   975  1265 I native  : Registering the position of 30683529 at 194.03,61.20,242.08,111.18 at time 245866914557
+03-04 14:22:52.292   975  1264 I native  : Registering the position of 124192142 at 194.93,26.01,242.08,65.79
+03-04 14:22:52.292   975  1264 I native  : Registering the position of 124192142 at 194.93,26.01,242.08,65.79 at time 247256436863
+03-04 14:22:52.296   975  1264 I native  : Registering the position of 73585071 at 193.12,61.20,242.08,111.18
+03-04 14:22:52.296   975  1264 I native  : Registering the position of 73585071 at 193.12,61.20,242.08,111.18 at time 247256436863
+03-04 14:22:52.530   975  1265 I native  : Registering the position of 105957820 at 194.93,26.52,242.08,66.30
+03-04 14:22:52.532   975  1265 I native  : Registering the position of 105957820 at 194.93,26.52,242.08,66.30 at time 247411589546
+03-04 14:22:52.538   975  1265 I native  : Registering the position of 21323077 at 193.12,61.20,242.99,111.69
+03-04 14:22:52.538   975  1265 I native  : Registering the position of 21323077 at 193.12,61.20,242.99,111.69 at time 247411589546
+03-04 14:22:53.655   975  1264 I native  : Registering the position of 89255066 at 193.12,25.50,241.17,65.79
+03-04 14:22:53.656   975  1264 I native  : Registering the position of 89255066 at 193.12,25.50,241.17,65.79 at time 248572922329
+03-04 14:22:53.659   975  1264 I native  : Registering the position of 51698123 at 194.03,60.69,242.99,111.69
+03-04 14:22:53.660   975  1264 I native  : Registering the position of 51698123 at 194.03,60.69,242.99,111.69 at time 248572922329
+03-04 14:22:53.731   975  1265 I native  : Registering the position of 138331560 at 194.93,27.03,239.36,65.79
+03-04 14:22:53.731   975  1265 I native  : Registering the position of 138331560 at 194.93,27.03,239.36,65.79 at time 248803651977
+03-04 14:22:53.734   975  1265 I native  : Registering the position of 182683841 at 192.21,62.22,241.17,110.67
+03-04 14:22:53.734   975  1265 I native  : Registering the position of 182683841 at 192.21,62.22,241.17,110.67 at time 248803651977
+03-04 14:22:55.035   975  1265 I native  : Registering the position of 215103590 at 194.03,26.01,240.27,65.79
+03-04 14:22:55.035   975  1265 I native  : Registering the position of 215103590 at 194.03,26.01,240.27,65.79 at time 250199829534
+03-04 14:22:55.037   975  1265 I native  : Registering the position of 127223719 at 192.21,61.71,241.17,110.67
+03-04 14:22:55.038   975  1265 I native  : Registering the position of 127223719 at 192.21,61.71,241.17,110.67 at time 250199829534
+03-04 14:22:56.474   975  1265 I native  : Registering the position of 143561812 at 194.93,26.01,241.17,65.79
+03-04 14:22:56.474   975  1265 I native  : Registering the position of 143561812 at 194.93,26.01,241.17,65.79 at time 251336797940
+03-04 14:22:56.477   975  1265 I native  : Registering the position of 48164861 at 194.03,61.71,242.08,111.69
+03-04 14:22:56.477   975  1265 I native  : Registering the position of 48164861 at 194.03,61.71,242.08,111.69 at time 251336797940
+03-04 14:22:56.508   975  1264 I native  : Registering the position of 12154098 at 194.93,26.52,241.17,65.79
+03-04 14:22:56.509   975  1264 I native  : Registering the position of 12154098 at 194.93,26.52,241.17,65.79 at time 251484794872
+03-04 14:22:56.511   975  1264 I native  : Registering the position of 96778051 at 193.12,61.71,242.08,111.18
+03-04 14:22:56.511   975  1264 I native  : Registering the position of 96778051 at 193.12,61.71,242.08,111.18 at time 251484794872
+03-04 14:22:57.763   975  1265 I native  : Registering the position of 90874304 at 194.93,26.52,240.27,65.79
+03-04 14:22:57.763   975  1265 I native  : Registering the position of 90874304 at 194.93,26.52,240.27,65.79 at time 252787322044
+03-04 14:22:57.766   975  1265 I native  : Registering the position of 103780089 at 193.12,61.20,241.17,110.67
+03-04 14:22:57.766   975  1265 I native  : Registering the position of 103780089 at 193.12,61.20,241.17,110.67 at time 252787322044
+03-04 14:22:57.988   975  1264 I native  : Registering the position of 224783934 at 195.84,26.52,241.17,65.79
+03-04 14:22:57.988   975  1264 I native  : Registering the position of 224783934 at 195.84,26.52,241.17,65.79 at time 252923303474
+03-04 14:22:57.991   975  1264 I native  : Registering the position of 82936991 at 193.12,61.20,242.08,111.18
+03-04 14:22:57.991   975  1264 I native  : Registering the position of 82936991 at 193.12,61.20,242.08,111.18 at time 252923303474
+03-04 14:22:59.029   975  1265 I native  : Registering the position of 54008300 at 194.93,26.01,241.17,65.79
+03-04 14:22:59.029   975  1265 I native  : Registering the position of 54008300 at 194.93,26.01,241.17,65.79 at time 254061077172
+03-04 14:22:59.041   975  1265 I native  : Registering the position of 256975285 at 193.12,61.20,242.99,111.18
+03-04 14:22:59.041   975  1265 I native  : Registering the position of 256975285 at 193.12,61.20,242.99,111.18 at time 254061077172
+03-04 14:22:59.307   975  1162 V Robocol : received command: CMD_RUN_OP_MODE(12757) AutoV11BlueLeft
+03-04 14:22:59.325   975  1190 V Robocol : sending CMD_NOTIFY_RUN_OP_MODE(3097), attempt: 0
+03-04 14:22:59.430   975  1264 I native  : Registering the position of 80654410 at 194.03,26.01,241.17,65.79
+03-04 14:22:59.430   975  1264 I native  : Registering the position of 80654410 at 194.03,26.01,241.17,65.79 at time 254255361317
+03-04 14:22:59.433   975  1264 I native  : Registering the position of 150195131 at 193.12,61.20,242.08,111.18
+03-04 14:22:59.434   975  1264 I native  : Registering the position of 150195131 at 193.12,61.20,242.08,111.18 at time 254255361317
+03-04 14:23:00.688   975  1265 I native  : Registering the position of 92465368 at 194.03,26.52,241.17,66.30
+03-04 14:23:00.688   975  1265 I native  : Registering the position of 92465368 at 194.03,26.52,241.17,66.30 at time 255408500891
+03-04 14:23:00.692   975  1265 I native  : Registering the position of 180298801 at 193.12,61.20,242.08,110.67
+03-04 14:23:00.693   975  1265 I native  : Registering the position of 180298801 at 193.12,61.20,242.08,110.67 at time 255408500891
+03-04 14:23:00.727   975  1264 I native  : Registering the position of 256870166 at 194.03,26.01,242.08,66.30
+03-04 14:23:00.728   975  1264 I native  : Registering the position of 256870166 at 194.03,26.01,242.08,66.30 at time 255782496053
+03-04 14:23:00.731   975  1264 I native  : Registering the position of 17393815 at 193.12,61.20,242.08,110.67
+03-04 14:23:00.731   975  1264 I native  : Registering the position of 17393815 at 193.12,61.20,242.08,110.67 at time 255782496053
+03-04 14:23:01.885   975  1265 I native  : Registering the position of 178895492 at 194.93,27.03,240.27,65.79
+03-04 14:23:01.886   975  1265 I native  : Registering the position of 178895492 at 194.93,27.03,240.27,65.79 at time 256942166920
+03-04 14:23:01.888   975  1265 I native  : Registering the position of 120640109 at 193.12,62.22,241.17,110.67
+03-04 14:23:01.889   975  1265 I native  : Registering the position of 120640109 at 193.12,62.22,241.17,110.67 at time 256942166920
+03-04 14:23:02.028   975  1264 I native  : Registering the position of 221576866 at 194.03,26.52,242.08,66.30
+03-04 14:23:02.028   975  1264 I native  : Registering the position of 221576866 at 194.03,26.52,242.08,66.30 at time 257095355519
+03-04 14:23:02.030   975  1264 I native  : Registering the position of 141686579 at 194.03,61.20,242.08,111.18
+03-04 14:23:02.030   975  1264 I native  : Registering the position of 141686579 at 194.03,61.20,242.08,111.18 at time 257095355519
+03-04 14:23:03.586   975  1264 I native  : Registering the position of 105511664 at 193.12,64.26,242.99,113.22
+03-04 14:23:03.586   975  1264 I native  : Registering the position of 105511664 at 193.12,64.26,242.99,113.22 at time 258331023351
+03-04 14:23:03.588   975  1264 I native  : Registering the position of 227879017 at 192.21,27.03,242.99,68.85
+03-04 14:23:03.589   975  1264 I native  : Registering the position of 227879017 at 192.21,27.03,242.99,68.85 at time 258331023351
+03-04 14:23:04.259   975  1204 I DbgLog  : Turn: RAD=-0.062222224 DEG=-3.565070811584458 POWER=0.1533333334326744
+03-04 14:23:04.308   975  1204 I DbgLog  : Turn: RAD=-0.062222224 DEG=-3.437746693945311 POWER=0.15599999904632567
+03-04 14:23:04.346   975  1204 I DbgLog  : Turn: RAD=-0.04777778 DEG=-2.7374651141470636 POWER=0.14666666716337204
+03-04 14:23:04.385   975  1204 I DbgLog  : Turn: RAD=-0.034444444 DEG=-1.7188733469726556 POWER=0.12666666835546495
+03-04 14:23:04.437   975  1204 I DbgLog  : Turn: RAD=-0.011111111 DEG=-0.38197187266976335 POWER=0.10933333292603492
+03-04 14:23:04.482   975  1204 I DbgLog  : Turn: RAD=0.010963265 DEG=0.8827782580054646 POWER=-0.0838221168331802
+03-04 14:23:04.542   975  1204 I DbgLog  : Turn: RAD=0.023185078 DEG=1.2647497571492576 POWER=-0.10515562027692794
+03-04 14:23:04.580   975  1204 I DbgLog  : Turn: RAD=0.015407387 DEG=0.691806168811908 POWER=-0.10248914688825607
+03-04 14:23:04.612   975  1204 I DbgLog  : Turn: RAD=0.0054076356 DEG=0.11883527305809163 POWER=-0.09048887223005295
+03-04 14:23:04.640   975  1204 I DbgLog  : IMU DEG=-0.4456338514480572
+03-04 14:23:04.648   975  1204 I DbgLog  : IMU DEG ERROR=0.4456338514480572
+03-04 14:23:08.775   975  1204 I DbgLog  : Turn: RAD=-0.046666667 DEG=-2.6738030553274905 POWER=0.13600000023841857
+03-04 14:23:08.832   975  1204 I DbgLog  : Turn: RAD=-0.04111111 DEG=-2.100845166281566 POWER=0.13466666519641876
+03-04 14:23:08.878   975  1204 I DbgLog  : Turn: RAD=-0.026666667 DEG=-1.1459155646484371 POWER=0.1159999991953373
+03-04 14:23:08.924   975  1204 I DbgLog  : Turn: RAD=-0.011111111 DEG=-0.4456338514480572 POWER=0.10000000104308128
+03-04 14:23:08.983   975  1204 I DbgLog  : Turn: RAD=0.0076296967 DEG=0.4371494224775791 POWER=0.08266666673123836
+03-04 14:23:09.011   975  1204 I DbgLog  : IMU DEG=0.8191208949409458
+0

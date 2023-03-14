@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.RobotLog;
+import com.qualcomm.robotcore.hardware.VoltageSensor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
@@ -17,13 +18,16 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 import java.time.LocalDateTime;
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.config.Config;
 
 /**
  * Example OpMode. Demonstrates use of gyro, color sensor, encoders, and telemetry.
  *
  */
-@TeleOp(name = "Datalogger Demo", group = "Datalogger")
-public class DataloggerDemo extends LinearOpMode {
+@Config
+@TeleOp(name = "Datalogger Demo With Dashboard", group = "Datalogger")
+public class DataloggerDemoWithDashboard extends LinearOpMode {
 
     private Datalogger datalog;
 
@@ -50,6 +54,7 @@ public class DataloggerDemo extends LinearOpMode {
     private DistanceSensor rightDistance;
     private DistanceSensor backDistance;
     private ColorSensor colorSensor;
+    private VoltageSensor battery;
 
     double live_gyro_value = 0;
     double gyro_offset = 0;
@@ -71,9 +76,11 @@ public class DataloggerDemo extends LinearOpMode {
     double integralSum = 0;
     double lastError = 0;
     //Ku is 3
-    double Kp = 1.2;
-    double Ki = 0;
-    double Kd = 0;
+    public static double Kp = 1;
+    public static double Ki = 0.05;
+    public static double Kd = 0.01;
+    public static int degreeErrorAllowed = 4;
+    public static int tickUpdateInMs = 100;
 
     //set endstate to a high number to prevent end from starting
     int endState = 10000;
@@ -100,7 +107,7 @@ public class DataloggerDemo extends LinearOpMode {
 
     private void logDataPoint(double timeout, double runtime, double power,
                               double directionInRadians, double headingInRadians,
-                              double errorInRadians, double Kp, double Ki, double Kd) {
+                              double errorInRadians, double Kp, double Ki, double Kd,double battery) {
         dataPoints[dataPointCount][0]=timeout;
         dataPoints[dataPointCount][1]=runtime;
         dataPoints[dataPointCount][2]=power;
@@ -110,7 +117,9 @@ public class DataloggerDemo extends LinearOpMode {
         dataPoints[dataPointCount][6]=Kp;
         dataPoints[dataPointCount][7]=Ki;
         dataPoints[dataPointCount][8]=Kd;
+        dataPoints[dataPointCount][9]=battery;
         dataPointCount++;
+        updateTelemetry();
     }
     private void logTurnData(){
         for (int i = 0; i < dataPointCount; i++) {
@@ -123,19 +132,17 @@ public class DataloggerDemo extends LinearOpMode {
             datalog.addField(String.format("%.2f", dataPoints[i][6]));
             datalog.addField(String.format("%.2f", dataPoints[i][7]));
             datalog.addField(String.format("%.2f", dataPoints[i][8]));
+            datalog.addField(String.format("%.2f", dataPoints[i][9]));
             datalog.newLine();
         }
     }
 
+    public static double maxPower = 1.0;
+    public static double minPower = 0.10;
+
     // Filter power
     private double filterPowerInTurn(double requestedPower){
         double filteredPower = requestedPower;
-        double maxPower = 0.9;
-        double minPower = 0.12;
-        if (isVirtualRobot){
-            minPower = 0.05;
-            maxPower = 1;
-        }
         if ((requestedPower < minPower) && (requestedPower > 0)) {
             filteredPower = minPower;
         } else if ((requestedPower > -minPower) && (requestedPower < 0)) {
@@ -155,7 +162,7 @@ public class DataloggerDemo extends LinearOpMode {
 
     IMU.Parameters myIMUparameters;
 
-    int rows = 30000, columns = 9;
+    int rows = 30000, columns = 10;
     int dataPointCount = 0;
 
     private double[][] dataPoints;
@@ -170,11 +177,21 @@ public class DataloggerDemo extends LinearOpMode {
         dataPointCount = 0;
     }
 
+    private double setMotorPowerInTurn(double power){
+        motorFrontLeft.setPower(power);
+        motorBackLeft.setPower(power);
+        motorFrontRight.setPower(-power);
+        motorBackRight.setPower(-power);
+        return power;
+    }
+
     // Turns Robot in direction specified using PID Controller and IMU.
     private void turnByIMU(double directionInDegrees) {
         double directionInRadians = Math.toRadians(directionInDegrees);
         double lastHeading = getHeadingInRadians();
         double error = angleWrap(directionInRadians - lastHeading);
+        int foundTargetCount=0;
+        Boolean isTargetFound=false;
         initializeDataPoints();
         PIDReset();
         motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -189,31 +206,31 @@ public class DataloggerDemo extends LinearOpMode {
         double power = PIDControl(directionInRadians, lastHeading);
         telemetry.addLine("turning");
         telemetry.update();
-        while (((Math.abs(error) > Math.toRadians(.2))) && opModeIsActive()) {
-            if (loopTimer.milliseconds() >= (tick + 10)){
-                tick += 10;
+        while (!isTargetFound && opModeIsActive()) {
+
+            if (loopTimer.milliseconds() >= (tick + tickUpdateInMs)){
+                tick += tickUpdateInMs;
                 lastHeading = getHeadingInRadians();
                 power = PIDControl(directionInRadians, getHeadingInRadians());
-                power = filterPowerInTurn(power);
-                motorFrontLeft.setPower(power);
-                motorBackLeft.setPower(power);
-                motorFrontRight.setPower(-power);
-                motorBackRight.setPower(-power);
+                power = setMotorPowerInTurn(filterPowerInTurn(power));
                 error = angleWrap(directionInRadians - lastHeading);
-                logDataPoint(timeout.milliseconds(),runtime.milliseconds(),power,directionInRadians,getHeadingInRadians(),error,Kp,Ki,Kd);
+                logDataPoint(timeout.milliseconds(),runtime.milliseconds(),power,directionInRadians,getHeadingInRadians(),error,Kp,Ki,Kd,battery.getVoltage());
+                if (Math.abs(error) < Math.toRadians(Math.abs(degreeErrorAllowed))){
+                    foundTargetCount++;
+                    if (foundTargetCount > 2){
+                        isTargetFound = true;
+                    }
+                }
                 if (timeout.seconds()> 5) {
                     break;
                 }
+
             }
         }
         logTurnData();
         telemetry.addLine("rotation complete after " + timeout.time()  + " seconds");
         updateTelemetry();
-
-        motorFrontLeft.setPower(0);
-        motorBackLeft.setPower(0);
-        motorFrontRight.setPower(0);
-        motorBackRight.setPower(0);
+        setMotorPowerInTurn(0);
 
         RobotLog.ii("DbgLog", "Turn Complete after " + timeout.time()  + "ms: RAD=" +  getHeadingInRadians() + " DEG="+ Math.toDegrees(getHeadingInRadians())+" POWER="+power);
 
@@ -239,10 +256,7 @@ public class DataloggerDemo extends LinearOpMode {
 
     //points in direction specified using PID Controller and IMU.
     private void pointDirection(double direction) {
-        double Ku = 3;
-        Kp = 1.2;
-        Ki = 0;
-        Kd = 0;
+        // Use values set by default or FTC Dashboard
         turnByIMU(direction);
     }
 
@@ -255,15 +269,17 @@ public class DataloggerDemo extends LinearOpMode {
         return -orientation.firstAngle * 180.0 / Math.PI;
     }
     private void updateTelemetry(){
-        telemetry.addData("Color","R %d  G %d  B %d", colorSensor.red(), colorSensor.green(), colorSensor.blue());
-        telemetry.addData("Heading", " %.1f", getHeadingInDegrees());
-        telemetry.addData("Angular Velocity", "%.1f", imu.getRobotAngularVelocity(AngleUnit.DEGREES).zRotationRate);
-        telemetry.addData("Front Distance", " %.1f", frontDistance.getDistance(DistanceUnit.CM));
-        telemetry.addData("Left Distance", " %.1f", leftDistance.getDistance(DistanceUnit.CM));
-        telemetry.addData("Right Distance", " %.1f", rightDistance.getDistance(DistanceUnit.CM));
-        telemetry.addData("Back Distance", " %.1f", backDistance.getDistance(DistanceUnit.CM));
-        telemetry.addData("Encoders"," %d %d %d %d", motorBackLeft.getCurrentPosition(), motorFrontLeft.getCurrentPosition(),
-                motorFrontRight.getCurrentPosition(), motorBackRight.getCurrentPosition());
+        telemetry.addData("Heading", getHeadingInDegrees());
+        telemetry.addData("Angular Velocity", imu.getRobotAngularVelocity(AngleUnit.DEGREES).zRotationRate);
+        telemetry.addData("Front Distance", frontDistance.getDistance(DistanceUnit.CM));
+        telemetry.addData("Left Distance", leftDistance.getDistance(DistanceUnit.CM));
+        telemetry.addData("Right Distance", rightDistance.getDistance(DistanceUnit.CM));
+        telemetry.addData("Back Distance", backDistance.getDistance(DistanceUnit.CM));
+        telemetry.addData("motorBackLeftEncoder",motorBackLeft.getCurrentPosition());
+        telemetry.addData("motorFrontLeftEncoder",motorFrontLeft.getCurrentPosition());
+        telemetry.addData("motorFrontRightEncoder",motorFrontRight.getCurrentPosition());
+        telemetry.addData("motorBackRightEncoder",motorBackRight.getCurrentPosition());
+        telemetry.addData("Battery Voltage", battery.getVoltage());
         telemetry.update();
     }
 
@@ -289,7 +305,11 @@ public class DataloggerDemo extends LinearOpMode {
         datalog.addField("PID Kp");
         datalog.addField("PID Ki");
         datalog.addField("PID Kd");
+        datalog.addField("Battery Voltage");
         datalog.firstLine();                        // end first line (row)
+
+        FtcDashboard dashboard = FtcDashboard.getInstance();
+        telemetry = dashboard.getTelemetry();
         telemetry.addData("Datalogger started." , "");
         telemetry.addData("file", filename);
 
@@ -327,6 +347,7 @@ public class DataloggerDemo extends LinearOpMode {
             rightDistance = hardwareMap.get(DistanceSensor.class, "arm distance");
             backDistance = hardwareMap.get(DistanceSensor.class, "control distance");
             colorSensor = hardwareMap.colorSensor.get("color1");
+            battery = hardwareMap.voltageSensor.get("Control Hub");
         }
 
         imu = hardwareMap.get(IMU.class, "imu");
@@ -341,6 +362,7 @@ public class DataloggerDemo extends LinearOpMode {
 
         telemetry.addData("Press Start When Ready","");
         telemetry.update();
+        telemetry.setMsTransmissionInterval(50);
 
         waitForStart();
         while (opModeIsActive()){
@@ -395,10 +417,7 @@ public class DataloggerDemo extends LinearOpMode {
                 motorBackLeft.setPower(backLeftPower);
                 motorFrontRight.setPower(frontRightPower);
                 motorBackRight.setPower(backRightPower);
-                if (y != 0 || x != 0 || rx != 0){
-                    updateTelemetry();
-                }
-
+                updateTelemetry();
             }
 
         }

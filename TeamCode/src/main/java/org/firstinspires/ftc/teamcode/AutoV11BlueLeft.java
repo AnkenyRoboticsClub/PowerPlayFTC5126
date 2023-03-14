@@ -76,9 +76,7 @@ import java.util.Collections;
 //@Disabled //Used disable files
 
 //Make sure the name is correct
-public class AutoV9RedLeft extends LinearOpMode {
-
-
+public class AutoV11BlueLeft extends LinearOpMode {
     //Camera Initialization
     /*
      * Specify the source for the Tensor Flow Model.
@@ -187,6 +185,7 @@ public class AutoV9RedLeft extends LinearOpMode {
     //set endstate to a high number to prevent end from starting
     int endState = 10000;
     
+    
     //PID control method
     public double PIDControl (double reference, double state) {
         double error = angleWrap(reference - state);
@@ -235,6 +234,9 @@ public class AutoV9RedLeft extends LinearOpMode {
         //diff*-30 (-30 is the multiplier)
         driveVertical((int)(diff*-30),600);
     }
+    private int driveToWall(){
+       return (int)((armdistance.getDistance(DistanceUnit.CM)-25)*10);
+    }
     
     //finds the red line on the field
     private boolean findRedLine(){
@@ -245,12 +247,12 @@ public class AutoV9RedLeft extends LinearOpMode {
         //reset timeout
         timeout.reset();
         //color limit variable. the optimal color reading
-        double COLOR_LIMIT = 150;
+        double COLOR_LIMIT = 190;
         double power = 0;
         boolean lineFound = false;
         while (opModeIsActive()){
-            if ((color2.red() >= COLOR_LIMIT) && (color1.red() >= COLOR_LIMIT)){
-                if (color2.red() > color1.red()){
+            if ((color2.blue() >= COLOR_LIMIT) && (color1.blue() >= COLOR_LIMIT)){
+                if (color2.blue() > color1.blue()){
                     // drive right slowly
                     power = 0.2; // min power to move motors right
                     //lineFound = true;
@@ -261,10 +263,10 @@ public class AutoV9RedLeft extends LinearOpMode {
                     //lineFound = true;
                     //break;
                 }
-            } else if ((color2.red() > COLOR_LIMIT) && (color1.red() < COLOR_LIMIT)){
+            } else if ((color2.blue() > COLOR_LIMIT) && (color1.blue() < COLOR_LIMIT)){
                 // drive right to line
                 power = 0.2;
-            } else if ((color2.red() < COLOR_LIMIT) && (color1.red() > COLOR_LIMIT)){
+            } else if ((color2.blue() < COLOR_LIMIT) && (color1.blue() > COLOR_LIMIT)){
                 // drive left to line
                 power = -0.2;
             } else {
@@ -275,12 +277,12 @@ public class AutoV9RedLeft extends LinearOpMode {
             motorBackRight.setPower(power * 1);
             motorBackLeft.setPower(power * -1);
             motorFrontLeft.setPower(power * 1);
-            if ((color2.red() < COLOR_LIMIT) && (color1.red() < COLOR_LIMIT)){
+            if ((color2.blue() < COLOR_LIMIT) && (color1.blue() < COLOR_LIMIT)){
                 // Too far from line to detect
                 lineFound = false;
                 break;
-            }else if ((Math.abs(color2.red() - color1.red()) < 50) &&
-                !((color2.red() < COLOR_LIMIT) && (color1.red() < COLOR_LIMIT))){
+            }else if ((Math.abs(color2.blue() - color1.blue()) < 50) &&
+                !((color2.blue() < COLOR_LIMIT) && (color1.blue() < COLOR_LIMIT))){
                 lineFound = true;
                 break;
             }
@@ -297,26 +299,28 @@ public class AutoV9RedLeft extends LinearOpMode {
         return lineFound;
     }
     
-    //set led color like in tele to show distance from pole
-    //color sensor is illegal but it doesn't report if it is connected or not so just leave the code
-    private void usePoleSensor(){
+    private int usePoleSensor(){
         if(controldistance.getDistance(DistanceUnit.CM)>18)
             {
                 //too far
                 Red.enable(true);
                 Green.enable(false);
+                return(0); 
+                
             }
             else if(controldistance.getDistance(DistanceUnit.CM)<13)
             {
                 //too close
                 Red.enable(true);
                 Green.enable(true);
+                return (2);
             }
             else
             {
                 //in range
                 Red.enable(false);
                 Green.enable(true);
+                return (1);
             }
     }
     
@@ -486,6 +490,75 @@ public class AutoV9RedLeft extends LinearOpMode {
         motorSlide.setPower(0);
     }
     
+    //set led color like in tele to show distance from pole
+    //color sensor is illegal but it doesn't report if it is connected or not so just leave the code
+    private double getAbsolutePoleDist()
+    {
+        if(controldistance.getDistance(DistanceUnit.CM)>18)
+            {
+                //too far
+                Red.enable(true);
+                Green.enable(false);
+                return(controldistance.getDistance(DistanceUnit.CM)-18); 
+                
+            }
+            else if(controldistance.getDistance(DistanceUnit.CM)<13)
+            {
+                //too close
+                Red.enable(true);
+                Green.enable(true);
+                return(controldistance.getDistance(DistanceUnit.CM)+13);
+            }
+            else
+            {
+                //in range
+                Red.enable(false);
+                Green.enable(true);
+                return (0);
+            }
+    }
+    
+    private void poleCorrection()
+    {
+        int lineUp=0;
+        while(lineUp<4){
+            if(getAbsolutePoleDist()<90)
+            {
+                break;
+            }
+            if(lineUp%2==0)
+            {
+                driveHorizontal(100/(lineUp+1),1000);
+            }
+            if(lineUp%2==1)
+            {
+                driveHorizontal(-100/(lineUp+1),1000);
+            }
+            lineUp++;
+        }
+        
+        int tries =0;
+        while((tries<3)){//this gives the robot three tries to line up with the pole 
+            if(usePoleSensor()==0)
+            {
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                driveVertical((int)getAbsolutePoleDist(),300);//75
+                }
+            }   
+            else if(usePoleSensor()==1)
+            {
+                break; 
+            }
+            else if (usePoleSensor()==2)
+            {
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+                }
+            }
+            tries++;
+            }
+    }
+    
     //state machine to progress through the cycles
     private void autoCycle(){
         if (state== -1) {
@@ -493,23 +566,28 @@ public class AutoV9RedLeft extends LinearOpMode {
             sleep(300);
             state++;
         }else if (state == 0) {
-            arm(1800,2000);
+            arm(1800,3000);
             state++;
         } else if (state == 1) {
             driveHorizontal(2125,1000);
             state++;
         } else if (state == 2) {
-            arm(1200,2000);
+            pointDirection(0);
+            driveVertical(30,500);
+            poleCorrection();
+            
+            arm(1200,2000);//1200
             claw(-1);
             sleep(50);
             arm(1800,2000);
-            pointDirection(0);
-            driveVertical(30,500);
+            //pointDirection(0);
+            
             driveHorizontal(800,1000);
             pointDirection(0);
             state++;
         } else if (state == 3) {
             driveHorizontal(-160,1000);
+            arm(670,2000);
             state++;
         } else if (state == 4) {
             pointDirection(0);
@@ -519,8 +597,12 @@ public class AutoV9RedLeft extends LinearOpMode {
             pointDirection(0);
             state++;
         } else if (state == 5) {
-            sleep(500);
-            driveArmSideDistance(30);
+            //sleep(500);
+            for (int i=0;i<3;i++)
+            {
+                driveVertical(driveToWall(),400);
+            }
+            //changed from driveArmSideDistance(30);
             pointDirection(0);
             arm(670,2000);
             sleep(700);
@@ -528,28 +610,34 @@ public class AutoV9RedLeft extends LinearOpMode {
         } else if (state == 6) {
             claw(0.15);
             sleep(100);
-            arm(2500,2000);
+            arm(2000,2000);
             sleep(500);
             pointDirection(0);
-            driveArmSideDistance(36);
-            pointDirection(0);
-            arm(2000,500);
-            pointDirection(105);
+            // driveArmSideDistance(36);
+            driveVertical(-200,1000);
+            //pointDirection(180);
+            arm(1800,500);
+            pointDirection(119);
             state++;
         } else if (state == 7) {
-            arm(1100,2000);
+            driveVertical(60,500);
+            
+            poleCorrection();//unchanged
+            
+            arm(1100,2000);//force cone down
             claw(-1);
             sleep(50);
             arm(1800,2000);
-            driveVertical(-30,500);
+            //driveVertical(-20,500);
             state++;
         } else if (state == 8) {
-            pointDirection(90);
+            //pointDirection(90);
             pointDirection(90);
             driveVertical(-75,500);
             pointDirection(90);
             arm(0,2000);
             state++;
+            pointDirection(90);
         } else if (state == 9) {
             endState = 9;
         }
@@ -587,6 +675,8 @@ public class AutoV9RedLeft extends LinearOpMode {
         motorSlide = hardwareMap.get(DcMotor.class, "MotorSlide");
         motorSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         
+        Red=hardwareMap.get(LED.class,"Red");
+        Green=hardwareMap.get(LED.class,"Green");
         
         
         // Retrieve the IMU from the hardware map
@@ -669,7 +759,7 @@ public class AutoV9RedLeft extends LinearOpMode {
                 if (imageFound != "nothing") {
                     //tick = tick + 1;
                 }
-                if ((gotImage == false) && (timer.seconds()>2)) {
+                if ((gotImage == false) && (state>1)) {
                     //timer.reset();
                     gotImage = true;
                     if (imageFound == "nothing") {
@@ -677,14 +767,16 @@ public class AutoV9RedLeft extends LinearOpMode {
                     }
                     imageFound2 = imageFound;
                 }
-                autoCycle();
+                if (timer.seconds()>1){
+                    autoCycle();
+                }
                 if ((gotImage == true)) {
                     
                     if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){
                         telemetry.addLine("1 Bolt Confirmed");
                         if (state == endState) {
                             driveHorizontal(400,1000);
-                            //pointDirection(90);
+                            pointDirection(90);
                             state++;
                         }
                     }
@@ -692,7 +784,7 @@ public class AutoV9RedLeft extends LinearOpMode {
                         telemetry.addLine("2 Bulb Confirmed");
                         if (state == endState) {
                             driveHorizontal(-700,1000);
-                            //pointDirection(90);
+                            pointDirection(90);
                             state++;
                         }
                     }
@@ -700,7 +792,7 @@ public class AutoV9RedLeft extends LinearOpMode {
                         telemetry.addLine("3 Panel Confirmed");
                         if (state == endState) {
                             driveHorizontal(-2000,1000);
-                            //pointDirection(90);
+                            pointDirection(90);
                             state++;
                         }
                     }

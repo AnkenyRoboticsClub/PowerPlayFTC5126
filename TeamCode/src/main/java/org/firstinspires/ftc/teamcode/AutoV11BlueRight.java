@@ -76,7 +76,7 @@ import java.util.Collections;
 //@Disabled //Used disable files
 
 //Make sure the name is correct
-public class AutoV10BlueRight extends LinearOpMode {
+public class AutoV11BlueRight extends LinearOpMode {
     //Camera Initialization
     /*
      * Specify the source for the Tensor Flow Model.
@@ -520,7 +520,7 @@ public class AutoV10BlueRight extends LinearOpMode {
     private void poleCorrection()
     {
         int lineUp=0;
-        while(lineUp<4){
+        while(lineUp<6){
             if(getAbsolutePoleDist()<90)
             {
                 break;
@@ -540,7 +540,9 @@ public class AutoV10BlueRight extends LinearOpMode {
         while((tries<3)){//this gives the robot three tries to line up with the pole 
             if(usePoleSensor()==0)
             {
-                driveVertical((int)getAbsolutePoleDist(),300);//75
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                    driveVertical((int)getAbsolutePoleDist(),300);//75
+                }
             }   
             else if(usePoleSensor()==1)
             {
@@ -548,7 +550,9 @@ public class AutoV10BlueRight extends LinearOpMode {
             }
             else if (usePoleSensor()==2)
             {
-                driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                    driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+                }
             }
             tries++;
             }
@@ -612,8 +616,8 @@ public class AutoV10BlueRight extends LinearOpMode {
             // driveArmSideDistance(36);
             driveVertical(-200,1000);
             //pointDirection(180);
-            arm(2000,500);
-            pointDirection(70);
+            arm(2100,500);
+            pointDirection(58);
             state++;
         } else if (state == 7) {
             driveVertical(60,500);
@@ -763,9 +767,9 @@ public class AutoV10BlueRight extends LinearOpMode {
                     }
                     imageFound2 = imageFound;
                 }
-                //if (timer.seconds()>1){
+                if (timer.seconds()>1){
                     autoCycle();
-                //}
+                }
                 if ((gotImage == true)) {
                     
                     if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){

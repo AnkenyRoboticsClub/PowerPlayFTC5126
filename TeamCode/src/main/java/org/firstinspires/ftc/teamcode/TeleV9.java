@@ -183,12 +183,12 @@ public class TeleV9 extends LinearOpMode {
 
             if(toggleLeftTrigger==1 && gamepad2.left_trigger<0.5){
                 toggleLeftTrigger=0;
-                encoderMin = -4411+encoderReal;
-                encoderMax = 0+encoderReal;
-                pole1 = -1845+encoderReal;
-                pole2 = -2900+encoderReal;
-                pole3 = encoderMin+20;
-                stack = -670+encoderReal;
+                encoderMin = -4411+encoderReal-10;
+                encoderMax = 0+encoderReal-10;
+                pole1 = -1845+encoderReal-10;
+                pole2 = -2900+encoderReal-10;
+                pole3 = encoderMin+20-10;
+                stack = -670+encoderReal-10;
             }
             if(gamepad2.left_trigger>0.5){
                 toggleLeftTrigger=1;

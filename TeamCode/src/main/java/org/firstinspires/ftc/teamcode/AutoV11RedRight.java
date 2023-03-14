@@ -76,7 +76,7 @@ import java.util.Collections;
 //@Disabled //Used disable files
 
 //Make sure the name is correct
-public class AutoV10RedLeft extends LinearOpMode {
+public class AutoV11RedRight extends LinearOpMode {
     //Camera Initialization
     /*
      * Specify the source for the Tensor Flow Model.
@@ -185,7 +185,6 @@ public class AutoV10RedLeft extends LinearOpMode {
     //set endstate to a high number to prevent end from starting
     int endState = 10000;
     
-    
     //PID control method
     public double PIDControl (double reference, double state) {
         double error = angleWrap(reference - state);
@@ -247,7 +246,7 @@ public class AutoV10RedLeft extends LinearOpMode {
         //reset timeout
         timeout.reset();
         //color limit variable. the optimal color reading
-        double COLOR_LIMIT = 150;
+        double COLOR_LIMIT = 190;
         double power = 0;
         boolean lineFound = false;
         while (opModeIsActive()){
@@ -521,7 +520,7 @@ public class AutoV10RedLeft extends LinearOpMode {
     private void poleCorrection()
     {
         int lineUp=0;
-        while(lineUp<4){
+        while(lineUp<6){
             if(getAbsolutePoleDist()<90)
             {
                 break;
@@ -541,7 +540,9 @@ public class AutoV10RedLeft extends LinearOpMode {
         while((tries<3)){//this gives the robot three tries to line up with the pole 
             if(usePoleSensor()==0)
             {
-                driveVertical((int)getAbsolutePoleDist(),300);//75
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                    driveVertical((int)getAbsolutePoleDist(),300);//75
+                }
             }   
             else if(usePoleSensor()==1)
             {
@@ -549,7 +550,9 @@ public class AutoV10RedLeft extends LinearOpMode {
             }
             else if (usePoleSensor()==2)
             {
-                driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+                if (controldistance.getDistance(DistanceUnit.CM)<70) {
+                    driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
+                }
             }
             tries++;
             }
@@ -562,7 +565,7 @@ public class AutoV10RedLeft extends LinearOpMode {
             sleep(300);
             state++;
         }else if (state == 0) {
-            arm(1800,3000);
+            arm(3000,3000);
             state++;
         } else if (state == 1) {
             driveHorizontal(2125,1000);
@@ -582,15 +585,16 @@ public class AutoV10RedLeft extends LinearOpMode {
             pointDirection(0);
             state++;
         } else if (state == 3) {
-            driveHorizontal(-160,1000);
+            pointDirection(180);
+            driveHorizontal(160,1000);
             arm(670,2000);
             state++;
         } else if (state == 4) {
-            pointDirection(0);
+            pointDirection(180);
             driveVertical(800,1000);
-            pointDirection(0);
+            pointDirection(180);
             findRedLine();
-            pointDirection(0);
+            pointDirection(180);
             state++;
         } else if (state == 5) {
             //sleep(500);
@@ -599,35 +603,35 @@ public class AutoV10RedLeft extends LinearOpMode {
                 driveVertical(driveToWall(),400);
             }
             //changed from driveArmSideDistance(30);
-            pointDirection(0);
+            pointDirection(180);
             arm(670,2000);
             sleep(700);
             state++;
         } else if (state == 6) {
             claw(0.15);
             sleep(100);
-            arm(2000,2000);
+            arm(2500,2000);
             sleep(500);
-            pointDirection(0);
+            pointDirection(180);
             // driveArmSideDistance(36);
             driveVertical(-200,1000);
             //pointDirection(180);
-            arm(1700,500);
-            pointDirection(115);
+            arm(2100,500);
+            pointDirection(58);
             state++;
         } else if (state == 7) {
             driveVertical(60,500);
             
-            poleCorrection();//unchanged
+            poleCorrection();
             
             arm(1100,2000);//force cone down
             claw(-1);
             sleep(50);
             arm(1800,2000);
-            //driveVertical(-20,500);
+            driveVertical(30,500);
             state++;
         } else if (state == 8) {
-            //pointDirection(90);
+            pointDirection(90);
             pointDirection(90);
             driveVertical(-75,500);
             pointDirection(90);
@@ -763,15 +767,15 @@ public class AutoV10RedLeft extends LinearOpMode {
                     }
                     imageFound2 = imageFound;
                 }
-                //if (timer.seconds()>1){
+                if (timer.seconds()>1){
                     autoCycle();
-                //}
+                }
                 if ((gotImage == true)) {
                     
                     if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){
                         telemetry.addLine("1 Bolt Confirmed");
                         if (state == endState) {
-                            driveHorizontal(400,1000);
+                            driveHorizontal(-400,1000);
                             pointDirection(90);
                             state++;
                         }
@@ -779,7 +783,7 @@ public class AutoV10RedLeft extends LinearOpMode {
                     else if ((imageFound2 == "D2") || (imageFound2 == "Hammer")) {
                         telemetry.addLine("2 Bulb Confirmed");
                         if (state == endState) {
-                            driveHorizontal(-700,1000);
+                            driveHorizontal(700,1000);
                             pointDirection(90);
                             state++;
                         }
@@ -787,7 +791,7 @@ public class AutoV10RedLeft extends LinearOpMode {
                     else if ((imageFound2 == "D3") || (imageFound2 == "Gear")) {
                         telemetry.addLine("3 Panel Confirmed");
                         if (state == endState) {
-                            driveHorizontal(-2000,1000);
+                            driveHorizontal(2000,1000);
                             pointDirection(90);
                             state++;
                         }

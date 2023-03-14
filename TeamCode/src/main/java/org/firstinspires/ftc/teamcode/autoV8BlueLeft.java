@@ -27,11 +27,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-//Import Files
 package org.firstinspires.ftc.teamcode;
 import java.lang.*;
-import com.qualcomm.robotcore.hardware.LED;
 import java.util.Arrays;
 import java.lang.reflect.Array;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -44,6 +41,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
+//import java.util.*;
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection;
@@ -70,14 +68,10 @@ import java.util.Collections;
  * IMPORTANT: In order to use this OpMode, you need to obtain your own Vuforia license key as
  * is explained below.
  */
- 
-//Set file to autonomous
-@Autonomous 
-//@Disabled //Used disable files
+@Autonomous //(name = "Concept: TensorFlow Object Detection", group = "Concept")
+@Disabled
+public class autoV8BlueLeft extends LinearOpMode {
 
-//Make sure the name is correct
-public class AutoV10BlueLeft extends LinearOpMode {
-    //Camera Initialization
     /*
      * Specify the source for the Tensor Flow Model.
      * If the TensorFlowLite object model is included in the Robot Controller App as an "asset",
@@ -86,17 +80,18 @@ public class AutoV10BlueLeft extends LinearOpMode {
      * Here we assume it's an Asset.    Also see method initTfod() below .
      */
     // private static final String TFOD_MODEL_ASSET = "PowerPlay.tflite";
-    // replace after "tflitemodels/"
     private static final String TFOD_MODEL_FILE  = "/sdcard/FIRST/tflitemodels/model_20230114_190010.tflite";
 
     private static final String[] LABELS = {
-        //labels
-        "D1",//side 1
-        "D2",//side 2
-        "D3",//side 3
-        "Gear",//side 3
-        "Hammer",//side 2
-        "Hawk"//side 1
+        //"1 Bolt",
+        //"2 Bulb",
+        //"3 Panel"
+        "D1",
+        "D2",
+        "D3",
+        "Gear",
+        "Hammer",
+        "Hawk"
     };
 
 
@@ -112,7 +107,6 @@ public class AutoV10BlueLeft extends LinearOpMode {
      * Once you've obtained a license key, copy the string from the Vuforia web site
      * and paste it in to your code on the next line, between the double quotes.
      */
-     
     private static final String VUFORIA_KEY =
             "AQua3MH/////AAABmUDuf1W5kURhh++lzwhKbA8KwXVHwllLTKXUN0VKW06wxewTDW2woPvacthP/3DRiCW0pizjqW2hra5ef6mIsaM/StC16g/RWDjjInNec3wkbJULFFwwAXj/bfPyFX2TCz0PrdYeCFta/k3+zRuOzZllHri8TafTAwpvb6NwhhOpq4kNyWdlY/Ruoajpn7w69NPoZs73/Wia0AdwOk5vDKdmuEnSn3hJ98zQnHhdHyxQ1i7ytXf5wdW1Bgn7Wdy1cgZ2sMIKEkQqonUf9jsO6A8vrZClIqXdjCyztTk+TKWKuOjn2wTLufTmyLFkLlwpb8pIieANG2cEXiZQkILhxrdv/FNP388w9hvli787XZjJ";
 
@@ -120,7 +114,6 @@ public class AutoV10BlueLeft extends LinearOpMode {
      * {@link #vuforia} is the variable we will use to store our instance of the Vuforia
      * localization engine.
      */
-     
     private VuforiaLocalizer vuforia;
 
     /**
@@ -128,41 +121,28 @@ public class AutoV10BlueLeft extends LinearOpMode {
      * Detection engine.
      */
      
-    //initialize component variables
-    //sensors
     private DistanceSensor armdistance;
     private DistanceSensor controldistance;
     private ColorSensor color1;
     private ColorSensor color2;
-    //can't use this color sensor because it's illegal
-    private LED Red;
-    private LED Green;
      
-    //arm motor and servos
     private DcMotor motorSlide;
     private CRServo right;
     private CRServo left; 
     
-    //camera
     private TFObjectDetector tfod;
-    
-    //timers
     private ElapsedTime timer = new ElapsedTime(ElapsedTime.Resolution.SECONDS);
     private ElapsedTime timeout = new ElapsedTime(ElapsedTime.Resolution.SECONDS);
     
-    //wheel motors
-    private DcMotor motorFrontLeft;     //3
-    private DcMotor motorBackLeft;      //2
-    private DcMotor motorFrontRight;    //0
-    private DcMotor motorBackRight;     //1
+    private DcMotor motorFrontLeft;
+    private DcMotor motorBackLeft;
+    private DcMotor motorFrontRight;
+    private DcMotor motorBackRight;
     
-    //set the state for the state machine
-    private int state = -1;
+    private int state = 0;
     
-    //initialize IMU
     private  BNO055IMU imu;
     
-    //finds optimal rotation
     public double angleWrap(double radians) {
         while (radians > Math.PI) {
             radians -= 2*Math.PI;
@@ -174,19 +154,16 @@ public class AutoV10BlueLeft extends LinearOpMode {
         return radians;
     }
     
-    //configure PID Controller for rotation
     double integralSum = 0;
     double lastError = 0;
     //Ku is 3
     double Kp = 1.2;
     double Ki = 0;
     double Kd = 0;
-    
-    //set endstate to a high number to prevent end from starting
     int endState = 10000;
     
     
-    //PID control method
+    
     public double PIDControl (double reference, double state) {
         double error = angleWrap(reference - state);
         integralSum += error * timer.seconds();
@@ -200,12 +177,58 @@ public class AutoV10BlueLeft extends LinearOpMode {
         
     }
     
-    //drive based on distance senosr reading from controll hub side
-    private void driveArmSideDistance(double distance){
+    private void armDistance(int target){
+        double difference = target - armdistance.getDistance(DistanceUnit.CM);
+        double proportion = 0.011;
+        //motorFrontLeft = hardwareMap.dcMotor.get("Motor3");
+        //motorBackLeft = hardwareMap.dcMotor.get("Motor2");
+        //motorFrontRight = hardwareMap.dcMotor.get("Motor0");
+        //motorBackRight = hardwareMap.dcMotor.get("Motor1");
+        motorFrontRight.setPower(difference * proportion * -1);
+        motorBackRight.setPower(difference * proportion * -1);
+        motorBackLeft.setPower(difference * proportion * -1);
+        motorFrontLeft.setPower(difference * proportion * -1);
+    }
+    
+    private void blueLine(){
+        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBackLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorFrontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBackRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        telemetry.addLine("line start");
+        telemetry.update();
+        double b1_bias = color1.blue()-325;
+        double b2_bias = color2.blue()-325;
+        double speed = b1_bias - b2_bias;
+        double proportion = 0.004;
+        while ((Math.abs(speed) > 20) && opModeIsActive()){
+            b1_bias = color1.blue()-325;
+            b2_bias = color2.blue()-325;
+            speed = b1_bias - b2_bias;
+            proportion = 0.004;
+            //motorFrontRight.setPower(speed * proportion * 1);
+            //motorBackRight.setPower(speed * proportion * -1);
+            //motorBackLeft.setPower(speed * proportion * 1);
+            //motorFrontLeft.setPower(speed * proportion * -1);
+            telemetry.addLine("line going");
+            telemetry.addData("Speed", speed);
+            telemetry.addData("Power", 1/(speed*proportion));
+            telemetry.update();
+        }
+        motorFrontRight.setPower(0);
+        motorBackRight.setPower(0);
+        motorBackLeft.setPower(0);
+        motorFrontLeft.setPower(0);
+        state++;
+        telemetry.addLine("line end");
+        telemetry.update();
+    }
+
+    private void driveArmSideDistance(int distance){
         double diff = (distance - armdistance.getDistance(DistanceUnit.CM));
         double average=0;
-        
-        //finds the average of the values collected by the distance sensor to increase accuracy.
+        //List<Double>values=new ArrayList(0,0,0);
+        //List <double>values=arrays.asList(0,0,0);
         List<Double> values= Arrays.asList(0.0,0.0,0.0,0.0,0.0,0.0);
         for(int i=0;i<6;i++)
         {
@@ -216,7 +239,29 @@ public class AutoV10BlueLeft extends LinearOpMode {
         }
         average=average/6;
         Double[]vals=values.toArray(new Double[values.size()]);
-        //gets the average
+        /*double highest= values[0];
+        if(values[1]>highest)
+        {
+            highest=values[1];
+        }
+        if(values[2]>highest)
+        {
+            highest=values[2];
+        }
+        
+        double lowest=values[0];
+        if(values[1]<lowest)
+        {
+            lowest=values[1];
+        }
+        if(values[2]<lowest)
+        {
+            lowest=values[2];
+        }
+        for(int i =0; i<3;i++)
+        {
+            if((highest!=values[i]))
+        }*/
         double avgDiff=10000;
         double smallestDev=0;
         for(int i=0;i<6;i++)
@@ -230,24 +275,40 @@ public class AutoV10BlueLeft extends LinearOpMode {
         diff = (distance - smallestDev);
         telemetry.addData("diff=", diff);
         telemetry.update();
-        //converts centimeters to encoder units
-        //diff*-30 (-30 is the multiplier)
         driveVertical((int)(diff*-30),600);
-    }
-    private int driveToWall(){
-       return (int)((armdistance.getDistance(DistanceUnit.CM)-25)*10);
+
     }
     
-    //finds the red line on the field
+    private void driveToArmSide(int distance){
+        motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBackLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorFrontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBackRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        while (opModeIsActive() && (Math.abs(distance - armdistance.getDistance(DistanceUnit.CM)) >3)){
+            double dist = (distance - armdistance.getDistance(DistanceUnit.CM));
+            if (Math.abs(dist)> 25){
+                dist = 25*(dist/Math.abs(dist));
+            }
+            double power = -dist*0.025;
+            //telemetry.addData("power=", power);
+            //telemetry.update();
+            motorFrontRight.setPower(power);
+            motorBackRight.setPower(power);
+            motorBackLeft.setPower(power);
+            motorFrontLeft.setPower(power);
+        }
+    }
+    
     private boolean findRedLine(){
         motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorBackLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorFrontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorBackRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        //reset timeout
+        //telemetry.addLine("line start");
+        //telemetry.update();
         timeout.reset();
-        //color limit variable. the optimal color reading
-        double COLOR_LIMIT = 190;
+        
+        double COLOR_LIMIT = 150;
         double power = 0;
         boolean lineFound = false;
         while (opModeIsActive()){
@@ -277,6 +338,10 @@ public class AutoV10BlueLeft extends LinearOpMode {
             motorBackRight.setPower(power * 1);
             motorBackLeft.setPower(power * -1);
             motorFrontLeft.setPower(power * 1);
+            //telemetry.addData("color1.blue()=",color1.blue());
+            //telemetry.addData("color2.blue()",color2.blue());
+            //telemetry.addData("power=", power);
+            //telemetry.update();
             if ((color2.blue() < COLOR_LIMIT) && (color1.blue() < COLOR_LIMIT)){
                 // Too far from line to detect
                 lineFound = false;
@@ -287,7 +352,6 @@ public class AutoV10BlueLeft extends LinearOpMode {
                 break;
             }
             if (timeout.seconds()>3){
-                lineFound = false;
                 break;
             }
         }
@@ -295,36 +359,95 @@ public class AutoV10BlueLeft extends LinearOpMode {
         motorBackRight.setPower(0);
         motorBackLeft.setPower(0);
         motorFrontLeft.setPower(0);
-        //returns the if the line was found or not
+        //state++;
+        //telemetry.addLine("line end");
+        //telemetry.update();
         return lineFound;
     }
     
-    private int usePoleSensor(){
-        if(controldistance.getDistance(DistanceUnit.CM)>18)
-            {
-                //too far
-                Red.enable(true);
-                Green.enable(false);
-                return(0); 
-                
-            }
-            else if(controldistance.getDistance(DistanceUnit.CM)<13)
-            {
-                //too close
-                Red.enable(true);
-                Green.enable(true);
-                return (2);
-            }
-            else
-            {
-                //in range
-                Red.enable(false);
-                Green.enable(true);
-                return (1);
-            }
+    private void autoCycle(){
+        endState = 9;
+        if (state == 0) {
+            //driveArmSideDistance(35);
+            //driveToArmSide(85);
+            claw(0.15);
+            sleep(300);
+            arm(1800,2000);
+            //sleep(300);
+            //driveHorizontal(100,500);
+            state++;
+        } else if (state == 1) {
+            //pointDirection(0);
+            driveHorizontal(2125,1000);
+            state++;
+        } else if (state == 2) {
+            //pointDirection(0);
+            //driveVertical(100,500);
+            //driveToArmSide(85);
+            arm(1200,2000);
+            claw(-1);
+            sleep(50);
+            arm(1800,2000);
+            pointDirection(0);
+            driveVertical(30,500);
+            driveHorizontal(800,1000);
+            pointDirection(0);
+            state++;
+        } else if (state == 3) {
+            driveHorizontal(-160,1000);
+            state++;
+        } else if (state == 4) {
+            pointDirection(0);
+            //arm(670,2000);
+            driveVertical(800,1000);
+            pointDirection(0);
+            findRedLine();
+            pointDirection(0);
+            state++;
+        } else if (state == 5) {
+            //arm(2500,2000);
+            //sleep(300);
+            sleep(500);
+            driveArmSideDistance(30);
+            pointDirection(0);
+            arm(670,2000);
+            sleep(700);
+            state++;
+        } else if (state == 6) {
+            claw(0.15);
+            sleep(100);
+            arm(2500,2000);
+            sleep(500);
+            pointDirection(0);
+            driveArmSideDistance(36);
+            pointDirection(0);
+            //pointDirection(50);
+            //pointDirection(90);
+            arm(2000,500);
+            pointDirection(105);
+            state++;
+        } else if (state == 7) {
+            //arm(1000,500);
+            driveVertical(20,500);
+            //sleep(300);
+            arm(1100,2000);//force
+            claw(-1);
+            sleep(50);
+            arm(1800,2000);
+            driveVertical(-30,500);
+            state++;
+        } else if (state == 8) {
+            pointDirection(90);
+            pointDirection(90);
+            driveVertical(-75,500);
+            pointDirection(90);
+            arm(0,2000);
+            state++;
+        } else if (state == 9) {
+            
+        }
     }
     
-    //points in direction specified using PID Controller and IMU.
     private void pointDirection(double direction) {
         motorFrontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorBackLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -351,6 +474,9 @@ public class AutoV10BlueLeft extends LinearOpMode {
             motorFrontRight.setPower(-power);
             motorBackRight.setPower(-power);
             RobotLog.ii("DbgLog", "Turn: RAD=" +imu.getAngularOrientation().firstAngle +" DEG="+ Math.toDegrees(imu.getAngularOrientation().firstAngle)+" POWER="+power);
+            //telemetry.addData("IMU RAD", imu.getAngularOrientation().firstAngle);
+            //telemetry.addData("IMU DEGREES", Math.toDegrees(imu.getAngularOrientation().firstAngle));
+            //telemetry.addData("Power", power);
             if (timeout.seconds()> 2) {
                 break;
             }
@@ -358,6 +484,9 @@ public class AutoV10BlueLeft extends LinearOpMode {
         } 
         
         telemetry.addLine("rotation complete");
+        //telemetry.addData("IMU RAD", imu.getAngularOrientation().firstAngle);
+        //telemetry.addData("IMU DEGREES", Math.toDegrees(imu.getAngularOrientation().firstAngle));
+        //telemetry.addData("Power", power);
         telemetry.update();
             
         motorFrontLeft.setPower(0);
@@ -365,11 +494,12 @@ public class AutoV10BlueLeft extends LinearOpMode {
         motorFrontRight.setPower(0);
         motorBackRight.setPower(0);
         
+        //Math.toRadians(direction)-imu.getAngularOrientation().firstAngle
         RobotLog.ii("DbgLog", "IMU DEG=" +Math.toDegrees(imu.getAngularOrientation().firstAngle)) ;
         RobotLog.ii("DbgLog", "IMU DEG ERROR=" +Math.toDegrees(Math.toRadians(direction)-imu.getAngularOrientation().firstAngle)) ;
+        //state++;
     }
     
-    //drives vertically
     private void driveVertical(int position, int velocity) {
         motorFrontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -408,6 +538,13 @@ public class AutoV10BlueLeft extends LinearOpMode {
             bL = (int)Math.round(motorBackLeft.getCurrentPosition());
             fR = (int)Math.round(motorFrontRight.getCurrentPosition());
             bR = (int)Math.round(motorBackRight.getCurrentPosition());
+            
+            //telemetry.addLine("driving");
+            //telemetry.addData("fL", motorFrontLeft.getCurrentPosition());
+            //telemetry.addData("bL", motorBackLeft.getCurrentPosition());
+            //telemetry.addData("fR", motorFrontRight.getCurrentPosition());
+            //telemetry.addData("bR", motorBackRight.getCurrentPosition());
+            //telemetry.update();
         }
         
         motorFrontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -417,10 +554,10 @@ public class AutoV10BlueLeft extends LinearOpMode {
         
         telemetry.addLine("done driving");
         telemetry.update();
+        //state++;
         
     }
     
-    //drives horizontally
     private void driveHorizontal(int position, int velocity) {
         motorFrontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -458,6 +595,13 @@ public class AutoV10BlueLeft extends LinearOpMode {
             bL = (int)Math.round(motorBackLeft.getCurrentPosition());
             fR = (int)Math.round(motorFrontRight.getCurrentPosition());
             bR = (int)Math.round(motorBackRight.getCurrentPosition());
+            
+            //telemetry.addLine("driving");
+            //telemetry.addData("fL", motorFrontLeft.getCurrentPosition());
+            //telemetry.addData("bL", motorBackLeft.getCurrentPosition());
+            //telemetry.addData("fR", motorFrontRight.getCurrentPosition());
+            //telemetry.addData("bR", motorBackRight.getCurrentPosition());
+            //telemetry.update();
         }
         
         motorFrontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -467,16 +611,16 @@ public class AutoV10BlueLeft extends LinearOpMode {
         
         telemetry.addLine("done driving");
         telemetry.update();
+        //state++;
+        
     }
     
-    //operates the claw
     private void claw(double open) {
         left.setPower(open);
         right.setPower(-open);
         sleep(1000);
     }
     
-    //operates the arm
     private void arm(int height, int velocity) {
         motorSlide.setTargetPosition(-height);
         motorSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -484,159 +628,10 @@ public class AutoV10BlueLeft extends LinearOpMode {
         ((DcMotorEx) motorSlide).setVelocity(velocity);
         //sleep(1000);
     }
-    //causes the arm to drop using gravity
+    
     private void armGravity() {
         motorSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorSlide.setPower(0);
-    }
-    
-    //set led color like in tele to show distance from pole
-    //color sensor is illegal but it doesn't report if it is connected or not so just leave the code
-    private double getAbsolutePoleDist()
-    {
-        if(controldistance.getDistance(DistanceUnit.CM)>18)
-            {
-                //too far
-                Red.enable(true);
-                Green.enable(false);
-                return(controldistance.getDistance(DistanceUnit.CM)-18); 
-                
-            }
-            else if(controldistance.getDistance(DistanceUnit.CM)<13)
-            {
-                //too close
-                Red.enable(true);
-                Green.enable(true);
-                return(controldistance.getDistance(DistanceUnit.CM)+13);
-            }
-            else
-            {
-                //in range
-                Red.enable(false);
-                Green.enable(true);
-                return (0);
-            }
-    }
-    
-    private void poleCorrection()
-    {
-        int lineUp=0;
-        while(lineUp<4){
-            if(getAbsolutePoleDist()<90)
-            {
-                break;
-            }
-            if(lineUp%2==0)
-            {
-                driveHorizontal(100/(lineUp+1),1000);
-            }
-            if(lineUp%2==1)
-            {
-                driveHorizontal(-100/(lineUp+1),1000);
-            }
-            lineUp++;
-        }
-        
-        int tries =0;
-        while((tries<3)){//this gives the robot three tries to line up with the pole 
-            if(usePoleSensor()==0)
-            {
-                driveVertical((int)getAbsolutePoleDist(),300);//75
-            }   
-            else if(usePoleSensor()==1)
-            {
-                break; 
-            }
-            else if (usePoleSensor()==2)
-            {
-                driveVertical((int)(-1*getAbsolutePoleDist()),300);//-100
-            }
-            tries++;
-            }
-    }
-    
-    //state machine to progress through the cycles
-    private void autoCycle(){
-        if (state== -1) {
-            claw(0.15);
-            sleep(300);
-            state++;
-        }else if (state == 0) {
-            arm(1800,3000);
-            state++;
-        } else if (state == 1) {
-            driveHorizontal(2125,1000);
-            state++;
-        } else if (state == 2) {
-            pointDirection(0);
-            driveVertical(30,500);
-            poleCorrection();
-            
-            arm(1200,2000);//1200
-            claw(-1);
-            sleep(50);
-            arm(1800,2000);
-            //pointDirection(0);
-            
-            driveHorizontal(800,1000);
-            pointDirection(0);
-            state++;
-        } else if (state == 3) {
-            driveHorizontal(-160,1000);
-            arm(670,2000);
-            state++;
-        } else if (state == 4) {
-            pointDirection(0);
-            driveVertical(800,1000);
-            pointDirection(0);
-            findRedLine();
-            pointDirection(0);
-            state++;
-        } else if (state == 5) {
-            //sleep(500);
-            for (int i=0;i<3;i++)
-            {
-                driveVertical(driveToWall(),400);
-            }
-            //changed from driveArmSideDistance(30);
-            pointDirection(0);
-            arm(670,2000);
-            sleep(700);
-            state++;
-        } else if (state == 6) {
-            claw(0.15);
-            sleep(100);
-            arm(2000,2000);
-            sleep(500);
-            pointDirection(0);
-            // driveArmSideDistance(36);
-            driveVertical(-200,1000);
-            //pointDirection(180);
-            arm(1700,500);
-            pointDirection(115);
-            state++;
-        } else if (state == 7) {
-            driveVertical(60,500);
-            
-            poleCorrection();//unchanged
-            
-            arm(1100,2000);//force cone down
-            claw(-1);
-            sleep(50);
-            arm(1800,2000);
-            //driveVertical(-20,500);
-            state++;
-        } else if (state == 8) {
-            //pointDirection(90);
-            pointDirection(90);
-            driveVertical(-75,500);
-            pointDirection(90);
-            arm(0,2000);
-            state++;
-            pointDirection(90);
-        } else if (state == 9) {
-            endState = 9;
-        }
     }
     
     @Override
@@ -671,8 +666,6 @@ public class AutoV10BlueLeft extends LinearOpMode {
         motorSlide = hardwareMap.get(DcMotor.class, "MotorSlide");
         motorSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         
-        Red=hardwareMap.get(LED.class,"Red");
-        Green=hardwareMap.get(LED.class,"Green");
         
         
         // Retrieve the IMU from the hardware map
@@ -755,7 +748,7 @@ public class AutoV10BlueLeft extends LinearOpMode {
                 if (imageFound != "nothing") {
                     //tick = tick + 1;
                 }
-                if ((gotImage == false) && (state>1)) {
+                if ((gotImage == false) && (timer.seconds()>2)) {
                     //timer.reset();
                     gotImage = true;
                     if (imageFound == "nothing") {
@@ -763,16 +756,13 @@ public class AutoV10BlueLeft extends LinearOpMode {
                     }
                     imageFound2 = imageFound;
                 }
-                //if (timer.seconds()>1){
-                    autoCycle();
-                //}
                 if ((gotImage == true)) {
-                    
+                    autoCycle();
                     if ((imageFound2 == "D1") || (imageFound2 == "Hawk")){
                         telemetry.addLine("1 Bolt Confirmed");
                         if (state == endState) {
                             driveHorizontal(400,1000);
-                            pointDirection(90);
+                            //pointDirection(90);
                             state++;
                         }
                     }
@@ -780,7 +770,7 @@ public class AutoV10BlueLeft extends LinearOpMode {
                         telemetry.addLine("2 Bulb Confirmed");
                         if (state == endState) {
                             driveHorizontal(-700,1000);
-                            pointDirection(90);
+                            //pointDirection(90);
                             state++;
                         }
                     }
@@ -788,7 +778,7 @@ public class AutoV10BlueLeft extends LinearOpMode {
                         telemetry.addLine("3 Panel Confirmed");
                         if (state == endState) {
                             driveHorizontal(-2000,1000);
-                            pointDirection(90);
+                            //pointDirection(90);
                             state++;
                         }
                     }

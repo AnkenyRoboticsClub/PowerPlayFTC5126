@@ -3,8 +3,10 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -38,6 +40,12 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
     private DcMotor motorBackLeft;      //2
     private DcMotor motorFrontRight;    //0
     private DcMotor motorBackRight;     //1
+
+    private DcMotor MotorSlide;
+    private CRServo right;
+    private CRServo left;
+
+    public static double squeezeFactor = 0.8;
 
     //timers
     private ElapsedTime timer = new ElapsedTime(ElapsedTime.Resolution.SECONDS);
@@ -191,6 +199,7 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
         double lastHeading = getHeadingInRadians();
         double error = angleWrap(directionInRadians - lastHeading);
         int foundTargetCount=0;
+        double batteryVoltage=12;
         Boolean isTargetFound=false;
         initializeDataPoints();
         PIDReset();
@@ -214,7 +223,10 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
                 power = PIDControl(directionInRadians, getHeadingInRadians());
                 power = setMotorPowerInTurn(filterPowerInTurn(power));
                 error = angleWrap(directionInRadians - lastHeading);
-                logDataPoint(timeout.milliseconds(),runtime.milliseconds(),power,directionInRadians,getHeadingInRadians(),error,Kp,Ki,Kd,battery.getVoltage());
+                if (!isVirtualRobot) {
+                    batteryVoltage = battery.getVoltage();
+                }
+                logDataPoint(timeout.milliseconds(),runtime.milliseconds(),power,directionInRadians,getHeadingInRadians(),error,Kp,Ki,Kd,batteryVoltage);
                 if (Math.abs(error) < Math.toRadians(Math.abs(degreeErrorAllowed))){
                     foundTargetCount++;
                     if (foundTargetCount > 2){
@@ -279,15 +291,14 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
         telemetry.addData("motorFrontLeftEncoder",motorFrontLeft.getCurrentPosition());
         telemetry.addData("motorFrontRightEncoder",motorFrontRight.getCurrentPosition());
         telemetry.addData("motorBackRightEncoder",motorBackRight.getCurrentPosition());
-        telemetry.addData("Battery Voltage", battery.getVoltage());
+        if (!isVirtualRobot) {
+            telemetry.addData("Battery Voltage", battery.getVoltage());
+        }
         telemetry.update();
     }
 
-    public void runOpMode(){
-        isVirtualRobot = System.getProperty("os.name").contains("Windows");
+    private void initializeTelemetry(){
         String filename;
-        // Speed Variable
-        double speed = 0.5;
         if (isVirtualRobot){
             LocalDateTime myDateObj = LocalDateTime.now();
             filename = "Datalogger Demo" + myDateObj.toString().replace(":","." ) + ".csv";
@@ -307,22 +318,60 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
         datalog.addField("PID Kd");
         datalog.addField("Battery Voltage");
         datalog.firstLine();                        // end first line (row)
-
-        FtcDashboard dashboard = FtcDashboard.getInstance();
-        telemetry = dashboard.getTelemetry();
+        if (!isVirtualRobot) {
+            FtcDashboard dashboard = FtcDashboard.getInstance();
+            telemetry = dashboard.getTelemetry();
+        }
         telemetry.addData("Datalogger started." , "");
         telemetry.addData("file", filename);
+        telemetry.addData("gamepad1 controls", "function");
+        telemetry.addData("left joystick" , "field centric movement");
+        telemetry.addData("right joystick" , "field centric rotate");
+        telemetry.addData("dpad" , "field centric quick turn");
+        telemetry.addData("-x" , "imu gyro reset");
+        telemetry.addData("-a" , "accel boost");
+        telemetry.addData("-b" , "TBD");
+        telemetry.addData("-y" , "TBD");
+        telemetry.addData("-LT" , "slider down");
+        telemetry.addData("-LB" , "slider up");
+        telemetry.addData("-RT" , "claw close and hold");
+        telemetry.addData("-RB" , "claw open");
+        telemetry.addData("gamepad2 controls", "function");
+        telemetry.addData("-left joystick" , "field centric movement");
+        telemetry.addData("-right joystick" , "slider movement");
+        telemetry.addData("-x" , "slider to top");
+        telemetry.addData("-a" , "slider setpoint");
+        telemetry.addData("-b" , "slider to bottom");
+        telemetry.addData("-y" , "slider other");
+        telemetry.addData("-RT" , "claw close then release");
+        telemetry.addData("-RB" , "TBD");
+    }
+
+    public void runOpMode(){
+        isVirtualRobot = System.getProperty("os.name").contains("Windows");
+
+        // Speed Variable
+        double speed = 0.5;
+        initializeTelemetry();
 
         if (isVirtualRobot) {
             motorBackLeft = hardwareMap.dcMotor.get("back_left_motor");
             motorFrontLeft = hardwareMap.dcMotor.get("front_left_motor");
             motorFrontRight = hardwareMap.dcMotor.get("front_right_motor");
             motorBackRight= hardwareMap.dcMotor.get("back_right_motor");
+            MotorSlide = hardwareMap.get(DcMotor.class, "arm_motor");
+            MotorSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            //right = hardwareMap.get(CRServo.class, "right_servo");
+            //left = hardwareMap.get(CRServo.class, "left_servo");
         }else {
             motorBackLeft = hardwareMap.dcMotor.get("Motor2");
             motorFrontLeft = hardwareMap.dcMotor.get("Motor3");
             motorFrontRight = hardwareMap.dcMotor.get("Motor0");
             motorBackRight= hardwareMap.dcMotor.get("Motor1");
+            MotorSlide = hardwareMap.get(DcMotor.class, "MotorSlide");
+            MotorSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            right = hardwareMap.get(CRServo.class, "right");
+            left = hardwareMap.get(CRServo.class, "left");
         }
         motorBackLeft.setDirection(DcMotor.Direction.REVERSE);
         motorFrontLeft.setDirection(DcMotor.Direction.REVERSE);
@@ -364,6 +413,39 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
         telemetry.update();
         telemetry.setMsTransmissionInterval(50);
 
+        //ARM INIT
+        int encoderPosition;
+        int lastEncoderPosition;
+        int encoderReal;
+        int encoderMin;
+        int encoderMax;
+        int pole1;
+        int pole2;
+        int pole3;
+        int stack;
+        int dist1=0;
+        int dist2=0;
+        int dist3=0;
+        int dist4=0;
+
+        int toggleLeftTrigger=0;
+
+
+
+        encoderPosition = 0;
+        encoderMin = -4411;
+        encoderMax = 0;
+        pole1 = -1845;
+        pole2 = -2900;
+        pole3 = encoderMin+20;
+        stack = -670;
+
+
+        double live_gyro_value = 0;
+        double gyro_offset = 0;
+        double lastMaxSqueeze = 0;
+        double lastMaxLift = 0;
+
         waitForStart();
         while (opModeIsActive()){
 
@@ -375,16 +457,112 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
                 pointDirection(-90);
             } else if (gamepad1.dpad_right) {
                 pointDirection(90);
-            } else if (gamepad1.y){
-                pointDirectionV2(0);
-            } else if (gamepad1.a) {
-                pointDirectionV2(180);
-            } else if (gamepad1.x) {
-                pointDirectionV2(-90);
-            } else if (gamepad1.b) {
-                pointDirectionV2(90);
             } else {
+                encoderReal = (int) Math.round(MotorSlide.getCurrentPosition());
+                if (gamepad1.right_trigger > lastMaxSqueeze){
+                    lastMaxSqueeze = gamepad1.right_trigger;
+                    left.setPower(gamepad1.right_trigger * squeezeFactor - 0.7);
+                    right.setPower(gamepad1.right_trigger * -squeezeFactor + 0.7);
+                } else if (gamepad1.right_bumper){
+                    lastMaxSqueeze = 0;
+                    left.setPower(-0.7);
+                    right.setPower(0.7);
+                } else if (lastMaxSqueeze <= 0){
+                    if (isVirtualRobot) {
+                        if (encoderReal<stack) {
+                            //left.setPower(gamepad2.right_trigger * squeezeFactor - 0.7);
+                            //right.setPower(gamepad2.right_trigger * -squeezeFactor + 0.7);
+                        } else {
+                            //left.setPower(gamepad2.right_trigger * 0.5 - 0.25);
+                            //right.setPower(gamepad2.right_trigger * -0.5 + 0.25);
+                        }
+                    }else {
+                        if (encoderReal<stack) {
+                            left.setPower(gamepad2.right_trigger * squeezeFactor - 0.7);
+                            right.setPower(gamepad2.right_trigger * -squeezeFactor + 0.7);
+                        } else {
+                            left.setPower(gamepad2.right_trigger * 0.5 - 0.25);
+                            right.setPower(gamepad2.right_trigger * -0.5 + 0.25);
+                        }
+                    }
 
+                }
+                if (gamepad1.left_trigger > lastMaxLift){
+                    lastMaxLift = gamepad1.left_trigger;
+                    encoderPosition = encoderMax - ((int)((encoderMax - encoderMin) * gamepad1.left_trigger));
+                } else if (gamepad1.left_bumper){
+                    encoderPosition = encoderMax;
+                    lastMaxLift = 0;
+                } else if (lastMaxLift <= 0){
+                    if (Math.abs(gamepad2.right_stick_y) > 0.1){
+                        encoderPosition = encoderReal + (int)Math.round(gamepad2.right_stick_y) * 150;
+                    }
+                }
+
+
+
+                if(toggleLeftTrigger==1 && gamepad2.left_trigger<0.5){
+                    toggleLeftTrigger=0;
+                    encoderMin = -4411+encoderReal-10;
+                    encoderMax = 0+encoderReal-10;
+                    pole1 = -1845+encoderReal-10;
+                    pole2 = -2900+encoderReal-10;
+                    pole3 = encoderMin+20-10;
+                    stack = -670+encoderReal-10;
+                }
+                if(gamepad2.left_trigger>0.5){
+                    toggleLeftTrigger=1;
+                } else {
+                    toggleLeftTrigger=0;
+                    if (encoderPosition < encoderMin) {
+                        encoderPosition = encoderMin;
+                    }
+                    if (encoderPosition > encoderMax) {
+                        encoderPosition = encoderMax;
+                    }
+                }
+                dist1 = Math.abs(encoderReal - pole1);
+                dist2 = Math.abs(encoderReal - pole2);
+                dist3 = Math.abs(encoderReal - pole3);
+                dist4 = Math.abs(encoderReal - stack);
+
+                if(gamepad2.a) {
+                    if ((dist4 < dist1) && (dist4 < dist2) && (dist4 < dist3)) {
+                        encoderPosition = stack;
+                    }
+                    if ((dist3 < dist1) && (dist3 < dist2) && (dist3 < dist4)) {
+                        encoderPosition = pole3;
+                    }
+                    if ((dist2 < dist1) && (dist2 < dist4) && (dist2 < dist3)) {
+                        encoderPosition = pole2;
+                    }
+                    if ((dist1 < dist4) && (dist1 < dist2) && (dist1 < dist3)) {
+                        encoderPosition = pole1;
+                    }
+                }
+
+                if(gamepad2.x) {
+                    encoderPosition = pole3;
+                }
+                if(gamepad2.b) {
+                    encoderPosition = encoderMax;
+                }
+
+                MotorSlide.setTargetPosition(encoderPosition);
+                MotorSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                ((DcMotorEx) MotorSlide).setTargetPositionTolerance(10);
+                ((DcMotorEx) MotorSlide).setVelocity(2000);
+                if (encoderReal < pole2+200){
+                    speed = 0.4;
+                } else if(gamepad1.a) {
+                    speed = 1;
+                } else {
+                    speed = 0.5;
+                }
+
+                if(gamepad1.x) {
+                    gyro_offset = live_gyro_value;
+                }
                 double y = -gamepad1.left_stick_y;          // Up-Down
                 double x = gamepad1.left_stick_x * 1.1;    // Left-Right
                 double rx = gamepad1.right_stick_x;         //Rotation

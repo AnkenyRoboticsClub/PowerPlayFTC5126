@@ -461,12 +461,30 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
                 encoderReal = (int) Math.round(MotorSlide.getCurrentPosition());
                 if (gamepad1.right_trigger > lastMaxSqueeze){
                     lastMaxSqueeze = gamepad1.right_trigger;
-                    left.setPower(gamepad1.right_trigger * squeezeFactor - 0.7);
-                    right.setPower(gamepad1.right_trigger * -squeezeFactor + 0.7);
+                    if (isVirtualRobot) {
+                        //left.setPower(gamepad1.right_trigger * squeezeFactor - 0.7);
+                        //right.setPower(gamepad1.right_trigger * -squeezeFactor + 0.7);
+                    } else {
+                        if (isVirtualRobot) {
+                            //left.setPower(gamepad1.right_trigger * squeezeFactor - 0.7);
+                            //right.setPower(gamepad1.right_trigger * -squeezeFactor + 0.7);
+                        } else {
+                            left.setPower(gamepad1.right_trigger * squeezeFactor - 0.7);
+                            right.setPower(gamepad1.right_trigger * -squeezeFactor + 0.7);
+                        }
+
+                    }
+
                 } else if (gamepad1.right_bumper){
                     lastMaxSqueeze = 0;
-                    left.setPower(-0.7);
-                    right.setPower(0.7);
+                    if (isVirtualRobot){
+                        //left.setPower(-0.7);
+                        //right.setPower(0.7);
+                    } else {
+                        left.setPower(-0.7);
+                        right.setPower(0.7);
+                    }
+
                 } else if (lastMaxSqueeze <= 0){
                     if (isVirtualRobot) {
                         if (encoderReal<stack) {

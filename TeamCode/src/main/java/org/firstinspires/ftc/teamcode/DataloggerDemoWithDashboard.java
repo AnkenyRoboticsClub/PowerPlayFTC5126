@@ -450,13 +450,13 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
         while (opModeIsActive()){
 
             if (gamepad1.dpad_up){
-                pointDirection(0);
-            } else if (gamepad1.dpad_down) {
                 pointDirection(180);
+            } else if (gamepad1.dpad_down) {
+                pointDirection(0);
             } else if (gamepad1.dpad_left) {
-                pointDirection(-90);
-            } else if (gamepad1.dpad_right) {
                 pointDirection(90);
+            } else if (gamepad1.dpad_right) {
+                pointDirection(-90);
             } else {
                 encoderReal = (int) Math.round(MotorSlide.getCurrentPosition());
                 if (gamepad1.right_trigger > lastMaxSqueeze){
@@ -586,8 +586,7 @@ public class DataloggerDemoWithDashboard extends LinearOpMode {
                 double rx = gamepad1.right_stick_x;         //Rotation
 
                 // Read inverse IMU heading, as the IMU heading is CW positive
-                Orientation orientation = imu.getRobotOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS);
-                live_gyro_value = -orientation.firstAngle * 180.0 / Math.PI;
+                live_gyro_value = getHeadingInRadians();
                 double botHeading = live_gyro_value - gyro_offset;
 
                 //double botHeading = -imu.getAngularOrientation().firstAngle;
